@@ -933,10 +933,7 @@ def XS2D_FAV(level, group, J_max, I_max, dTOT, dNUFIS, fav_strength, diff_X_ABS,
     return dTOT_hexx, dNUFIS_hexx
 
 ##############################################################################
-def interpolate_2D_hexx_rbf(dPHI_zero, group, J_max, I_max, level, conv_tri, map_detector_conv, all_triangles):
-    l = 6 * (4 ** (level - 1))  # Number of triangles per hexagon
-    N_hexx = I_max * J_max * l  # Total number of triangles
-
+def interpolate_2D_hexx_rbf(dPHI_zero, group, conv_tri, known_coords, known_values, zero_coords, all_triangles, zero_coord_to_index):
     if len(dPHI_zero) == group * max(conv_tri):
         dPHI_zero_new = np.reshape(dPHI_zero, (group, max(conv_tri)))
     else:
@@ -944,47 +941,16 @@ def interpolate_2D_hexx_rbf(dPHI_zero, group, J_max, I_max, level, conv_tri, map
     dPHI_interp = dPHI_zero_new.copy()
 
     for g in range(group):
-        # Step 2: Extract known values and coordinates
-        known_coords = []
-        known_values = []
-        zero_coords = []
-
-        PHIg = dPHI_zero_new[g]
-        for n in range(len(all_triangles)):
-            tri_coords = [round_vertex(v) for v in all_triangles[n]]
-            centroid = (
-                sum(v[0] for v in tri_coords) / 3,
-                sum(v[1] for v in tri_coords) / 3
-            )
-
-            if map_detector_conv[n] == 1:
-                known_coords.append(centroid)
-                known_values.append(PHIg[n])
-            elif map_detector_conv[n] == 0:
-                zero_coords.append(centroid)
-
-        # Step 3: Perform RBF Interpolation
-#        PHIg_temp = np.zeros(N_hexx, dtype=complex)
         PHIg_temp = np.zeros(max(conv_tri), dtype=complex)
         if zero_coords:
             try:
                 rbf_interpolator = RBFInterpolator(known_coords, known_values, kernel='thin_plate_spline')
                 interpolated_values = rbf_interpolator(zero_coords)
 
-                # Map interpolated values back to PHIg
-#                for coord, value in zip(zero_coords, interpolated_values):
-#                    for idx, tri in enumerate(all_triangles):
-#                        if np.all(np.isclose([sum(v) for v in zip(*tri)[:2]], coord)):
-#                            PHIg_temp[idx] = value
+                # Use precomputed mapping instead of recalculating centroids
                 for coord, value in zip(zero_coords, interpolated_values):
-                    for idx, tri in enumerate(all_triangles):
-                        tri_coords = [v for v in tri]  # Explicitly unpack triangle vertices
-                        centroid = (
-                            sum(v[0] for v in tri_coords) / 3,
-                            sum(v[1] for v in tri_coords) / 3
-                        )
-                        if np.all(np.isclose(centroid, coord, atol=1e-6)):  # Compare centroids
-                            PHIg_temp[idx] = value
+                    if coord in zero_coord_to_index:
+                        PHIg_temp[zero_coord_to_index[coord]] = value
             except Exception as e:
                 print(f"RBF Interpolation failed for group {g}: {e}")
                 continue

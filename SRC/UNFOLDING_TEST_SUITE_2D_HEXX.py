@@ -10,7 +10,7 @@ sys.dont_write_bytecode = True
 
 start_time = time.time()
 
-from SRC_ALL.SRC_UNFOLDING_2D_HEXX import *
+from SRC_UNFOLDING_2D_HEXX import *
 
 #######################################################################################################
 v1 = 9622264.500578672
@@ -123,7 +123,7 @@ map_zone = [
 ]
 
 #######################################################################################################
-output_dir = f'OUTPUTS/{case_name_base}'
+output_dir = f'../OUTPUTS/{case_name_base}'
 
 ##### Forward Simulation
 solver_type = 'forward'
@@ -181,7 +181,7 @@ validity_GREEDY = []
 methods = ["INVERT", "ZONE", "SCAN", "BRUTE", "BACK", "GREEDY"]
 
 iter = 0
-iter_file = f"OUTPUTS/{case_name_base}/iteration_info.txt"
+iter_file = f"../OUTPUTS/{case_name_base}/iteration_info.txt"
 
 # Check if the file exists, if yes, delete it
 if os.path.exists(iter_file):
@@ -264,11 +264,11 @@ while add_iter < additional_iter:
                 file.write(f"Iteration: {iter+1}, num_source: {len(loc)}, loc_conv = {loc_conv}, loc = {loc}, frequency: {f}, Real magnitude = {mag_real_loc}, Imaginary magnitude = {mag_imag_loc}\n")
 
             # run main_unfold_2D_RECT
-            dPHI_temp, S, dPHI_temp_meas, G_matrix = main_unfold_2D_hexx_base(group, I_max, J_max, N_hexx, conv_tri, conv_neighbor, TOT, SIGS_reshaped, BC, h, level, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT_hexx, dSIGS_hexx, chi_hexx, dNUFIS_hexx, noise_section, type_noise, map_detector_hexx, case_name, case_name_base, case_name2)
-            dPHI_temp_INVERT, dS_unfold_INVERT_temp, dS_unfold_ZONE_temp, dS_unfold_SCAN_temp, validity_INVERT, validity_ZONE, validity_SCAN = main_unfold_2D_hexx_old_methods(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_INVERT, validity_ZONE, validity_SCAN)
-            dPHI_temp_BRUTE, dS_unfold_BRUTE_temp, validity_BRUTE = main_unfold_2D_hexx_brute(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_BRUTE)
-            dPHI_temp_BACK, dS_unfold_BACK_temp, validity_BACK = main_unfold_2D_hexx_back(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, I_max, J_max, N_hexx, conv_tri, level, D, case_name, case_name_base, validity_BACK)
-            dPHI_temp_GREEDY, dS_unfold_GREEDY_temp, validity_GREEDY = main_unfold_2D_hexx_greedy(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_GREEDY)
+            dPHI_temp, S, dPHI_temp_meas, G_matrix = main_unfold_2D_hexx_base(group, s, I_max, J_max, N_hexx, conv_tri, conv_neighbor, TOT, SIGS_reshaped, BC, h, level, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT_hexx, dSIGS_hexx, chi_hexx, dNUFIS_hexx, noise_section, type_noise, map_detector_hexx, case_name, case_name_base, case_name2, precond)
+            dPHI_temp_INVERT, dS_unfold_INVERT_temp, dS_unfold_ZONE_temp, dS_unfold_SCAN_temp, validity_INVERT, validity_ZONE, validity_SCAN = main_unfold_2D_hexx_old_methods(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, map_zone, case_name, case_name_base, validity_INVERT, validity_ZONE, validity_SCAN)
+            dPHI_temp_BRUTE, dS_unfold_BRUTE_temp, validity_BRUTE = main_unfold_2D_hexx_brute(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_BRUTE)
+#            dPHI_temp_BACK, dS_unfold_BACK_temp, validity_BACK = main_unfold_2D_hexx_back(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, case_name, case_name_base, validity_BACK)
+            dPHI_temp_GREEDY, dS_unfold_GREEDY_temp, validity_GREEDY = main_unfold_2D_hexx_greedy(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_GREEDY)
 
             iter += 1
     add_iter += 1

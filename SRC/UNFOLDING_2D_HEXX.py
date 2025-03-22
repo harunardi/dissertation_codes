@@ -14,14 +14,17 @@ sys.dont_write_bytecode = True
 
 start_time = time.time()
 
-from SRC_ALL.UTILS import Utils
-from SRC_ALL.MATRIX_BUILDER import *
-from SRC_ALL.METHODS import *
-from SRC_ALL.POSTPROCESS import PostProcessor
-from SRC_ALL.SOLVERFACTORY import SolverFactory
+from UTILS import Utils
+from MATRIX_BUILDER import *
+from METHODS import *
+from POSTPROCESS import PostProcessor
+from SOLVERFACTORY import SolverFactory
 
 #######################################################################################################
 # INPUTS
+original_sys_path = sys.path.copy()
+sys.path.append('../')
+
 from INPUTS.TASK3_TEST03a_2DTriMG_HTTR_1SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03b_2DTriMG_HTTR_2SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03c_2DTriMG_HTTR_3SRC_AVS_NONCENTER import *
@@ -29,11 +32,14 @@ from INPUTS.TASK3_TEST03a_2DTriMG_HTTR_1SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03e_2DTriMG_HTTR_5SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03f_2DTriMG_HTTR_6SRC_AVS_NONCENTER import *
 
+# Restore the original sys.path
+sys.path = original_sys_path
+
 #######################################################################################################
 def main():
     start_time = time.time()
 
-    output_dir = f'OUTPUTS/{input_name}'
+    output_dir = f'../OUTPUTS/{input_name}'
     global level
 
 ##### Forward Simulation
@@ -275,10 +281,10 @@ def main():
     dPHI_temp_SOLVE_reshaped = np.reshape(dPHI_temp_SOLVE, (group, max_conv))
     S_reshaped = np.reshape(S, (group, max_conv))
     for g in range(group):
-        plot_triangular_general(dPHI_temp_SOLVE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI', title=f'2D Plot of dPHI{g+1} Hexx (Reference) Magnitude', case_name=case_name, output_dir=output_SOLVE, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dPHI_temp_SOLVE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI', title=f'2D Plot of dPHI{g+1} Hexx (Reference) Phase', case_name=case_name, output_dir=output_SOLVE, solve=solver_type.upper(), process_data="phase")
-        plot_triangular_general(S_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='S', title=f'2D Plot of S{g+1} Hexx (Reference) Magnitude', case_name=case_name, output_dir=output_SOLVE, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(S_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='S', title=f'2D Plot of S{g+1} Hexx (Reference) Phase', case_name=case_name, output_dir=output_SOLVE, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dPHI_temp_SOLVE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI', title=f'2D Plot of dPHI{g+1} Hexx (Reference) Magnitude', case_name=case_name, output_dir=output_SOLVE, process_data="magnitude")
+        plot_triangular_general(dPHI_temp_SOLVE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI', title=f'2D Plot of dPHI{g+1} Hexx (Reference) Phase', case_name=case_name, output_dir=output_SOLVE, process_data="phase")
+        plot_triangular_general(S_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='S', title=f'2D Plot of S{g+1} Hexx (Reference) Magnitude', case_name=case_name, output_dir=output_SOLVE, process_data="magnitude")
+        plot_triangular_general(S_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='S', title=f'2D Plot of S{g+1} Hexx (Reference) Phase', case_name=case_name, output_dir=output_SOLVE, process_data="phase")
 
     # UNFOLDING
     G_inverse = scipy.linalg.inv(G_matrix)
@@ -313,8 +319,8 @@ def main():
     dS_unfold_temp_SOLVE_reshaped = np.reshape(dS_unfold_temp_SOLVE, (group, max_conv))
 
     for g in range(group):
-        plot_triangular_general(dS_unfold_temp_SOLVE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS', title=f'2D Plot of dS{g+1}_SOLVE Hexx Magnitude', case_name=case_name, output_dir=output_SOLVE, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dS_unfold_temp_SOLVE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS', title=f'2D Plot of dS{g+1}_SOLVE Hexx Phase', case_name=case_name, output_dir=output_SOLVE, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dS_unfold_temp_SOLVE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS', title=f'2D Plot of dS{g+1}_SOLVE Hexx Magnitude', case_name=case_name, output_dir=output_SOLVE, process_data="magnitude")
+        plot_triangular_general(dS_unfold_temp_SOLVE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS', title=f'2D Plot of dS{g+1}_SOLVE Hexx Phase', case_name=case_name, output_dir=output_SOLVE, process_data="phase")
 
     # Calculate error and compare
     diff_S1 = np.abs(np.array(dS_unfold_SOLVE_reshaped[0]) - np.array(S_all_reshaped[0]))
@@ -332,8 +338,8 @@ def main():
     diff_S_temp_reshaped = diff_S_temp_array.reshape(group, max(conv_tri))
 
     for g in range(group):
-        plot_triangular_general(diff_S_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S', title=f'2D Plot of diff_S{g+1} Hexx Magnitude', case_name=case_name, output_dir=output_SOLVE, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(diff_S_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S', title=f'2D Plot of diff_S{g+1} Hexx Phase', case_name=case_name, output_dir=output_SOLVE, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(diff_S_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S', title=f'2D Plot of diff_S{g+1} Hexx Magnitude', case_name=case_name, output_dir=output_SOLVE, process_data="magnitude")
+        plot_triangular_general(diff_S_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S', title=f'2D Plot of diff_S{g+1} Hexx Phase', case_name=case_name, output_dir=output_SOLVE, process_data="phase")
 
 ##### 03. INVERT
     os.makedirs(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_03_INVERT', exist_ok=True)
@@ -363,7 +369,23 @@ def main():
 
     map_detector_hexx_plot = np.array(map_detector_hexx)
     map_detector_conv_plot = np.array(map_detector_conv)
-    plot_triangular_general(map_detector_conv_plot, x, y, tri_indices, g+1, cmap='viridis', varname='map_detector', title=f'2D Plot of map_detector_hexx', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="magnitude")
+    plot_triangular_general(map_detector_conv_plot, x, y, tri_indices, g+1, cmap='viridis', varname='map_detector', title=f'2D Plot of map_detector_hexx', case_name=case_name, output_dir=output_INVERT, process_data="magnitude")
+
+    centroids = []
+    for idx, tri in enumerate(all_triangles):
+        tri_coords = [v for v in tri]  # Explicitly unpack triangle vertices
+        centroids.append([
+            sum(v[0] for v in tri_coords) / 3,
+            sum(v[1] for v in tri_coords) / 3
+        ])
+
+    centroids_round = []
+    for n in range(len(all_triangles)):
+        tri_coords = [round_vertex(v) for v in all_triangles[n]]
+        centroids_round.append([
+            sum(v[0] for v in tri_coords) / 3,
+            sum(v[1] for v in tri_coords) / 3
+        ])
 
     # --------------- MANIPULATE dPHI -------------------
     # Define zeroed dPHI as dPHI_temp_zero and dPHI_zero
@@ -378,12 +400,39 @@ def main():
     dPHI_meas_reshaped = np.reshape(dPHI_temp_meas, (group, max_conv))
 
     for g in range(group):
-        plot_triangular_general(dPHI_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dPHI_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dPHI_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, process_data="magnitude")
+        plot_triangular_general(dPHI_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_INVERT, process_data="phase")
 
     # --------------- INTERPOLATE dPHI -------------------
-    dPHI_interp = interpolate_2D_hexx_rbf(dPHI_meas_reshaped, group, J_max, I_max, level, conv_tri,map_detector_conv, all_triangles)
+#    dPHI_interp = interpolate_2D_hexx_rbf(dPHI_meas_reshaped, group, J_max, I_max, level, conv_tri,map_detector_conv, all_triangles, centroids, centroids_round)
+    for g in range(group):
+        known_coords = []
+        known_values = []
+        zero_coords = []
 
+        for n in range(len(all_triangles)):
+            tri_coords = [round_vertex(v) for v in all_triangles[n]]
+            centroid = (
+                sum(v[0] for v in tri_coords) / 3,
+                sum(v[1] for v in tri_coords) / 3
+            )
+
+            if map_detector_conv[n] == 1:
+                known_coords.append(centroid)
+                known_values.append(dPHI_meas_reshaped[g][n])
+            elif map_detector_conv[n] == 0:
+                zero_coords.append(centroid)
+
+    zero_coord_to_index = {}
+    for idx, tri in enumerate(all_triangles):
+        tri_coords = [v for v in tri]
+        centroid = (
+            sum(v[0] for v in tri_coords) / 3,
+            sum(v[1] for v in tri_coords) / 3
+        )
+    zero_coord_to_index[centroid] = idx  # Map centroid to index
+
+    dPHI_interp = interpolate_2D_hexx_rbf(dPHI_meas_reshaped, group, conv_tri, known_coords, known_values, zero_coords, all_triangles, zero_coord_to_index)
     dPHI_temp_interp = np.zeros((group * max_conv), dtype=complex)
     for g in range(group):
         for n in range(max_conv):
@@ -392,8 +441,8 @@ def main():
             dPHI_temp_interp[g * max_conv + n] = dPHI_interp[g][n]
 
     for g in range(group):
-        plot_triangular_general(dPHI_interp[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_interp', title=f'2D Plot of dPHI{g+1}_interp Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dPHI_interp[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_interp', title=f'2D Plot of dPHI{g+1}_interp Hexx Phase', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dPHI_interp[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_interp', title=f'2D Plot of dPHI{g+1}_interp Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, process_data="magnitude")
+        plot_triangular_general(dPHI_interp[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_interp', title=f'2D Plot of dPHI{g+1}_interp Hexx Phase', case_name=case_name, output_dir=output_INVERT, process_data="phase")
 
     # Initialize dPHI_all with zeros (or appropriate default value)
     dPHI_interp_all = np.zeros((group, N_hexx), dtype=complex)
@@ -425,8 +474,8 @@ def main():
     diff_dPHI_interp_reshaped = diff_dPHI_interp_array.reshape(group,max_conv)
 
     for g in range(group):
-        plot_triangular_general(diff_dPHI_interp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_dPHI_interp', title=f'2D Plot of diff_dPHI{g+1}_interp Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(diff_dPHI_interp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_dPHI_interp', title=f'2D Plot of diff_dPHI{g+1}_interp Hexx Phase', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(diff_dPHI_interp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_dPHI_interp', title=f'2D Plot of diff_dPHI{g+1}_interp Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, process_data="magnitude")
+        plot_triangular_general(diff_dPHI_interp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_dPHI_interp', title=f'2D Plot of diff_dPHI{g+1}_interp Hexx Phase', case_name=case_name, output_dir=output_INVERT, process_data="phase")
 
     # --------------- LOAD GREEN'S FUNCTION -------------------
     # Plot G_matrix
@@ -455,86 +504,86 @@ def main():
     plt.gca().invert_yaxis()
     plt.title('Plot of the Magnitude of G_matrix_meas')
     plt.savefig(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_03_INVERT/{case_name}_G_matrix_meas.png')
-#
-#    # Interpolate rows of the Green's function
-#    G_matrix_interp = G_matrix_meas
-#    G_matrix_interp_cols = np.zeros((group * max_conv, group * max_conv), dtype=complex) #np.full((group * N_hexx, group * N_hexx), np.nan, dtype=complex)
-#    for g in range(group):
-#        for n in range(max_conv):
-#            G_mat_interp_temp = G_matrix_interp[:, g * max_conv + n]  # Extract a row
-#            print(f'Interpolating G_mat_interp_temp group {g+1}, position {n+1}')
-#            G_mat_interp_cols = interpolate_2D_hexx_rbf(G_mat_interp_temp, group, J_max, I_max, level, conv_tri, map_detector_conv, all_triangles) # Perform interpolation on the column
-#            G_matrix_interp_cols[:, g * max_conv + n] = G_mat_interp_cols  # Assign back to the row
-#
-#    plt.figure(figsize=(8, 6))
-#    plt.imshow(G_matrix_interp_cols.real, cmap='viridis', interpolation='nearest', origin='lower')
-#    plt.colorbar(label='Magnitude of G_matrix_interp_cols')
-#    plt.xlabel('Index')
-#    plt.ylabel('Index')
-#    plt.gca().invert_yaxis()
-#    plt.title('Plot of the Magnitude of G_matrix_interp_cols')
-#    plt.savefig(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_03_INVERT/{case_name}_G_matrix_interp_cols.png')
-#
-#    # --------------- UNFOLD GREEEN'S FUNCTION USING DIRECT METHOD -------------------
-#    print(f'Solve for dS using Direct Method')
-#    G_mat_interp_inverse = scipy.linalg.pinv(G_matrix_interp_cols)
-#
-#    # Plot G_matrix
-#    plt.figure(figsize=(8, 6))
-#    plt.imshow(G_mat_interp_inverse.real, cmap='viridis', interpolation='nearest', origin='lower')
-#    plt.colorbar(label='Magnitude of G_mat_interp_inverse')
-#    plt.xlabel('Index')
-#    plt.ylabel('Index')
-#    plt.gca().invert_yaxis()
-#    plt.title('Plot of the Magnitude of G_mat_interp_inverse')
-#    plt.savefig(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_03_INVERT/{case_name}_G_mat_interp_inverse.png')
-#
-#    # UNFOLD ALL INTERPOLATED
-#    dS_unfold_INVERT_temp = np.dot(G_mat_interp_inverse, dPHI_temp_interp)
-#    dS_unfold_INVERT = np.zeros((group* N_hexx), dtype=complex)
-#
-#    # POSTPROCESS
-#    print(f'Postprocessing to appropriate dPHI')
-#    non_zero_conv = np.nonzero(conv_tri)[0]
-#    dS_unfold_temp_indices = conv_tri_array[non_zero_conv] - 1
-#
-#    for g in range(group):
-#        dS_unfold_temp_start = g * max(conv_tri)
-#        dS_unfold_INVERT[g * N_hexx + non_zero_conv] = dS_unfold_INVERT_temp[dS_unfold_temp_start + dS_unfold_temp_indices]
-#        for n in range(N_hexx):
-#            if conv_tri[n] == 0:
-#                dS_unfold_INVERT[g*N_hexx+n] = np.nan
-#
-#    dS_unfold_INVERT_reshaped = np.reshape(dS_unfold_INVERT,(group,N_hexx))
-#    dS_unfold_INVERT_temp_reshaped = np.reshape(dS_unfold_INVERT_temp,(group,max_conv))
-#
-#    for g in range(group):
-#        plot_triangular_general(dS_unfold_INVERT_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_INVERT', title=f'2D Plot of dS{g+1}_unfold_INVERT Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="magnitude")
-#        plot_triangular_general(dS_unfold_INVERT_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_INVERT', title=f'2D Plot of dS{g+1}_unfold_INVERT Hexx Phase', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="phase")
-#
-#    # OUTPUT
-#    print(f'Generating JSON output for dS')
-#    output_direct1 = {}
-#    for g in range(group):
-#        dS_unfold_direct_groupname = f'dS_unfold{g+1}'
-#        dS_unfold_direct_list = [{"real": x.real, "imaginary": x.imag} for x in dS_unfold_INVERT_reshaped[g]]
-#        output_direct1[dS_unfold_direct_groupname] = dS_unfold_direct_list
-#
-#    # Save data to JSON file
-#    with open(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_03_INVERT/{case_name}_dS_unfold_INVERT_output.json', 'w') as json_file:
-#        json.dump(output_direct1, json_file, indent=4)
-#
-#    # Calculate error and compare
-#    diff_S1_INVERT = (np.abs(np.array(dS_unfold_INVERT_temp_reshaped[0]) - np.array(S_reshaped[0])) / (np.abs(np.array(S_reshaped[0])) + 1E-20)) * 100
-#    diff_S2_INVERT = (np.abs(np.array(dS_unfold_INVERT_temp_reshaped[1]) - np.array(S_reshaped[1])) / (np.abs(np.array(S_reshaped[0])) + 1E-20)) * 100
-#    diff_S_INVERT = [[diff_S1_INVERT], [diff_S2_INVERT]]
-#    diff_S_INVERT_array = np.array(diff_S_INVERT)
-#    diff_S_INVERT_reshaped = diff_S_INVERT_array.reshape(group, max_conv)
-#
-#    for g in range(group):
-#        plot_triangular_general(diff_S_INVERT_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_dS_INVERT', title=f'2D Plot of diff_dS{g+1}_INVERT Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="magnitude")
-#        plot_triangular_general(diff_S_INVERT_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_dS_INVERT', title=f'2D Plot of diff_dS{g+1}_INVERT Hexx Phase', case_name=case_name, output_dir=output_INVERT, solve=solver_type.upper(), process_data="phase")
-#
+
+    # Interpolate rows of the Green's function
+    G_matrix_interp = G_matrix_meas
+    G_matrix_interp_cols = np.zeros((group * max_conv, group * max_conv), dtype=complex) #np.full((group * N_hexx, group * N_hexx), np.nan, dtype=complex)
+    for g in range(group):
+        for n in range(max_conv):
+            G_mat_interp_temp = G_matrix_interp[:, g * max_conv + n]  # Extract a row
+            print(f'Interpolating G_mat_interp_temp group {g+1}, position {n+1}')
+            G_mat_interp_cols = interpolate_2D_hexx_rbf(G_mat_interp_temp, group, conv_tri, known_coords, known_values, zero_coords, all_triangles, zero_coord_to_index) # Perform interpolation on the column
+            G_matrix_interp_cols[:, g * max_conv + n] = G_mat_interp_cols  # Assign back to the row
+
+    plt.figure(figsize=(8, 6))
+    plt.imshow(G_matrix_interp_cols.real, cmap='viridis', interpolation='nearest', origin='lower')
+    plt.colorbar(label='Magnitude of G_matrix_interp_cols')
+    plt.xlabel('Index')
+    plt.ylabel('Index')
+    plt.gca().invert_yaxis()
+    plt.title('Plot of the Magnitude of G_matrix_interp_cols')
+    plt.savefig(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_03_INVERT/{case_name}_G_matrix_interp_cols.png')
+
+    # --------------- UNFOLD GREEEN'S FUNCTION USING DIRECT METHOD -------------------
+    print(f'Solve for dS using Direct Method')
+    G_mat_interp_inverse = scipy.linalg.pinv(G_matrix_interp_cols)
+
+    # Plot G_matrix
+    plt.figure(figsize=(8, 6))
+    plt.imshow(G_mat_interp_inverse.real, cmap='viridis', interpolation='nearest', origin='lower')
+    plt.colorbar(label='Magnitude of G_mat_interp_inverse')
+    plt.xlabel('Index')
+    plt.ylabel('Index')
+    plt.gca().invert_yaxis()
+    plt.title('Plot of the Magnitude of G_mat_interp_inverse')
+    plt.savefig(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_03_INVERT/{case_name}_G_mat_interp_inverse.png')
+
+    # UNFOLD ALL INTERPOLATED
+    dS_unfold_INVERT_temp = np.dot(G_mat_interp_inverse, dPHI_temp_interp)
+    dS_unfold_INVERT = np.zeros((group* N_hexx), dtype=complex)
+
+    # POSTPROCESS
+    print(f'Postprocessing to appropriate dPHI')
+    non_zero_conv = np.nonzero(conv_tri)[0]
+    dS_unfold_temp_indices = conv_tri_array[non_zero_conv] - 1
+
+    for g in range(group):
+        dS_unfold_temp_start = g * max(conv_tri)
+        dS_unfold_INVERT[g * N_hexx + non_zero_conv] = dS_unfold_INVERT_temp[dS_unfold_temp_start + dS_unfold_temp_indices]
+        for n in range(N_hexx):
+            if conv_tri[n] == 0:
+                dS_unfold_INVERT[g*N_hexx+n] = np.nan
+
+    dS_unfold_INVERT_reshaped = np.reshape(dS_unfold_INVERT,(group,N_hexx))
+    dS_unfold_INVERT_temp_reshaped = np.reshape(dS_unfold_INVERT_temp,(group,max_conv))
+
+    for g in range(group):
+        plot_triangular_general(dS_unfold_INVERT_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_INVERT', title=f'2D Plot of dS{g+1}_unfold_INVERT Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, process_data="magnitude")
+        plot_triangular_general(dS_unfold_INVERT_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_INVERT', title=f'2D Plot of dS{g+1}_unfold_INVERT Hexx Phase', case_name=case_name, output_dir=output_INVERT, process_data="phase")
+
+    # OUTPUT
+    print(f'Generating JSON output for dS')
+    output_direct1 = {}
+    for g in range(group):
+        dS_unfold_direct_groupname = f'dS_unfold{g+1}'
+        dS_unfold_direct_list = [{"real": x.real, "imaginary": x.imag} for x in dS_unfold_INVERT_reshaped[g]]
+        output_direct1[dS_unfold_direct_groupname] = dS_unfold_direct_list
+
+    # Save data to JSON file
+    with open(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_03_INVERT/{case_name}_dS_unfold_INVERT_output.json', 'w') as json_file:
+        json.dump(output_direct1, json_file, indent=4)
+
+    # Calculate error and compare
+    diff_S1_INVERT = (np.abs(np.array(dS_unfold_INVERT_temp_reshaped[0]) - np.array(S_reshaped[0])) / (np.abs(np.array(S_reshaped[0])) + 1E-20)) * 100
+    diff_S2_INVERT = (np.abs(np.array(dS_unfold_INVERT_temp_reshaped[1]) - np.array(S_reshaped[1])) / (np.abs(np.array(S_reshaped[0])) + 1E-20)) * 100
+    diff_S_INVERT = [[diff_S1_INVERT], [diff_S2_INVERT]]
+    diff_S_INVERT_array = np.array(diff_S_INVERT)
+    diff_S_INVERT_reshaped = diff_S_INVERT_array.reshape(group, max_conv)
+
+    for g in range(group):
+        plot_triangular_general(diff_S_INVERT_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_dS_INVERT', title=f'2D Plot of diff_dS{g+1}_INVERT Hexx Magnitude', case_name=case_name, output_dir=output_INVERT, process_data="magnitude")
+        plot_triangular_general(diff_S_INVERT_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_dS_INVERT', title=f'2D Plot of diff_dS{g+1}_INVERT Hexx Phase', case_name=case_name, output_dir=output_INVERT, process_data="phase")
+
 ##### 04. ZONE
     os.makedirs(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_04_ZONE', exist_ok=True)
     output_ZONE = f'{output_dir}/{case_name}_UNFOLDING/{case_name}_04_ZONE/{case_name}'
@@ -563,7 +612,7 @@ def main():
 
     map_detector_hexx_plot = np.array(map_detector_hexx)
     map_detector_conv_plot = np.array(map_detector_conv)
-    plot_triangular_general(map_detector_conv_plot, x, y, tri_indices, g+1, cmap='viridis', varname='map_detector', title=f'2D Plot of map_detector_hexx', case_name=case_name, output_dir=output_ZONE, solve=solver_type.upper(), process_data="magnitude")
+    plot_triangular_general(map_detector_conv_plot, x, y, tri_indices, g+1, cmap='viridis', varname='map_detector', title=f'2D Plot of map_detector_hexx', case_name=case_name, output_dir=output_ZONE, process_data="magnitude")
 
     map_zone_hexx = [0] * I_max * J_max * p
     map_zone_temp = np.reshape(map_zone, (J_max, I_max))
@@ -584,7 +633,7 @@ def main():
 
     map_zone_hexx_plot = np.array(map_zone_hexx)
     map_zone_conv_plot = np.array(map_zone_conv)
-    plot_triangular_general(map_zone_conv_plot, x, y, tri_indices, g+1, cmap='viridis', varname='map_zone', title=f'2D Plot of map_zone', case_name=case_name, output_dir=output_ZONE, solve=solver_type.upper(), process_data="magnitude")
+    plot_triangular_general(map_zone_conv_plot, x, y, tri_indices, g+1, cmap='viridis', varname='map_zone', title=f'2D Plot of map_zone', case_name=case_name, output_dir=output_ZONE, process_data="magnitude")
 
     zone_length = np.zeros(int(max(map_zone_conv)))
     for z in range(int(max(map_zone_conv))):
@@ -605,8 +654,8 @@ def main():
     dPHI_meas_reshaped = np.reshape(dPHI_temp_meas, (group, max_conv))
 
     for g in range(group):
-        plot_triangular_general(dPHI_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_ZONE, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dPHI_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_ZONE, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dPHI_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_ZONE, process_data="magnitude")
+        plot_triangular_general(dPHI_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_ZONE, process_data="phase")
 
     # --------------- DIVIDE dPHI TO ZONES -------------------
     dPHI_temp_meas_zone = np.zeros((int(max(map_zone_conv)), group * max_conv), dtype=complex)
@@ -761,8 +810,8 @@ def main():
     # Plot dPHI_sol_reshaped
     dS_unfold_ZONE_temp_reshaped = np.reshape(dS_unfold_ZONE_temp, (group, max_conv))
     for g in range(group):
-        plot_triangular_general(dS_unfold_ZONE_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_ZONE_unfold', title=f'2D Plot of dS{g+1}_ZONE Hexx Magnitude', case_name=case_name, output_dir=output_ZONE, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dS_unfold_ZONE_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_ZONE_unfold', title=f'2D Plot of dS{g+1}_ZONE Hexx Phase', case_name=case_name, output_dir=output_ZONE, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dS_unfold_ZONE_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_ZONE_unfold', title=f'2D Plot of dS{g+1}_ZONE Hexx Magnitude', case_name=case_name, output_dir=output_ZONE, process_data="magnitude")
+        plot_triangular_general(dS_unfold_ZONE_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_ZONE_unfold', title=f'2D Plot of dS{g+1}_ZONE Hexx Phase', case_name=case_name, output_dir=output_ZONE, process_data="phase")
 
     # OUTPUT
     print(f'Generating JSON output for dS')
@@ -784,8 +833,8 @@ def main():
     diff_S_ZONE_reshaped = diff_S_ZONE_array.reshape(group, max_conv)
 
     for g in range(group):
-        plot_triangular_general(diff_S_ZONE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_ZONE', title=f'2D Plot of diff_S{g+1}_ZONE Hexx Magnitude', case_name=case_name, output_dir=output_ZONE, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(diff_S_ZONE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_ZONE', title=f'2D Plot of diff_S{g+1}_ZONE Hexx Phase', case_name=case_name, output_dir=output_ZONE, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(diff_S_ZONE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_ZONE', title=f'2D Plot of diff_S{g+1}_ZONE Hexx Magnitude', case_name=case_name, output_dir=output_ZONE, process_data="magnitude")
+        plot_triangular_general(diff_S_ZONE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_ZONE', title=f'2D Plot of diff_S{g+1}_ZONE Hexx Phase', case_name=case_name, output_dir=output_ZONE, process_data="phase")
 
 ##### 05. SCAN
     os.makedirs(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_05_SCAN', exist_ok=True)
@@ -845,7 +894,7 @@ def main():
     delta_all_full_plot = np.reshape(delta_all_full, (group, N_hexx))
     delta_all_plot = np.reshape(delta_all, (group, max_conv)) #3D array, size (group, J_max, I_max)
     for g in range(group):
-        plot_triangular_general(delta_all_plot[g], x, y, tri_indices, g+1, cmap='viridis', varname=f'delta_AB{g+1}', title=f'2D Plot of delta_AB{g+1} Magnitude', case_name=case_name, output_dir=output_SCAN, solve=solver_type.upper(), process_data="magnitude")
+        plot_triangular_general(delta_all_plot[g], x, y, tri_indices, g+1, cmap='viridis', varname=f'delta_AB{g+1}', title=f'2D Plot of delta_AB{g+1} Magnitude', case_name=case_name, output_dir=output_SCAN, process_data="magnitude")
 
     # Flatten dPHI_sol_temp_groups to a 1D list
     delta_all_full_inv = np.zeros((group* N_hexx), dtype=complex) # 1D list, size (group * N)
@@ -870,7 +919,7 @@ def main():
     delta_all_full_inv_plot = np.reshape(delta_all_full_inv, (group, N_hexx)) #3D array, size (group, J_max, I_max)
     delta_all_inv_plot = np.reshape(delta_all_inv, (group, max_conv)) #3D array, size (group, J_max, I_max)
     for g in range(group):
-        plot_triangular_general(delta_all_inv_plot[g], x, y, tri_indices, g+1, cmap='viridis', varname=f'delta_AB{g+1}_inv', title=f'2D Plot of delta_AB{g+1}_inv Magnitude', case_name=case_name, output_dir=output_SCAN, solve=solver_type.upper(), process_data="magnitude")
+        plot_triangular_general(delta_all_inv_plot[g], x, y, tri_indices, g+1, cmap='viridis', varname=f'delta_AB{g+1}_inv', title=f'2D Plot of delta_AB{g+1}_inv Magnitude', case_name=case_name, output_dir=output_SCAN, process_data="magnitude")
 
     # Find minimum value and index
     min_value = min(delta_all)
@@ -914,8 +963,8 @@ def main():
     dS_unfold_SCAN_reshaped = np.reshape(dS_unfold_SCAN,(group,N_hexx))
     dS_unfold_SCAN_temp_reshaped = np.reshape(dS_unfold_SCAN_temp,(group,max_conv))
     for g in range(group):
-        plot_triangular_general(dS_unfold_SCAN_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_SCAN_unfold', title=f'2D Plot of dS{g+1}_SCAN Hexx Magnitude', case_name=case_name, output_dir=output_SCAN, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dS_unfold_SCAN_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_SCAN_unfold', title=f'2D Plot of dS{g+1}_SCAN Hexx Phase', case_name=case_name, output_dir=output_SCAN, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dS_unfold_SCAN_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_SCAN_unfold', title=f'2D Plot of dS{g+1}_SCAN Hexx Magnitude', case_name=case_name, output_dir=output_SCAN, process_data="magnitude")
+        plot_triangular_general(dS_unfold_SCAN_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_SCAN_unfold', title=f'2D Plot of dS{g+1}_SCAN Hexx Phase', case_name=case_name, output_dir=output_SCAN, process_data="phase")
 
     # OUTPUT
     print(f'Generating JSON output for dS')
@@ -937,8 +986,8 @@ def main():
     diff_S_SCAN_reshaped = diff_S_SCAN_array.reshape(group, max_conv)
 
     for g in range(group):
-        plot_triangular_general(diff_S_SCAN_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_SCAN', title=f'2D Plot of diff_S{g+1}_SCAN Hexx Magnitude', case_name=case_name, output_dir=output_SCAN, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(diff_S_SCAN_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_SCAN', title=f'2D Plot of diff_S{g+1}_SCAN Hexx Phase', case_name=case_name, output_dir=output_SCAN, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(diff_S_SCAN_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_SCAN', title=f'2D Plot of diff_S{g+1}_SCAN Hexx Magnitude', case_name=case_name, output_dir=output_SCAN, process_data="magnitude")
+        plot_triangular_general(diff_S_SCAN_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_SCAN', title=f'2D Plot of diff_S{g+1}_SCAN Hexx Phase', case_name=case_name, output_dir=output_SCAN, process_data="phase")
 
 ##### 06. BRUTE FORCE
     os.makedirs(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_06_BRUTE', exist_ok=True)
@@ -968,8 +1017,8 @@ def main():
 #    dPHI_meas_reshaped = np.reshape(dPHI_meas, (group, J_max, I_max)) #3D array, size (group, J_max, I_max)
 
     for g in range(group):
-        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_BRUTE, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, process_data="magnitude")
+        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_BRUTE, process_data="phase")
 
     non_zero_indices = np.nonzero(dPHI_temp_meas)[0]
     dPHI_temp_meas = np.array(dPHI_temp_meas)
@@ -1056,8 +1105,8 @@ def main():
         # Plot dPHI_zero_reshaped
         dPHI_temp_BRUTE_reshaped = np.reshape(dPHI_temp_BRUTE, (group, max_conv)) #3D array, size (group, J_max, I_max)
         for g in range(group):
-            plot_triangular_general(dPHI_temp_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BRUTE', title=f'2D Plot of dPHI{g+1}_BRUTE Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, solve=solver_type.upper(), process_data="magnitude")
-            plot_triangular_general(dPHI_temp_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BRUTE', title=f'2D Plot of dPHI{g+1}_BRUTE Hexx Phase', case_name=case_name, output_dir=output_BRUTE, solve=solver_type.upper(), process_data="phase")
+            plot_triangular_general(dPHI_temp_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BRUTE', title=f'2D Plot of dPHI{g+1}_BRUTE Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, process_data="magnitude")
+            plot_triangular_general(dPHI_temp_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BRUTE', title=f'2D Plot of dPHI{g+1}_BRUTE Hexx Phase', case_name=case_name, output_dir=output_BRUTE, process_data="phase")
 
         ######################################################################################################
         # --------------- UNFOLD GREEEN'S FUNCTION USING DIRECT METHOD -------------------
@@ -1078,7 +1127,7 @@ def main():
         dS_unfold_BRUTE_temp = np.dot(G_inverse, dPHI_temp_BRUTE)
         dS_unfold_BRUTE_temp_reshaped = np.reshape(dS_unfold_BRUTE_temp,(group,max_conv))
         for g in range(group):
-            plot_triangular_general(dS_unfold_BRUTE_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_BRUTE', title=f'2D Plot of dS{g+1}_BRUTE Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, solve=solver_type.upper(), process_data="magnitude")
+            plot_triangular_general(dS_unfold_BRUTE_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_BRUTE', title=f'2D Plot of dS{g+1}_BRUTE Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, process_data="magnitude")
 
         # POSTPROCESS
         print(f'Postprocessing to appropriate dPHI')
@@ -1115,16 +1164,16 @@ def main():
         diff_S_BRUTE_reshaped = diff_S_BRUTE_array.reshape(group, max_conv)
 
         for g in range(group):
-            plot_triangular_general(diff_S_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BRUTE', title=f'2D Plot of diff_S{g+1}_BRUTE Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, solve=solver_type.upper(), process_data="magnitude")
-            plot_triangular_general(diff_S_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BRUTE', title=f'2D Plot of diff_S{g+1}_BRUTE Hexx Phase', case_name=case_name, output_dir=output_BRUTE, solve=solver_type.upper(), process_data="phase")
+            plot_triangular_general(diff_S_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BRUTE', title=f'2D Plot of diff_S{g+1}_BRUTE Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, process_data="magnitude")
+            plot_triangular_general(diff_S_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BRUTE', title=f'2D Plot of diff_S{g+1}_BRUTE Hexx Phase', case_name=case_name, output_dir=output_BRUTE, process_data="phase")
 
 ##### 07. BACKWARD ELIMINATION
     os.makedirs(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK', exist_ok=True)
     output_BACK = f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK/{case_name}'
 
     for g in range(group):
-        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_BACK, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_BACK, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
+        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
 
     # Initialize variables for the higher loop
     valid_solution_BACK = False  # Flag to indicate a valid solution
@@ -1206,8 +1255,8 @@ def main():
         # Plot dPHI_zero_reshaped
         dPHI_BACK_reshaped = np.reshape(dPHI_temp_BACK, (group, max_conv))
         for g in range(group):
-            plot_triangular_general(dPHI_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BACK', title=f'2D Plot of dPHI{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, solve=solver_type.upper(), process_data="magnitude")
-            plot_triangular_general(dPHI_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BACK', title=f'2D Plot of dPHI{g+1}_BACK Hexx Phase', case_name=case_name, output_dir=output_BACK, solve=solver_type.upper(), process_data="phase")
+            plot_triangular_general(dPHI_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BACK', title=f'2D Plot of dPHI{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
+            plot_triangular_general(dPHI_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BACK', title=f'2D Plot of dPHI{g+1}_BACK Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
 
         ######################################################################################################
         # --------------- UNFOLD GREEEN'S FUNCTION USING DIRECT METHOD -------------------
@@ -1228,7 +1277,7 @@ def main():
         dS_unfold_BACK_temp = np.dot(G_inverse, dPHI_temp_BACK)
         dS_unfold_BACK_temp_reshaped = np.reshape(dS_unfold_BACK_temp,(group,max_conv))
         for g in range(group):
-            plot_triangular_general(dS_unfold_BACK_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_BACK', title=f'2D Plot of dS{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, solve=solver_type.upper(), process_data="magnitude")
+            plot_triangular_general(dS_unfold_BACK_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_BACK', title=f'2D Plot of dS{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
 
         # POSTPROCESS
         print(f'Postprocessing to appropriate dPHI')
@@ -1265,8 +1314,8 @@ def main():
         diff_S_BACK_reshaped = diff_S_BACK_array.reshape(group, max_conv)
 
         for g in range(group):
-            plot_triangular_general(diff_S_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BACK', title=f'2D Plot of diff_S{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, solve=solver_type.upper(), process_data="magnitude")
-            plot_triangular_general(diff_S_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BACK', title=f'2D Plot of diff_S{g+1}_BACK Hexx Phase', case_name=case_name, output_dir=output_BACK, solve=solver_type.upper(), process_data="phase")
+            plot_triangular_general(diff_S_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BACK', title=f'2D Plot of diff_S{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
+            plot_triangular_general(diff_S_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BACK', title=f'2D Plot of diff_S{g+1}_BACK Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
 
     else:
         print("No valid solution found with backward elimination.")
@@ -1276,8 +1325,8 @@ def main():
     output_GREEDY = f'{output_dir}/{case_name}_UNFOLDING/{case_name}_08_GREEDY/{case_name}'
 
     for g in range(group):
-        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_GREEDY, solve=solver_type.upper(), process_data="magnitude")
-        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_GREEDY, solve=solver_type.upper(), process_data="phase")
+        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_GREEDY, process_data="magnitude")
+        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_GREEDY, process_data="phase")
 
     # Initialize variables for the higher loop
     valid_solution_GREEDY = False  # Flag to indicate a valid solution
@@ -1413,8 +1462,8 @@ def main():
         # Plot dPHI_zero_reshaped
         dPHI_temp_GREEDY_reshaped = np.reshape(dPHI_temp_GREEDY, (group, max_conv))
         for g in range(group):
-            plot_triangular_general(dPHI_temp_GREEDY_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_GREEDY', title=f'2D Plot of dPHI{g+1}_GREEDY Hexx Magnitude', case_name=case_name, output_dir=output_GREEDY, solve=solver_type.upper(), process_data="magnitude")
-            plot_triangular_general(dPHI_temp_GREEDY_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_GREEDY', title=f'2D Plot of dPHI{g+1}_GREEDY Hexx Phase', case_name=case_name, output_dir=output_GREEDY, solve=solver_type.upper(), process_data="phase")
+            plot_triangular_general(dPHI_temp_GREEDY_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_GREEDY', title=f'2D Plot of dPHI{g+1}_GREEDY Hexx Magnitude', case_name=case_name, output_dir=output_GREEDY, process_data="magnitude")
+            plot_triangular_general(dPHI_temp_GREEDY_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_GREEDY', title=f'2D Plot of dPHI{g+1}_GREEDY Hexx Phase', case_name=case_name, output_dir=output_GREEDY, process_data="phase")
 
         ######################################################################################################
         # --------------- UNFOLD GREEEN'S FUNCTION USING DIRECT METHOD -------------------
@@ -1440,8 +1489,8 @@ def main():
         dS_unfold_GREEDY_temp_reshaped = np.reshape(dS_unfold_GREEDY_temp,(group, max_conv))
 
         for g in range(group):
-            plot_triangular_general(dS_unfold_GREEDY_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_GREEDY', title=f'2D Plot of dS{g+1}_unfold_GREEDY Hexx Magnitude', case_name=case_name, output_dir=output_GREEDY, solve=solver_type.upper(), process_data="magnitude")
-            plot_triangular_general(dS_unfold_GREEDY_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_GREEDY', title=f'2D Plot of dS{g+1}_unfold_GREEDY Hexx Phase', case_name=case_name, output_dir=output_GREEDY, solve=solver_type.upper(), process_data="phase")
+            plot_triangular_general(dS_unfold_GREEDY_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_GREEDY', title=f'2D Plot of dS{g+1}_unfold_GREEDY Hexx Magnitude', case_name=case_name, output_dir=output_GREEDY, process_data="magnitude")
+            plot_triangular_general(dS_unfold_GREEDY_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_GREEDY', title=f'2D Plot of dS{g+1}_unfold_GREEDY Hexx Phase', case_name=case_name, output_dir=output_GREEDY, process_data="phase")
 
         # OUTPUT
         print(f'Generating JSON output for dS')
@@ -1463,8 +1512,8 @@ def main():
         diff_S_GREEDY_reshaped = diff_S_GREEDY_array.reshape(group,max_conv)
 
         for g in range(group):
-            plot_triangular_general(diff_S_GREEDY_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_GREEDY', title=f'2D Plot of diff_S{g+1}_GREEDY Hexx Magnitude', case_name=case_name, output_dir=output_GREEDY, solve=solver_type.upper(), process_data="magnitude")
-            plot_triangular_general(diff_S_GREEDY_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_GREEDY', title=f'2D Plot of diff_S{g+1}_GREEDY Hexx Phase', case_name=case_name, output_dir=output_GREEDY, solve=solver_type.upper(), process_data="phase")
+            plot_triangular_general(diff_S_GREEDY_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_GREEDY', title=f'2D Plot of diff_S{g+1}_GREEDY Hexx Magnitude', case_name=case_name, output_dir=output_GREEDY, process_data="magnitude")
+            plot_triangular_general(diff_S_GREEDY_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_GREEDY', title=f'2D Plot of diff_S{g+1}_GREEDY Hexx Phase', case_name=case_name, output_dir=output_GREEDY, process_data="phase")
 
     end_time = time.time()
     elapsed_time = end_time - start_time
