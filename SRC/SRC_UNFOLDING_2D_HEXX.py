@@ -21,14 +21,11 @@ from POSTPROCESS import PostProcessor
 from SOLVERFACTORY import SolverFactory
 
 #######################################################################################################
-def main_unfold_2D_hexx_base(group, s, I_max, J_max, N_hexx, conv_tri, conv_neighbor, TOT, SIGS_reshaped, BC, h, level, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT_hexx, dSIGS_hexx, chi_hexx, dNUFIS_hexx, noise_section, type_noise, map_detector_hexx, case_name, case_name_base, case_name2, precond):
+def main_unfold_2D_hexx_base(group, s, I_max, J_max, N_hexx, conv_tri, conv_neighbor, TOT, SIGS_reshaped, BC, h, level, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT_hexx, dSIGS_hexx, chi_hexx, dNUFIS_hexx, noise_section, type_noise, map_detector_hexx, case_name, case_name_base, case_name2, precond, tri_indices, x, y, all_triangles):
     output_dir = f'../OUTPUTS/{case_name_base}/{case_name}_UNFOLDING'
 
-    conv_hexx = convert_2D_hexx(I_max, J_max, D)
-    conv_tri, conv_hexx_ext = convert_2D_tri(I_max, J_max, conv_hexx, level)
     conv_tri_array = np.array(conv_tri)
     max_conv = max(conv_tri)
-    conv_neighbor, tri_indices, x, y, all_triangles = calculate_neighbors_2D(s, I_max, J_max, conv_hexx, level)
 
 ##### Noise Simulation
     solver_type = 'noise'
@@ -46,7 +43,7 @@ def main_unfold_2D_hexx_base(group, s, I_max, J_max, N_hexx, conv_tri, conv_neig
     for g in range(group):
         PHI_indices = g * max(conv_tri) + (conv_tri_array - 1)
         PHI[PHI_indices] = PHI_all[g]
-    
+
     matrix_builder = MatrixBuilderNoise2DHexx(group, I_max, J_max, N_hexx, conv_tri, conv_neighbor, TOT, SIGS_reshaped, BC, h, level, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT_hexx, dSIGS_hexx, chi_hexx, dNUFIS_hexx, noise_section, type_noise)
     M, dS = matrix_builder.build_noise_matrices()
 
@@ -274,14 +271,11 @@ def main_unfold_2D_hexx_base(group, s, I_max, J_max, N_hexx, conv_tri, conv_neig
 
     return dPHI_temp, S, dPHI_temp_meas, G_matrix
 
-def main_unfold_2D_hexx_old_methods(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, map_zone, case_name, case_name_base, validity_INVERT, validity_ZONE, validity_SCAN):
-    output_dir = f'../OUTPUTS/{case_name_base}/{case_name}_UNFOLDING'
+def main_unfold_2D_hexx_old_methods(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, map_zone, case_name, case_name_base, tri_indices, x, y, all_triangles, validity_INVERT, validity_ZONE, validity_SCAN):
+    output_dir = f'../OUTPUTS/{case_name_base}'
 
-    conv_hexx = convert_2D_hexx(I_max, J_max, D)
-    conv_tri, conv_hexx_ext = convert_2D_tri(I_max, J_max, conv_hexx, level)
     conv_tri_array = np.array(conv_tri)
     max_conv = max(conv_tri)
-    conv_neighbor, tri_indices, x, y, all_triangles = calculate_neighbors_2D(s, I_max, J_max, conv_hexx, level)
 
     S_reshaped = np.reshape(S, (group, max(conv_tri)))
     dPHI_temp_reshaped = np.reshape(dPHI_temp, (group, max(conv_tri)))
@@ -920,14 +914,11 @@ def main_unfold_2D_hexx_old_methods(dPHI_temp_meas, dPHI_temp, S, G_matrix, grou
 
     return dPHI_temp_INVERT, dS_unfold_INVERT_temp, dS_unfold_ZONE_temp, dS_unfold_SCAN_temp, validity_INVERT, validity_ZONE, validity_SCAN
 
-def main_unfold_2D_hexx_brute(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_BRUTE):
-    output_dir = f'../OUTPUTS/{case_name_base}/{case_name}_UNFOLDING'
+def main_unfold_2D_hexx_brute(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, tri_indices, x, y, all_triangles, validity_BRUTE):
+    output_dir = f'../OUTPUTS/{case_name_base}'
 
-    conv_hexx = convert_2D_hexx(I_max, J_max, D)
-    conv_tri, conv_hexx_ext = convert_2D_tri(I_max, J_max, conv_hexx, level)
     conv_tri_array = np.array(conv_tri)
     max_conv = max(conv_tri)
-    conv_neighbor, tri_indices, x, y, all_triangles = calculate_neighbors_2D(s, I_max, J_max, conv_hexx, level)
 
     S_reshaped = np.reshape(S, (group, max(conv_tri)))
     dPHI_temp_reshaped = np.reshape(dPHI_temp, (group, max(conv_tri)))
@@ -1117,14 +1108,11 @@ def main_unfold_2D_hexx_brute(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, 
 
     return dPHI_temp_BRUTE, dS_unfold_BRUTE_temp, validity_BRUTE
 
-def main_unfold_2D_hexx_back(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, case_name, case_name_base, validity_BACK):
-    output_dir = f'../OUTPUTS/{case_name_base}/{case_name}_UNFOLDING'
+def main_unfold_2D_hexx_back(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, case_name, case_name_base, tri_indices, x, y, all_triangles, validity_BACK):
+    output_dir = f'../OUTPUTS/{case_name_base}'
 
-    conv_hexx = convert_2D_hexx(I_max, J_max, D)
-    conv_tri, conv_hexx_ext = convert_2D_tri(I_max, J_max, conv_hexx, level)
     conv_tri_array = np.array(conv_tri)
     max_conv = max(conv_tri)
-    conv_neighbor, tri_indices, x, y, all_triangles = calculate_neighbors_2D(s, I_max, J_max, conv_hexx, level)
 
     S_reshaped = np.reshape(S, (group, max(conv_tri)))
     dPHI_temp_reshaped = np.reshape(dPHI_temp, (group, max(conv_tri)))
@@ -1305,14 +1293,11 @@ def main_unfold_2D_hexx_back(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I
 
     return dPHI_temp_BACK, dS_unfold_BACK_temp, validity_BACK
 
-def main_unfold_2D_hexx_greedy(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_GREEDY):
-    output_dir = f'../OUTPUTS/{case_name_base}/{case_name}_UNFOLDING'
+def main_unfold_2D_hexx_greedy(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, tri_indices, x, y, all_triangles, validity_GREEDY):
+    output_dir = f'../OUTPUTS/{case_name_base}'
 
-    conv_hexx = convert_2D_hexx(I_max, J_max, D)
-    conv_tri, conv_hexx_ext = convert_2D_tri(I_max, J_max, conv_hexx, level)
     conv_tri_array = np.array(conv_tri)
     max_conv = max(conv_tri)
-    conv_neighbor, tri_indices, x, y, all_triangles = calculate_neighbors_2D(s, I_max, J_max, conv_hexx, level)
 
     S_reshaped = np.reshape(S, (group, max(conv_tri)))
     dPHI_temp_reshaped = np.reshape(dPHI_temp, (group, max(conv_tri)))

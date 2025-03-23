@@ -39,7 +39,7 @@ h_hexx = s / np.sqrt(3) # Triangle side or hexagon radius
 h = h_hexx / (2**(level-1))
 
 # INITIALIZATION
-input_name = f"TASK3_TEST03n_2DTriMG_HTTR_1SRC_AVS_NONCENTER" 
+input_name = f"TASK3_TEST03n_2DTriMG_HTTR" 
 case_name_base = f"{input_name}_TEST_SUITE"
 case_name2 = f"{input_name}_level{level}"
 
@@ -74,7 +74,6 @@ dTOT1 = [0] * I_max * J_max
 dTOT2 = [0] * I_max * J_max
 #dTOT2[71] = 0.05 * ABS[1][71]
 dTOT = [dTOT1, dTOT2]
-dTOT_OLD = dTOT
 
 dNUFIS = [[0] * I_max * J_max for _ in range(group)]
 dSIGS12 = [0] * I_max * J_max
@@ -160,12 +159,38 @@ for g in range(len(PHI_ADJ_reshaped)):
 with open(f'{output_dir}/{case_name2}_{solver_type.upper()}/{case_name2}_{solver_type.upper()}_output.json', 'w') as json_file:
     json.dump(output, json_file, indent=4)
 
-# Number of source -> From 1 to 3
-# Frequency -> logspace from 0.01 Hz to 10 Hz
-# Energy -> random between group 1 and 2, might be the same group
-# Location -> random
-# magnitude -> linspace 1% to 10% of Total XS
-# 50 iterations each
+# --------------- MAP DETECTOR -------------------
+# Expand the map detector
+p = 6 * (4 ** (level - 1))
+map_detector_hexx = [0] * I_max * J_max * p
+map_detector_temp = np.reshape(map_detector, (J_max, I_max))
+for j in range(J_max):
+    for i in range(I_max):
+        m = j * I_max + i
+        for k in range(p):
+            map_detector_hexx[m * p + k] = map_detector_temp[j][i]
+map_detector_conv = []
+for n in range(N_hexx):
+    if conv_tri[n] != 0:
+        map_detector_conv.append(map_detector_hexx[n])
+
+# Noise Input Manipulation
+dTOT_hexx = expand_XS_hexx(group, J_max, I_max, dTOT, level)
+dTOT_hexx_OLD = expand_XS_hexx(group, J_max, I_max, dTOT, level)
+TOT_hexx2 = expand_XS_hexx(group, J_max, I_max, TOT, level)
+dSIGS_hexx = expand_SIGS_hexx(group, J_max, I_max, dSIGS_reshaped, level)
+chi_hexx = expand_XS_hexx(group, J_max, I_max, chi, level)
+dNUFIS_hexx = expand_XS_hexx(group, J_max, I_max, dNUFIS, level)
+
+hex_centers, hex_vertices = generate_pointy_hex_grid(s, I_max, J_max)
+triangle_neighbors_global = find_triangle_neighbors_2D(all_triangles, precision=6)
+
+conv_new = np.zeros((group*N_hexx))
+for g in range(group):
+    for n in range(N_hexx):
+        m = g * N_hexx + n
+        if conv_tri[n] > 0:
+            conv_new[m] = g * max(conv_tri) + conv_tri[n]
 
 additional_iter = 1
 max_num_source = 1
@@ -188,45 +213,14 @@ if os.path.exists(iter_file):
     os.remove(iter_file)
     print(f"Existing file '{iter_file}' deleted.")
 
-dTOT_hexx = expand_XS_hexx(group, J_max, I_max, dTOT, level)
-TOT_hexx2 = expand_XS_hexx(group, J_max, I_max, TOT, level)
-dSIGS_hexx = expand_SIGS_hexx(group, J_max, I_max, dSIGS_reshaped, level)
-chi_hexx = expand_XS_hexx(group, J_max, I_max, chi, level)
-dNUFIS_hexx = expand_XS_hexx(group, J_max, I_max, dNUFIS, level)
-
-hex_centers, hex_vertices = generate_pointy_hex_grid(s, I_max, J_max)
-triangle_neighbors_global = find_triangle_neighbors_2D(all_triangles, precision=6)
-
-# --------------- MAP DETECTOR -------------------
-# Expand the map detector
-p = 6 * (4 ** (level - 1))
-map_detector_hexx = [0] * I_max * J_max * p
-map_detector_temp = np.reshape(map_detector, (J_max, I_max))
-for j in range(J_max):
-    for i in range(I_max):
-        m = j * I_max + i
-        for k in range(p):
-            map_detector_hexx[m * p + k] = map_detector_temp[j][i]
-map_detector_conv = []
-for n in range(N_hexx):
-    if conv_tri[n] != 0:
-        map_detector_conv.append(map_detector_hexx[n])
-
-conv_new = np.zeros((group*N_hexx))
-for g in range(group):
-    for n in range(N_hexx):
-        m = g * N_hexx + n
-        if conv_tri[n] > 0:
-            conv_new[m] = g * max(conv_tri) + conv_tri[n]
 
 while add_iter < additional_iter:
     for num_source in range(max_num_source):
         for fo in range(len(freq)):
-            dTOT = [row[:] for row in dTOT_OLD]
+            dTOT_hexx = [row[:] for row in dTOT_hexx_OLD]
             source = num_source + 1
             f = freq[fo]
 
-            # Choose location, energy, magnitude
             loc_conv = []
             loc = []
             for s in range(source):
@@ -236,7 +230,7 @@ while add_iter < additional_iter:
                 for g in range(group):
                     for n in range(N_hexx):
                         m = g * N_hexx + n
-                        if lo == conv_new[m]:
+                        if loc_conv == conv_new[m]:
                             loc.append(m)
 
             mag_real_loc = []
@@ -264,11 +258,81 @@ while add_iter < additional_iter:
                 file.write(f"Iteration: {iter+1}, num_source: {len(loc)}, loc_conv = {loc_conv}, loc = {loc}, frequency: {f}, Real magnitude = {mag_real_loc}, Imaginary magnitude = {mag_imag_loc}\n")
 
             # run main_unfold_2D_RECT
-            dPHI_temp, S, dPHI_temp_meas, G_matrix = main_unfold_2D_hexx_base(group, s, I_max, J_max, N_hexx, conv_tri, conv_neighbor, TOT, SIGS_reshaped, BC, h, level, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT_hexx, dSIGS_hexx, chi_hexx, dNUFIS_hexx, noise_section, type_noise, map_detector_hexx, case_name, case_name_base, case_name2, precond)
-            dPHI_temp_INVERT, dS_unfold_INVERT_temp, dS_unfold_ZONE_temp, dS_unfold_SCAN_temp, validity_INVERT, validity_ZONE, validity_SCAN = main_unfold_2D_hexx_old_methods(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, map_zone, case_name, case_name_base, validity_INVERT, validity_ZONE, validity_SCAN)
-            dPHI_temp_BRUTE, dS_unfold_BRUTE_temp, validity_BRUTE = main_unfold_2D_hexx_brute(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_BRUTE)
-#            dPHI_temp_BACK, dS_unfold_BACK_temp, validity_BACK = main_unfold_2D_hexx_back(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, case_name, case_name_base, validity_BACK)
-            dPHI_temp_GREEDY, dS_unfold_GREEDY_temp, validity_GREEDY = main_unfold_2D_hexx_greedy(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_GREEDY)
+            dPHI_temp, S, dPHI_temp_meas, G_matrix = main_unfold_2D_hexx_base(group, s, I_max, J_max, N_hexx, conv_tri, conv_neighbor, TOT, SIGS_reshaped, BC, h, level, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT_hexx, dSIGS_hexx, chi_hexx, dNUFIS_hexx, noise_section, type_noise, map_detector_hexx, case_name, case_name_base, case_name2, precond, tri_indices, x, y, all_triangles)
+            dPHI_temp_INVERT, dS_unfold_INVERT_temp, dS_unfold_ZONE_temp, dS_unfold_SCAN_temp, validity_INVERT, validity_ZONE, validity_SCAN = main_unfold_2D_hexx_old_methods(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, map_zone, case_name, case_name_base, tri_indices, x, y, all_triangles, validity_INVERT, validity_ZONE, validity_SCAN)
+            dPHI_temp_BRUTE, dS_unfold_BRUTE_temp, validity_BRUTE = main_unfold_2D_hexx_brute(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, tri_indices, x, y, all_triangles, validity_BRUTE)
+#            dPHI_temp_BACK, dS_unfold_BACK_temp, validity_BACK = main_unfold_2D_hexx_back(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, case_name, case_name_base, tri_indices, x, y, all_triangles, validity_BACK)
+            dPHI_temp_GREEDY, dS_unfold_GREEDY_temp, validity_GREEDY = main_unfold_2D_hexx_greedy(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, tri_indices, x, y, all_triangles, validity_GREEDY)
+
+            validity = [validity_INVERT, validity_ZONE, validity_SCAN, validity_BRUTE, validity_BACK, validity_GREEDY]
+            with open(f"../OUTPUTS/{case_name_base}/output_validity.txt", "w") as f:
+                for category, lst in zip(methods, validity):
+                    f.write(f"{category} " + ", ".join(lst) + "\n")
 
             iter += 1
     add_iter += 1
+
+## Number of source -> From 1 to 3
+## Frequency -> logspace from 0.01 Hz to 10 Hz
+## Energy -> random between group 1 and 2, might be the same group
+## Location -> random
+## magnitude -> linspace 1% to 10% of Total XS
+## 50 iterations each
+#
+#iter = 0
+#iter_file = f"../OUTPUTS/{case_name_base}/iteration_info.txt"
+#
+#while add_iter < additional_iter:
+#    for num_source in range(max_num_source):
+#        for fo in range(len(freq)):
+#            dTOT_hexx = [row[:] for row in dTOT_hexx_OLD]
+#            source = num_source + 1
+#            f = freq[fo]
+#
+#            # Choose location, energy, magnitude
+#            loc_conv = []
+#            loc = []
+#            for s in range(source):
+#                loc_conv.append(random.randint(1, group * max(conv_tri)))
+#
+#            for l, lo in enumerate(loc_conv):
+#                for g in range(group):
+#                    for n in range(N_hexx):
+#                        m = g * N_hexx + n
+#                        if lo == conv_new[m]:
+#                            loc.append(m)
+#            
+#            mag_real_loc = []
+#            mag_imag_loc = []
+#            for g in range(group):
+#                for n in range(N_hexx):
+#                    for l in range(len(loc)):
+#                        if g * N_hexx + n == loc[l]:
+#                            mag_real = random.randint(1, 10)/100
+#                            imag_random = random.randint(0,1)
+#                            if imag_random == 0:
+#                                dTOT_hexx[g][n] = mag_real * TOT_hexx2[g][n]
+#                                mag_real_loc.append(mag_real)
+#                                mag_imag_loc.append(0.0)
+#                            elif imag_random == 1:
+#                                mag_imag = random.randint(1, 10)/100
+#                                dTOT_hexx[g][n] = mag_real * TOT_hexx2[g][n] + (1j * mag_imag * TOT_hexx2[g][n])
+#                                mag_real_loc.append(mag_real)
+#                                mag_imag_loc.append(mag_imag)
+#
+#            case_name = f'{case_name2}_iter{iter}'
+#
+#            # Append to file without changing loop structure
+#            with open(iter_file, "a") as file:
+#                file.write(f"Iteration: {iter+1}, num_source: {len(loc)}, loc_conv = {loc_conv}, loc = {loc}, frequency: {f}, Real magnitude = {mag_real_loc}, Imaginary magnitude = {mag_imag_loc}\n")
+#
+#            # run main_unfold_2D_RECT
+#            dPHI_temp, S, dPHI_temp_meas, G_matrix = main_unfold_2D_hexx_base(group, s, I_max, J_max, N_hexx, conv_tri, conv_neighbor, TOT, SIGS_reshaped, BC, h, level, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT_hexx, dSIGS_hexx, chi_hexx, dNUFIS_hexx, noise_section, type_noise, map_detector_hexx, case_name, case_name_base, case_name2, precond)
+##            dPHI_temp_INVERT, dS_unfold_INVERT_temp, dS_unfold_ZONE_temp, dS_unfold_SCAN_temp, validity_INVERT, validity_ZONE, validity_SCAN = main_unfold_2D_hexx_old_methods(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, map_zone, case_name, case_name_base, validity_INVERT, validity_ZONE, validity_SCAN)
+##            dPHI_temp_BRUTE, dS_unfold_BRUTE_temp, validity_BRUTE = main_unfold_2D_hexx_brute(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_BRUTE)
+###            dPHI_temp_BACK, dS_unfold_BACK_temp, validity_BACK = main_unfold_2D_hexx_back(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, case_name, case_name_base, validity_BACK)
+##            dPHI_temp_GREEDY, dS_unfold_GREEDY_temp, validity_GREEDY = main_unfold_2D_hexx_greedy(dPHI_temp_meas, dPHI_temp, S, G_matrix, group, s, I_max, J_max, N_hexx, conv_tri, level, D, map_detector_hexx, case_name, case_name_base, validity_GREEDY)
+#
+#            iter += 1
+#    add_iter += 1
+#
