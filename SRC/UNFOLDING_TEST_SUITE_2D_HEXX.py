@@ -230,7 +230,7 @@ while add_iter < additional_iter:
                 for g in range(group):
                     for n in range(N_hexx):
                         m = g * N_hexx + n
-                        if loc_conv == conv_new[m]:
+                        if lo == conv_new[m]:
                             loc.append(m)
 
             mag_real_loc = []
