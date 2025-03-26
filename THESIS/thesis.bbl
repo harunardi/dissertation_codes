@@ -19,6 +19,137 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{akcasuApplicationLangevinTechnique1966}{article}{}
+      \name{author}{2}{}{%
+        {{hash=121f5c10a1dfbf0979ebbb4395e75352}{%
+           family={Akcasu},
+           familyi={A\bibinitperiod},
+           given={A.\bibnamedelimi Ziya},
+           giveni={A\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=7f4960a900aebfd47e4bd0c89a2db9b1}{%
+           family={Osborn},
+           familyi={O\bibinitperiod},
+           given={R.\bibnamedelimi K.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{1b2240bb1aebd3a7b858a8ca24cef57c}
+      \strng{fullhash}{1b2240bb1aebd3a7b858a8ca24cef57c}
+      \strng{bibnamehash}{1b2240bb1aebd3a7b858a8ca24cef57c}
+      \strng{authorbibnamehash}{1b2240bb1aebd3a7b858a8ca24cef57c}
+      \strng{authornamehash}{1b2240bb1aebd3a7b858a8ca24cef57c}
+      \strng{authorfullhash}{1b2240bb1aebd3a7b858a8ca24cef57c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The space- and energy-dependent theory of reactor-noise analysis has been developed using Langevin's technique starting from the transport equations. The theory includes delayed neutrons. The correlation function and the power spectral density for the detection rate, as well as for the neutron density, have been obtained. The application of the general theory to simple reactor models has been discussed and illustrated by considering the one-speed transport and one-speed diffusion approximations. The connection between Langevin's technique and the doublet theory based on the Liouville equation has been established. It has been found that both formulations yield identical results and that the postulates of Langevin's technique are justified for the study of neutron distributions.}
+      \field{issn}{0029-5639}
+      \field{journaltitle}{Nuclear Science and Engineering}
+      \field{month}{9}
+      \field{number}{1}
+      \field{title}{Application of {{Langevin}}'s {{Technique}} to {{Space-}} and {{Energy-Dependent Noise Analysis}}}
+      \field{urlday}{19}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{volume}{26}
+      \field{year}{1966}
+      \field{urldateera}{ce}
+      \field{pages}{13\bibrangedash 25}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.13182/NSE66-A17183
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/7BG9QZ47/Akcasu and Osborn - 1966 - Application of Langevin’s Technique to Space- and .pdf
+      \endverb
+    \endentry
+    \entry{cohnSimplifiedTheoryPile1960}{article}{}
+      \name{author}{1}{}{%
+        {{hash=b746c947322a2651624c7c78bae8bc8d}{%
+           family={Cohn},
+           familyi={C\bibinitperiod},
+           given={Charles\bibnamedelima Erwin},
+           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{b746c947322a2651624c7c78bae8bc8d}
+      \strng{fullhash}{b746c947322a2651624c7c78bae8bc8d}
+      \strng{bibnamehash}{b746c947322a2651624c7c78bae8bc8d}
+      \strng{authorbibnamehash}{b746c947322a2651624c7c78bae8bc8d}
+      \strng{authornamehash}{b746c947322a2651624c7c78bae8bc8d}
+      \strng{authorfullhash}{b746c947322a2651624c7c78bae8bc8d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A theoretical treatment is given of the statistical fluctuations in neutron population which occur in nuclear reactors. The absolute magnitude and frequency dependence of the spectral density of these fluctuations is obtained. The model used assumes that the fluctuations arise from a ``noise-equivalent source'' whose strength can be easily calculated from fundamental considerations. Calculations are also presented of the fundamental statistical errors in criticality measurements.}
+      \field{issn}{0029-5639}
+      \field{journaltitle}{Nuclear Science and Engineering}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{A {{Simplified Theory}} of {{Pile Noise}}}
+      \field{urlday}{31}
+      \field{urlmonth}{8}
+      \field{urlyear}{2023}
+      \field{volume}{7}
+      \field{year}{1960}
+      \field{urldateera}{ce}
+      \field{pages}{472\bibrangedash 475}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.13182/NSE60-4
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/BTZZBE2X/Cohn - 1960 - A Simplified Theory of Pile Noise.pdf
+      \endverb
+    \endentry
+    \entry{moorePowerNoiseTransfer1959}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9bfefe95a0ed67f9afa5c0c83ee929a2}{%
+           family={Moore},
+           familyi={M\bibinitperiod},
+           given={M.\bibnamedelimi N.},
+           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
+      \strng{fullhash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
+      \strng{bibnamehash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
+      \strng{authorbibnamehash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
+      \strng{authornamehash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
+      \strng{authorfullhash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{A formalism is developed to calculate the power noise transfer function for any kinetic model under the assumption that noise may originate in any or all loops of the system. Reactor kinetic equations are generalized to the macrostochastic equations satisfied by the pile noise. From these, the differential equations of the various correlation functions are determined and solved for the noise spectra. The case of a single feedback, one-delay group model is treated in detail.}
+      \field{issn}{0029-5639}
+      \field{journaltitle}{Nuclear Science and Engineering}
+      \field{month}{11}
+      \field{number}{5}
+      \field{title}{The {{Power Noise Transfer Function}} of a {{Reactor}}}
+      \field{urlday}{31}
+      \field{urlmonth}{8}
+      \field{urlyear}{2023}
+      \field{volume}{6}
+      \field{year}{1959}
+      \field{urldateera}{ce}
+      \field{pages}{448\bibrangedash 452}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.13182/NSE59-A25684
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/8S4E9WT8/Moore - 1959 - The Power Noise Transfer Function of a Reactor.pdf
+      \endverb
+    \endentry
     \entry{Trembly98}{article}{}
       \name{author}{2}{}{%
         {{hash=72ae20b3306217cf99cfb8afae22bb7e}{%
@@ -41,8 +172,8 @@
       \strng{authorbibnamehash}{e578dd2585ef8781d000df7439e0a865}
       \strng{authornamehash}{e578dd2585ef8781d000df7439e0a865}
       \strng{authorfullhash}{e578dd2585ef8781d000df7439e0a865}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{My Subject's Strange Addictions}
@@ -75,8 +206,8 @@
       \strng{authorbibnamehash}{197c4ed97103798fdb2fa01c101010b7}
       \strng{authornamehash}{197c4ed97103798fdb2fa01c101010b7}
       \strng{authorfullhash}{197c4ed97103798fdb2fa01c101010b7}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Impure Science}
@@ -101,8 +232,8 @@
       \strng{authorbibnamehash}{43bd7ac5d6c6c3fe125b9a61f20ca4ee}
       \strng{authornamehash}{43bd7ac5d6c6c3fe125b9a61f20ca4ee}
       \strng{authorfullhash}{43bd7ac5d6c6c3fe125b9a61f20ca4ee}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Unusual but Well-Funded Research}
