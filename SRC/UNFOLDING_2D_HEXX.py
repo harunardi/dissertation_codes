@@ -25,12 +25,14 @@ from SOLVERFACTORY import SolverFactory
 original_sys_path = sys.path.copy()
 sys.path.append('../')
 
-from INPUTS.TASK3_TEST03a_2DTriMG_HTTR_1SRC_AVS_NONCENTER import *
+#from INPUTS.TASK3_TEST03a_2DTriMG_HTTR_1SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03b_2DTriMG_HTTR_2SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03c_2DTriMG_HTTR_3SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03d_2DTriMG_HTTR_4SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03e_2DTriMG_HTTR_5SRC_AVS_NONCENTER import *
 #from INPUTS.TASK3_TEST03f_2DTriMG_HTTR_6SRC_AVS_NONCENTER import *
+from INPUTS.TASK3_TEST03k_2DTriMG_HTTR_LVL2_AVS_NONCENTER import *
+#from INPUTS.TASK3_TEST03l_2DTriMG_HTTR_LVL3_AVS_NONCENTER import *
 
 # Restore the original sys.path
 sys.path = original_sys_path
