@@ -1169,159 +1169,159 @@ def main():
             plot_triangular_general(diff_S_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BRUTE', title=f'2D Plot of diff_S{g+1}_BRUTE Hexx Magnitude', case_name=case_name, output_dir=output_BRUTE, process_data="magnitude")
             plot_triangular_general(diff_S_BRUTE_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BRUTE', title=f'2D Plot of diff_S{g+1}_BRUTE Hexx Phase', case_name=case_name, output_dir=output_BRUTE, process_data="phase")
 
-##### 07. BACKWARD ELIMINATION
-    os.makedirs(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK', exist_ok=True)
-    output_BACK = f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK/{case_name}'
-
-    for g in range(group):
-        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
-        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
-
-    # Initialize variables for the higher loop
-    valid_solution_BACK = False  # Flag to indicate a valid solution
-    tol_BACK = 1E-10
-    selected_atoms = list(G_dictionary_sampled.keys())
-    residual = dPHI_meas.copy()
-    iter_BACK = 0
-    residual_norm = 1.0
-    contribution_threshold = 1e-6  # Define the contribution threshold
-    coefficients = {}
-
-    # Dictionary to store valid solutions with term counts
-    valid_solutions_BACK = {}
-
-    #while not valid_solution:
-    while selected_atoms:
-        iter_BACK += 1
-        print(f"Iteration {iter_BACK}: Atoms remaining = {len(selected_atoms)}")
-
-        try:
-            # Stack all selected atoms into the matrix
-            A = np.array([G_dictionary_sampled[k] for k in selected_atoms]).T
-            coeffs = np.linalg.lstsq(A, dPHI_temp_meas, rcond=None)[0]
-            coefficients = dict(zip(selected_atoms, coeffs))
-            residual = dPHI_temp_meas - A @ coeffs
-            residual_norm = np.linalg.norm(residual)
-            # Compute contributions (absolute value of coefficients)
-            contributions = {atom: abs(coeff) / max(abs(coeffs)) for atom, coeff in zip(selected_atoms, coeffs)}
-
-            # Validate the reconstructed signal against the criterion
-            if residual_norm < tol:
-                valid_solution = True  # Criterion satisfied
-                print(f"Valid solution found, selected atoms = {selected_atoms}, residual norm = {residual_norm:.6e}")
-                valid_solutions_BACK[iter] = selected_atoms[:]
-                atom_to_remove = min(contributions, key=contributions.get)
-                selected_atoms.remove(atom_to_remove)
-            else:
-                # Find the least contributing atom
-                atom_to_remove = min(contributions, key=contributions.get)
-                selected_atoms.remove(atom_to_remove)
-                print(f"Criteria not met. Removing least contributing atom: {atom_to_remove}, Contribution = {contributions[atom_to_remove]:.6e}, residual norm = {residual_norm:.6e}")
-                if len(selected_atoms) == 0:
-                    print(f'Criteria not met using Backward Elimination.')
-                    break
-
-        except np.linalg.LinAlgError:
-            print("SVD did not converge, skipping this iteration.")
-            sorted_contributions = sorted(contributions.items(), key=lambda x: x[1])
-            second_least_atom = sorted_contributions[1][0]  # Get the atom with the second smallest contribution
-            selected_atoms.remove(second_least_atom)
-            continue  # Skip to the next iteration
-
-    if valid_solutions_BACK:
-        best_atom = min(valid_solutions_BACK, key=lambda k: len(valid_solutions_BACK[k]))
-        print(f"The best valid solution is with atom {best_atom} with iteration number = {valid_solutions_BACK[best_atom]}.")
-        valid_solution_BACK = valid_solutions_BACK[best_atom]
-
-        A = np.array([G_dictionary_sampled[k] for k in valid_solution_BACK]).T
-        coeffs = np.linalg.lstsq(A, dPHI_temp_meas, rcond=None)[0]
-        coefficients = dict(zip(valid_solution_BACK, coeffs))
-        dPHI_temp_BACK = sum(c * G_dictionary[k] for k, c in coefficients.items())
-    else:
-        print("Failed to find a valid solution within the maximum number of outer iterations.")
-
-    ###################################################################################################
-    if valid_solution_BACK:
-        # Reshape reconstructed signal
-        non_zero_conv = np.nonzero(conv_tri)[0]
-        dPHI_temp_conv = conv_tri_array[non_zero_conv] - 1
-        dPHI_BACK = np.zeros((group* N_hexx), dtype=complex) # 1D list, size (group * N)
-
-        for g in range(group):
-            dPHI_temp_start = g * max(conv_tri)
-            dPHI_BACK[g * N_hexx + non_zero_conv] = dPHI_temp_BACK[dPHI_temp_start + dPHI_temp_conv]
-            for n in range(N_hexx):
-                if conv_tri[n] == 0:
-                    dPHI_BACK[g*N_hexx+n] = np.nan
-
-        # Plot dPHI_zero_reshaped
-        dPHI_BACK_reshaped = np.reshape(dPHI_temp_BACK, (group, max_conv))
-        for g in range(group):
-            plot_triangular_general(dPHI_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BACK', title=f'2D Plot of dPHI{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
-            plot_triangular_general(dPHI_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BACK', title=f'2D Plot of dPHI{g+1}_BACK Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
-
-        ######################################################################################################
-        # --------------- UNFOLD GREEEN'S FUNCTION USING DIRECT METHOD -------------------
-        print(f'Solve for dS using Direct Method')
-        G_inverse = scipy.linalg.inv(G_matrix)
-
-        # Plot G_matrix
-        plt.figure(figsize=(8, 6))
-        plt.imshow(G_inverse.real, cmap='viridis', interpolation='nearest', origin='lower')
-        plt.colorbar(label='Magnitude of G_inverse')
-        plt.xlabel('Index')
-        plt.ylabel('Index')
-        plt.gca().invert_yaxis()
-        plt.title('Plot of the Magnitude of G_inverse')
-        plt.savefig(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK/{case_name}_G_inverse.png')
-
-        # UNFOLD ALL INTERPOLATED
-        dS_unfold_BACK_temp = np.dot(G_inverse, dPHI_temp_BACK)
-        dS_unfold_BACK_temp_reshaped = np.reshape(dS_unfold_BACK_temp,(group,max_conv))
-        for g in range(group):
-            plot_triangular_general(dS_unfold_BACK_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_BACK', title=f'2D Plot of dS{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
-
-        # POSTPROCESS
-        print(f'Postprocessing to appropriate dPHI')
-        non_zero_conv = np.nonzero(conv_tri)[0]
-        dS_unfold_temp_indices = conv_tri_array[non_zero_conv] - 1
-        dS_unfold_BACK = np.zeros((group* N_hexx), dtype=complex)
-
-        for g in range(group):
-            dS_unfold_temp_start = g * max(conv_tri)
-            dS_unfold_BACK[g * N_hexx + non_zero_conv] = dS_unfold_BACK_temp[dS_unfold_temp_start + dS_unfold_temp_indices]
-            for n in range(N_hexx):
-                if conv_tri[n] == 0:
-                    dS_unfold_BACK[g*N_hexx+n] = np.nan
-
-        dS_unfold_BACK_reshaped = np.reshape(dS_unfold_BACK,(group,N_hexx))
-
-        # OUTPUT
-        print(f'Generating JSON output for dS')
-        output_direct1 = {}
-        for g in range(group):
-            dS_unfold_direct_groupname = f'dS_unfold{g+1}'
-            dS_unfold_direct_list = [{"real": x.real, "imaginary": x.imag} for x in dS_unfold_BACK_reshaped[g]]
-            output_direct1[dS_unfold_direct_groupname] = dS_unfold_direct_list
-
-        # Save data to JSON file
-        with open(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK/{case_name}_dS_unfold_BACK_output.json', 'w') as json_file:
-            json.dump(output_direct1, json_file, indent=4)
-
-        # Calculate error and compare
-        diff_S1_BACK = np.abs(np.array(dS_unfold_BACK_temp_reshaped[0]) - np.array(S_reshaped[0]))/(np.abs(np.array(S_reshaped[0])) + 1E-7) * 100
-        diff_S2_BACK = np.abs(np.array(dS_unfold_BACK_temp_reshaped[1]) - np.array(S_reshaped[1]))/(np.abs(np.array(S_reshaped[1])) + 1E-7) * 100
-        diff_S_BACK = [[diff_S1_BACK], [diff_S2_BACK]]
-        diff_S_BACK_array = np.array(diff_S_BACK)
-        diff_S_BACK_reshaped = diff_S_BACK_array.reshape(group, max_conv)
-
-        for g in range(group):
-            plot_triangular_general(diff_S_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BACK', title=f'2D Plot of diff_S{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
-            plot_triangular_general(diff_S_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BACK', title=f'2D Plot of diff_S{g+1}_BACK Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
-
-    else:
-        print("No valid solution found with backward elimination.")
-
+###### 07. BACKWARD ELIMINATION
+#    os.makedirs(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK', exist_ok=True)
+#    output_BACK = f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK/{case_name}'
+#
+#    for g in range(group):
+#        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
+#        plot_triangular_general(dPHI_temp_meas_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_meas', title=f'2D Plot of dPHI{g+1}_meas Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
+#
+#    # Initialize variables for the higher loop
+#    valid_solution_BACK = False  # Flag to indicate a valid solution
+#    tol_BACK = 1E-10
+#    selected_atoms = list(G_dictionary_sampled.keys())
+#    residual = dPHI_meas.copy()
+#    iter_BACK = 0
+#    residual_norm = 1.0
+#    contribution_threshold = 1e-6  # Define the contribution threshold
+#    coefficients = {}
+#
+#    # Dictionary to store valid solutions with term counts
+#    valid_solutions_BACK = {}
+#
+#    #while not valid_solution:
+#    while selected_atoms:
+#        iter_BACK += 1
+#        print(f"Iteration {iter_BACK}: Atoms remaining = {len(selected_atoms)}")
+#
+#        try:
+#            # Stack all selected atoms into the matrix
+#            A = np.array([G_dictionary_sampled[k] for k in selected_atoms]).T
+#            coeffs = np.linalg.lstsq(A, dPHI_temp_meas, rcond=None)[0]
+#            coefficients = dict(zip(selected_atoms, coeffs))
+#            residual = dPHI_temp_meas - A @ coeffs
+#            residual_norm = np.linalg.norm(residual)
+#            # Compute contributions (absolute value of coefficients)
+#            contributions = {atom: abs(coeff) / max(abs(coeffs)) for atom, coeff in zip(selected_atoms, coeffs)}
+#
+#            # Validate the reconstructed signal against the criterion
+#            if residual_norm < tol:
+#                valid_solution = True  # Criterion satisfied
+#                print(f"Valid solution found, selected atoms = {selected_atoms}, residual norm = {residual_norm:.6e}")
+#                valid_solutions_BACK[iter] = selected_atoms[:]
+#                atom_to_remove = min(contributions, key=contributions.get)
+#                selected_atoms.remove(atom_to_remove)
+#            else:
+#                # Find the least contributing atom
+#                atom_to_remove = min(contributions, key=contributions.get)
+#                selected_atoms.remove(atom_to_remove)
+#                print(f"Criteria not met. Removing least contributing atom: {atom_to_remove}, Contribution = {contributions[atom_to_remove]:.6e}, residual norm = {residual_norm:.6e}")
+#                if len(selected_atoms) == 0:
+#                    print(f'Criteria not met using Backward Elimination.')
+#                    break
+#
+#        except np.linalg.LinAlgError:
+#            print("SVD did not converge, skipping this iteration.")
+#            sorted_contributions = sorted(contributions.items(), key=lambda x: x[1])
+#            second_least_atom = sorted_contributions[1][0]  # Get the atom with the second smallest contribution
+#            selected_atoms.remove(second_least_atom)
+#            continue  # Skip to the next iteration
+#
+#    if valid_solutions_BACK:
+#        best_atom = min(valid_solutions_BACK, key=lambda k: len(valid_solutions_BACK[k]))
+#        print(f"The best valid solution is with atom {best_atom} with iteration number = {valid_solutions_BACK[best_atom]}.")
+#        valid_solution_BACK = valid_solutions_BACK[best_atom]
+#
+#        A = np.array([G_dictionary_sampled[k] for k in valid_solution_BACK]).T
+#        coeffs = np.linalg.lstsq(A, dPHI_temp_meas, rcond=None)[0]
+#        coefficients = dict(zip(valid_solution_BACK, coeffs))
+#        dPHI_temp_BACK = sum(c * G_dictionary[k] for k, c in coefficients.items())
+#    else:
+#        print("Failed to find a valid solution within the maximum number of outer iterations.")
+#
+#    ###################################################################################################
+#    if valid_solution_BACK:
+#        # Reshape reconstructed signal
+#        non_zero_conv = np.nonzero(conv_tri)[0]
+#        dPHI_temp_conv = conv_tri_array[non_zero_conv] - 1
+#        dPHI_BACK = np.zeros((group* N_hexx), dtype=complex) # 1D list, size (group * N)
+#
+#        for g in range(group):
+#            dPHI_temp_start = g * max(conv_tri)
+#            dPHI_BACK[g * N_hexx + non_zero_conv] = dPHI_temp_BACK[dPHI_temp_start + dPHI_temp_conv]
+#            for n in range(N_hexx):
+#                if conv_tri[n] == 0:
+#                    dPHI_BACK[g*N_hexx+n] = np.nan
+#
+#        # Plot dPHI_zero_reshaped
+#        dPHI_BACK_reshaped = np.reshape(dPHI_temp_BACK, (group, max_conv))
+#        for g in range(group):
+#            plot_triangular_general(dPHI_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BACK', title=f'2D Plot of dPHI{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
+#            plot_triangular_general(dPHI_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI_BACK', title=f'2D Plot of dPHI{g+1}_BACK Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
+#
+#        ######################################################################################################
+#        # --------------- UNFOLD GREEEN'S FUNCTION USING DIRECT METHOD -------------------
+#        print(f'Solve for dS using Direct Method')
+#        G_inverse = scipy.linalg.inv(G_matrix)
+#
+#        # Plot G_matrix
+#        plt.figure(figsize=(8, 6))
+#        plt.imshow(G_inverse.real, cmap='viridis', interpolation='nearest', origin='lower')
+#        plt.colorbar(label='Magnitude of G_inverse')
+#        plt.xlabel('Index')
+#        plt.ylabel('Index')
+#        plt.gca().invert_yaxis()
+#        plt.title('Plot of the Magnitude of G_inverse')
+#        plt.savefig(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK/{case_name}_G_inverse.png')
+#
+#        # UNFOLD ALL INTERPOLATED
+#        dS_unfold_BACK_temp = np.dot(G_inverse, dPHI_temp_BACK)
+#        dS_unfold_BACK_temp_reshaped = np.reshape(dS_unfold_BACK_temp,(group,max_conv))
+#        for g in range(group):
+#            plot_triangular_general(dS_unfold_BACK_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dS_unfold_BACK', title=f'2D Plot of dS{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
+#
+#        # POSTPROCESS
+#        print(f'Postprocessing to appropriate dPHI')
+#        non_zero_conv = np.nonzero(conv_tri)[0]
+#        dS_unfold_temp_indices = conv_tri_array[non_zero_conv] - 1
+#        dS_unfold_BACK = np.zeros((group* N_hexx), dtype=complex)
+#
+#        for g in range(group):
+#            dS_unfold_temp_start = g * max(conv_tri)
+#            dS_unfold_BACK[g * N_hexx + non_zero_conv] = dS_unfold_BACK_temp[dS_unfold_temp_start + dS_unfold_temp_indices]
+#            for n in range(N_hexx):
+#                if conv_tri[n] == 0:
+#                    dS_unfold_BACK[g*N_hexx+n] = np.nan
+#
+#        dS_unfold_BACK_reshaped = np.reshape(dS_unfold_BACK,(group,N_hexx))
+#
+#        # OUTPUT
+#        print(f'Generating JSON output for dS')
+#        output_direct1 = {}
+#        for g in range(group):
+#            dS_unfold_direct_groupname = f'dS_unfold{g+1}'
+#            dS_unfold_direct_list = [{"real": x.real, "imaginary": x.imag} for x in dS_unfold_BACK_reshaped[g]]
+#            output_direct1[dS_unfold_direct_groupname] = dS_unfold_direct_list
+#
+#        # Save data to JSON file
+#        with open(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_07_BACK/{case_name}_dS_unfold_BACK_output.json', 'w') as json_file:
+#            json.dump(output_direct1, json_file, indent=4)
+#
+#        # Calculate error and compare
+#        diff_S1_BACK = np.abs(np.array(dS_unfold_BACK_temp_reshaped[0]) - np.array(S_reshaped[0]))/(np.abs(np.array(S_reshaped[0])) + 1E-7) * 100
+#        diff_S2_BACK = np.abs(np.array(dS_unfold_BACK_temp_reshaped[1]) - np.array(S_reshaped[1]))/(np.abs(np.array(S_reshaped[1])) + 1E-7) * 100
+#        diff_S_BACK = [[diff_S1_BACK], [diff_S2_BACK]]
+#        diff_S_BACK_array = np.array(diff_S_BACK)
+#        diff_S_BACK_reshaped = diff_S_BACK_array.reshape(group, max_conv)
+#
+#        for g in range(group):
+#            plot_triangular_general(diff_S_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BACK', title=f'2D Plot of diff_S{g+1}_BACK Hexx Magnitude', case_name=case_name, output_dir=output_BACK, process_data="magnitude")
+#            plot_triangular_general(diff_S_BACK_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='diff_S_BACK', title=f'2D Plot of diff_S{g+1}_BACK Hexx Phase', case_name=case_name, output_dir=output_BACK, process_data="phase")
+#
+#    else:
+#        print("No valid solution found with backward elimination.")
+#
 ##### 08. GREEDY
     os.makedirs(f'{output_dir}/{case_name}_UNFOLDING/{case_name}_08_GREEDY', exist_ok=True)
     output_GREEDY = f'{output_dir}/{case_name}_UNFOLDING/{case_name}_08_GREEDY/{case_name}'
