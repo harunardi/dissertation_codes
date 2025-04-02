@@ -1,15 +1,18 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'thesis.blg'
-[154] biber:340> INFO - === Wed Mar 26, 2025, 13:44:29
-[183] Biber.pm:419> INFO - Reading 'thesis.bcf'
-[348] Biber.pm:979> INFO - Found 6 citekeys in bib section 0
-[391] Biber.pm:4419> INFO - Processing section 0
-[416] Biber.pm:4610> INFO - Looking for bibtex file './references.bib' for section 0
-[522] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1889] bibtex.pm:1519> INFO - Found BibTeX data source './references.bib'
-[2217] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[2217] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[2218] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[2219] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[2234] bbl.pm:660> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[2242] bbl.pm:763> INFO - Output to thesis.bbl
+[73] biber-darwin:340> INFO - === Tue Apr  1, 2025, 19:20:40
+[93] Biber.pm:419> INFO - Reading 'thesis.bcf'
+[197] Biber.pm:979> INFO - Found 45 citekeys in bib section 0
+[212] Biber.pm:4419> INFO - Processing section 0
+[225] Biber.pm:4610> INFO - Looking for bibtex file './references.bib' for section 0
+[261] bibtex.pm:1713> INFO - LaTeX decoding ...
+[902] bibtex.pm:1519> INFO - Found BibTeX data source './references.bib'
+[1279] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1279] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1279] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1279] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[1307] bbl.pm:660> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[1341] bbl.pm:763> INFO - Output to thesis.bbl
+[1342] Biber.pm:131> WARN - legacy year field '2017-04-16/2017-04-20' in entry 'chionisSIMULATE3KAnalysesNeutron2017' is not an integer - this will probably not sort properly.
+[1342] Biber.pm:131> WARN - legacy year field '2016-05-01/2016-05-05' in entry 'montalvoFirstEvidencePivotal2016' is not an integer - this will probably not sort properly.
+[1342] Biber.pm:133> INFO - WARNINGS: 2

@@ -1,0 +1,31 @@
+\label{ch:intro}
+
+\section{Motivation}
+
+Core diagnostics have been a key component of nuclear reactor operation to ensure reactor safety and performance. As a multicomponent system, perturbations in nuclear reactors are unavoidable. In the past, neutron noise experiments were developed to study the effect of perturbations in zero-power reactors \cite{akcasuApplicationLangevinTechnique1966,cohnSimplifiedTheoryPile1960,moorePowerNoiseTransfer1959}. Neutron noise is defined as the stochastic or random process that always happens in a nuclear reactor [6]. Another meaning also defines noise as the fluctuation in the output of the detector when the incident radiation is steady [7]. The results show that the neutron noise method could be used to detect anomalies in zero-power reactors. Later, the neutron noise method was used to detect anomalies in power reactors. Some examples include continuous neutron noise monitoring at the High Flux Isotope Reactor (HFIR), neutron and pressure noise monitors at the Molten Salt Reactor Experiment (MSRE) [8], neutron noise diagnostics at the Palisades Nuclear Generating Station in Michigan [9], and German measurements in boiling water reactors (BWR) that showed vibrations quantified using neutron noise simulations [10]. 
+
+The success of core diagnostics using neutron noise experiments motivates the development of computational models of neutron noise. The computational model of neutron noise was developed first for zero-power reactors, similar to the experiments. The early computational model introduces the concept of noise equivalent source [2]. Then, [1] further detailed how this concept of a noise equivalent source can be included in the neutron transport equation. In the paper, [1] developed the space and energy-dependent theory of neutron noise using the Langevin technique. The Langevin technique has been extensively used in studies such as Brownian motion and thermodynamics. [1] also evaluated the equivalent source of noise as fluctuations of all the phenomena that contribute to the neutron transport equation. That includes capture, fission, scattering, and external sources. To validate the application of Langevin technique, the paper included the correlations of the count rates of two detectors at two different phase points in a zero-power reactor system. Further investigation in [11] took advantage of the Langevin technique to model the analysis of two groups of neutron noise. The paper suggested the simplification of neutron transport into two-group neutron diffusion theory and applied the Langevin technique to the said theory. In the application of two groups, [11] reported that the space-independent model and explicit expressions for the auto- and cross-power spectral densities of the two groups can be obtained. These results show a consistent correlation between the noise source and the power spectral density in the measurement of neutrons from experiments of a zero-power reactor system. 
+
+Further development of the model led to the concept of noise unfolding method, which is a method to detect the location of neutron noise and determine the magnitude of neutron noise. There are three main methods that have been developed to unfold neutron noise: the inversion method, the zoning method, and the scanning method. All of the methods require the Green function matrix to solve the problem [12]. The input for these methods is the noise fluxes from the detector readings, and the output is the noise locations and magnitude.
+In this work, computational models of neutron noise are developed based on the neutron diffusion equation in the frequency domain. The solver is developed using the box-scheme finite difference for rectangular and hexagonal geometries. The main goal of the solver is application to HTGRs. However, application to rectangular geometries is also provided to differentiate the characteristics of HTGRs and LWRs systems. In this work, code-to-code comparisons are provided. Methods for unfolding neutron noise are also developed in the simulator to highlight the advantages and disadvantages of the methods. 
+
+
+\section{Objectives}
+
+\section{Outline}
+
+How does this relate to coffee? We direct the reader to Refs.
+
+Equations are numbered within chapters:
+\begin{align}
+    a
+    &= b + c \\
+    d
+    &= \frac{e}{f}.
+\end{align}
+
+% input individual chapters files
+% \input{1-introduction}
+% \input{2-related}
+% \input{3-model}
+% \input{4-predictions}

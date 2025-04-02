@@ -1,0 +1,405 @@
+\label{ch:literature_review}
+
+In nuclear engineering, “noise” can be categorized into two distinct definitions. The first definition is the zero-power reactor noise, also known as pile noise, which is the random fluctuation of fission chains that could affect the reactor operation in low-powered systems \cite{pazsitNoiseTechniquesNuclear2010, pazsitNeutronFluctuationsTreatise2008, uhrigRandomNoiseTechniques1970}. The other category is the at-power reactor noise, also known as neutron noise, which is defined as the stochastic or random processes in which a nuclear reactor inheres \cite{saitoTheoryPowerReactor1974b}. Another meaning also defines noise as the fluctuation in the detector output when the incident radiation is steady \cite{pacilioAnalysisReactorNoise1979}. These random fluctuations are common in a nuclear reactor system. A nuclear reactor is a very delicate and complex system that is expected to produce some noise \cite{thiePowerReactorNoise1981}.
+
+Neutron noise has been studied since the early adaptation of power reactors. This is because we have realized the importance of some fluctuating components in the state variables of nuclear reactors, such as thermal power, outlet coolant temperature, control rods, and many others \cite{saitoTheoryPowerReactor1974, saitoTheoryPowerReactor1974a}. The original neutron noise theory observation can be found in the reactor oscillator experiments performed at the “Clinton Pile” in Oak Ridge, USA. Clinton Pile is the nickname of the X-10 Reactor built in today's Oak Ridge National Laboratory \cite{pazsitNoiseTechniquesNuclear2010}. 
+
+Neutron noise serves several beneficial purposes, one for core monitoring and diagnostics. The monitoring and diagnostics encompass a wide range of nuclear reactor operations, including steady-state and transient operations. During the operation of any system, perturbations are unavoidable, including in nuclear reactor systems. The perturbations could be significant, such as control rod insertion, loss of forced cooling, and many other examples that could lead to unexpected behavior in the transient operation \cite{ottIntroductoryNuclearReactor1985}. Detecting any anomalies or perturbations would enable operators to respond appropriately to the problem. This will prevent any accident from occurring \cite{ferrierReactorNoise1963}. 
+
+Various aspects can cause the effects of perturbation. For example, several technological processes such as mechanical vibrations in the fuel assemblies and absorbers, boiling of the coolant/moderator in a Boiling Water Reactor (BWR), and instability of flow dynamics in the system may cause some perturbations that will lead to fluctuations of reactor system behavior \cite{thiePowerReactorNoise1981}. Reactor diagnostics using noise analysis have been widely employed globally. Noise analysis relies on measuring fluctuations in process parameters, such as neutron flux, around their mean values. Using noise analysis, non-intrusive, online core monitoring can be done more accurately \cite{demaziereDevelopmentNonintrusiveMethod2002}. These fluctuations represent the localized and instantaneous phenomenon in the nuclear reactor. It is described as the deviation around the mean values
+
+The chapter is structured as follows. First, we provide an overview of the theoretical aspects of neutron noise. This includes the theory underlying some past experiments and the theory behind the computational methods used for neutron noise analysis. Second, we highlighted some historical context of neutron noise analysis. Third, we provide examples of the application of neutron noise to reactor diagnostics, including past noise experiments for diagnostics and the computational methods that contributed to these experiments. Fourth, we review some computational tools and their approaches to solving neutron noise analysis. These computational tools have been developed for the last few years. Lastly, we propose extensions to the neutron noise method and discuss how these extensions would impact neutron noise analysis. This includes, but is not limited to, the use of machine learning for neutron noise analysis and the application of neutron noise to advanced reactor technologies. 
+ 
+\section{Theory of Power Reactor Noise and Its Approaches}
+
+\subsection{The Neutron Noise Experiments}
+
+In the past, the neutron noise method was used in experiments to perform core monitoring and diagnostics. In general, the neutron noise experiments involve obtaining a statistical descriptor from measurements of statistical signals \cite{thiePowerReactorNoise1981}. The descriptor measured from the reactor is the neutron flux signals. The detector responses are recorded in the time domain. The end goal of the noise analysis is to perform a spectral analysis of the noise, assuming the noise is an oscillation induced by external materials. Before performing the transform from the time domain to the frequency domain, it is essential to note that the detector’s signals should be preprocessed to remove any possible trends from the signals. Trend removal is a necessary step since it is assumed that the analysis is done during steady-state conditions \cite{mylonakisCORESIMSIMULATIONS2021}.
+
+The detector responses are then converted into the frequency domain by performing a fast Fourier transform to perform the spectral analysis. The quantity of interest in this case is the cross-power spectral density (CPSD) \cite{ambrozicNoiseAnalysisTechniques2020}. The CPSD represents the correlation of power between two different signals as a function of frequency. The CPSD is defined as follows:
+\begin{equation}
+    S_{xy}(f) = \lim_{T \rightarrow \infty} \frac{1}{T} \mathbb{E} \bigg( X^*(f) \cdot Y(f) \bigg)
+    \label{eq:S_xy}
+\end{equation}
+where $S_{xy} (f)$ is the CPSD as a function of frequency, $T$ is the period, $X(f)$ and $Y(f)$ is the Fourier transform of $x(t)$ and $y(t)$, and $X^* (f)$ is the complex conjugate of $X(f)$. It should be noted that Equation \ref{eq:S_xy} shows that CPSD is essentially the Fourier transform of the cross-correlation function \cite{thiePowerReactorNoise1981}. It should also be noted that the signal is recorded at a particular time value in the noise experiments. Therefore, Equation 1 would be complicated to achieve. Another way to calculate CPSD is to calculate each detector signal’s power spectral density (PSD). One method used to estimate the PSD for a detector signal is the Welch method, where the PSD is calculated directly without an autocorrelation function \cite{welchDirectDigitalMethod1961}. The Welch method works by introducing a window function to each frequency segment, performing a fast Fourier transform for each segment, and then averaging the resulting PSD estimates over all segments. The Welch method can be written as follows:
+\begin{equation}
+    S_{xy}(f) = \frac{1}{N} \sum_{k=1}^{N} X_k^*(f) \cdot Y_k(f)
+\end{equation}
+where $N$ is the number of segments in the Welch method, $X(f)$ and $Y(f)$ are the Fourier transforms of $x(t)$ and $y(t)$, and $X^* (f)$ the complex conjugate of $X(f)$ \cite{ambrozicNoiseAnalysisTechniques2020}.
+
+Other than the CPSD, another variable of interest in a neutron noise experiment is coherence, which is defined as the measure of commonality between two signals. It can also be defined as the closeness of two signals to have a cause-and-effect relationship. The coherence is described as follows \cite{fryAnalysisNeutrondensityOscillations1975}:
+
+\begin{equation}
+    COH \equiv \gamma^2 (f) = \frac{|S_{xy} (f)|^2}{PSD_x (f) \cdot PSD_y (f)}
+    \label{eq:COH}
+\end{equation}
+
+Equation \ref{eq:COH} shows that two perfectly correlated signals would have a coherence of 1, and two uncorrelated signals would have a coherence of 1. The coherence would act as an indicator of the data quality from the signals. It is common to aim for COH > 0.8 for noise experiments \cite{ambrozicNoiseAnalysisTechniques2020}. If the two signals have relatively high coherence, it is also meaningful to have the phase relationship between the signals, which is defined as follows \cite{fryAnalysisNeutrondensityOscillations1975}:
+
+\begin{equation}
+    \theta (f) = \tan^{-1} \biggr( \frac{Im(S_{xy} (f)}{Re(S_{xy} (f)} \biggr)
+\end{equation}
+
+The spectral analysis is done by observing the detector signals’ CPSD, PSD, and coherence. The PSD analysis can show some fluctuations directly, but using CPSD and coherence will help eliminate some uncertainties that might still be propagated in the PSD.
+
+\subsection{Theory of Computational Method of Neutron Noise}
+
+\subsubsection{Neutron Noise Derivation in Frequency Domain}
+
+Neutron noise is derived using neutron transport theory, such as $P_N$ transport and $S_N$ transport theory, or diffusion \cite{bahramiNewApproachCalculation2020, demaziereDevelopment2D2group2004}, in the case of power reactors. Here, we will focus on the diffusion theory and its application to neutron noise analysis. The diffusion theory is chosen as it satisfies the phenomena for most cases of practical interest \cite{pazsitNoiseTechniquesNuclear2010}. Here, we will consider only one group diffusion, which allows us to understand the general behavior of the system \cite{pazsitNoiseTechniquesNuclear2010}. 
+
+In general, the derivation of the neutron noise equation begins with the neutron diffusion equation and the precursor equation. We are interested in the local scale case of neutron noise. Therefore, we can assume that temporal fluctuation in diffusion coefficient can be neglected, such that,
+
+\begin{equation}
+        \nabla D(\textbf{r}, t) \nabla \phi(\textbf{r}, t) = \nabla D(\textbf{r}) \nabla \phi(\textbf{r}, t)
+\end{equation}
+
+For power reactors, neutron noise theory assumes that the stationary deviation in the system is small enough that the overall system would not change significantly \cite{pazsitNoiseTechniquesNuclear2010}. This means that the noise phenomena can be analyzed using linear equations. Additionally, we can separate the form of any time-dependent variable into its mean value and fluctuations.
+
+\begin{equation}
+        X(\textbf{r}, t) = X_0 (\textbf{r}) + \delta X(\textbf{r}, t)
+        \label{eq:fluctuation}
+\end{equation}
+
+We can apply these definitions to the time-dependent neutron diffusion equations. Then, to further simplify the equation, we define some approximations,
+\begin{itemize}
+        \item The cross-product of the fluctuating terms is neglected. This means that we only keep the first-order behavior of the neutron noise. The higher order might be relevant for a specific case. However, generally, the first order is good enough to explain the behavior of neutron noise in the reactor.
+        \begin{equation}
+                \Sigma_t (\textbf{r}, t) \phi_g (\textbf{r}, t) = \Sigma_{t,0} (\textbf{r}) \phi_{g0} (\textbf{r}) + \delta \Sigma_t (\textbf{r}, t) \phi_{g0} (\textbf{r}) + \Sigma_{t,0} (\textbf{r}) \delta \phi_g (\textbf{r}, t)
+        \end{equation}
+
+
+        \item The reactor system is assumed to be critical. A critical reactor assumes that the number of neutrons in each cycle is constant at all times, reducing fluctuations in neutron behavior. 
+	\item One group of delayed neutron precursors is used. 
+\end{itemize}
+
+Applying all of these approximations and fluctuation definitions of the time-dependent neutron diffusion equation and the neutron precursor equation, we get,
+
+\begin{equation}
+        \begin{aligned}
+                \frac{1}{v_g} \frac{\partial \delta \phi_g (\textbf{r}, t)}{\partial t} - \nabla D_g(\textbf{r}) \nabla \delta \phi_g(\textbf{r}, t) + \biggl(\Sigma_{t,g,0}(\textbf{r}) \delta \phi_g(\textbf{r}, t) + \delta \Sigma_{t,g}(\textbf{r}, t) \phi_{g,0}(\textbf{r}) \biggr) = \\
+                \sum_{g' = 1}^{G} \biggl(\Sigma_{s0,g',g,0}(\textbf{r}) \delta \phi_{g'}(\textbf{r}, t) + \delta \Sigma_{s0,g',g}(\textbf{r}, t) \phi_{g',0}(\textbf{r}) \biggr)\\
+                \chi^p_g \frac{1-\beta_{\text{eff}}}{k_{\text{eff}}} \biggl(\sum_{g' = 1}^{G} \nu \Sigma_{f,g',0}(\textbf{r}) \delta \phi_{g'}(\textbf{r}, t) + \chi_g \sum_{g' = 1}^{G} \delta \nu \Sigma_{f,g'}(\textbf{r}, t) \phi_{g',0}(\textbf{r}) \biggr) + \lambda \delta C(\textbf{r}, t)
+        \end{aligned}
+        \label{eq:time_1}
+\end{equation}
+
+And the precursor equation:
+
+\begin{equation}
+        \frac{\partial \delta C(\textbf{r}, t)}{\partial t} = - \lambda \delta C(\textbf{r}, t) + \chi^d_g \frac{\beta_{\text{eff}}}{k_{\text{eff}}}\biggl(\sum_{g' = 1}^{G} \nu \Sigma_{f,g',0}(\textbf{r}) \delta \phi_{g'}(\textbf{r}, t) + \sum_{g' = 1}^{G} \delta \nu \Sigma_{f,g'}(\textbf{r}, t) \phi_{g',0}(\textbf{r}) \biggr)
+        \label{eq:time_2}
+\end{equation}
+
+Using Equation \ref{eq:time_1} and \ref{eq:time_2}, the time domain analysis can be conducted to solve for $\delta \phi_g (\textbf{r}, t)$. If the frequency domain analysis is desired, then we can multiply Equation \ref{eq:time_1} and \ref{eq:time_2} with $\int_{-\infty}^{\infty} \exp (-i \omega t) dt$, which yields to,
+
+\begin{equation}
+        \begin{aligned}
+                \frac{i \omega}{v_g} \delta \phi_g (\textbf{r}, \omega) - \nabla D_g(\textbf{r}) \nabla \delta \phi_g(\textbf{r}, \omega) + \biggl(\Sigma_{t,g,0}(\textbf{r}) \delta \phi_g(\textbf{r}, \omega) + \delta \Sigma_{t,g}(\textbf{r}, \omega) \phi_{g,0}(\textbf{r}) \biggr) = \\
+                \sum_{g' = 1}^{G} \biggl(\Sigma_{s0,g',g,0}(\textbf{r}) \delta \phi_{g'}(\textbf{r}, \omega) + \delta \Sigma_{s0,g',g}(\textbf{r}, \omega) \phi_{g',0}(\textbf{r}) \biggr)\\
+                \chi^p_g \frac{1-\beta_{\text{eff}}}{k_{\text{eff}}} \biggl(\sum_{g' = 1}^{G} \nu \Sigma_{f,g',0}(\textbf{r}) \delta \phi_{g'}(\textbf{r}, \omega) + \sum_{g' = 1}^{G} \delta \nu \Sigma_{f,g'}(\textbf{r}, \omega) \phi_{g',0}(\textbf{r}) \biggr) + \lambda \delta C(\textbf{r}, \omega)
+        \end{aligned}
+        \label{eq:freq_1}
+\end{equation}
+
+And the precursor equation:
+\begin{equation}
+        i \omega \delta C(\textbf{r}, \omega) = - \lambda \delta C(\textbf{r}, \omega) + \chi^d_g \frac{\beta_{\text{eff}}}{k_{\text{eff}}}\biggl(\sum_{g' = 1}^{G} \nu \Sigma_{f,g',0}(\textbf{r}) \delta \phi_{g'}(\textbf{r}, \omega) + \sum_{g' = 1}^{G} \delta \nu \Sigma_{f,g'}(\textbf{r}, \omega) \phi_{g',0}(\textbf{r}) \biggr)
+        \label{eq:freq_2}
+\end{equation}
+
+Further simplification yields to,
+\begin{equation}
+        \begin{aligned}
+                \frac{i \omega}{v_g} \delta \phi_g (\textbf{r}, \omega) - \nabla D_g(\textbf{r}) \nabla \delta \phi_g(\textbf{r}, \omega) + \biggl(\Sigma_{t,g,0}(\textbf{r}) \delta \phi_g(\textbf{r}, \omega) + \delta \Sigma_{t,g}(\textbf{r}, \omega) \phi_{g,0}(\textbf{r}) \biggr) = \\
+                \sum_{g' = 1}^{G} \biggl(\Sigma_{s0,g',g,0}(\textbf{r}) \delta \phi_{g'}(\textbf{r}, \omega) + \delta \Sigma_{s0,g',g}(\textbf{r}, \omega) \phi_{g',0}(\textbf{r}) \biggr)\\
+                \frac{1}{k_{\text{eff}}} \biggl( \chi^p_g (1-\beta_{\text{eff}}) + \chi^d_g \frac{\lambda \beta_{\text{eff}}}{i \omega + \lambda} \biggr)  \biggl(\sum_{g' = 1}^{G} \nu \Sigma_{f,g',0}(\textbf{r}) \delta \phi_{g'}(\textbf{r}, \omega) + \chi_g \sum_{g' = 1}^{G} \delta \nu \Sigma_{f,g'}(\textbf{r}, \omega) \phi_{g',0}(\textbf{r}) \biggr)
+        \end{aligned}
+        \label{eq:freq_4}
+\end{equation}
+
+Equation \ref{eq:freq_4} is the neutron noise equation in the frequency domain. The equation shows that the noise equation in the frequency domain is similar to the diffusion equation in a subcritical system (or a fixed source system). However, this diffusion equation has a complex value term and noise source. The complex terms represent the complex-valued absorption of the system. The noise source  $S (\textbf{r}, \omega)$ consists of the fluctuation of the cross-sections multiplied by the static neutron flux $\phi_{g0} (\textbf{r})$ \cite{pazsitDynamicAdjointGreen2015}. 
+
+The computational method can work in tandem with the experimental method of neutron noise. The experimental method measures the quantity of interest using the known power spectral density of the detectors. The computational method can extend the analysis by verifying the CPSD at known frequency to detect the location of noise sources \cite{hursinModelingNoiseExperiments2023}. The general workflow is described in Figure \ref{fig:flow_diagram}.
+\begin{figure}[h]
+        \centering
+        \includegraphics[width=\textwidth]{Picture1.png}
+        \caption{General workflow of neutron noise experiment and simulation}
+        \label{fig:flow_diagram}
+\end{figure}
+
+Assuming $\delta \phi_g (\textbf{r},\omega)$ is known from the computational method, the PSD can be determined using Welch method as follow \cite{mylonakisCORESIMSIMULATIONS2021}:
+
+\begin{equation}
+        \text{CPSD}_{xy} = \biggl(\frac{\delta \phi_{g}(\textbf{r}, \omega)}{\phi_{g}(\textbf{r})} \biggr)_x^* \cdot \biggl(\frac{\delta \phi_{g}(\textbf{r}, \omega)}{\phi_{g}(\textbf{r})} \biggr)_y
+        \label{eq:CPSD_comp}
+\end{equation}
+
+To further understand the physical meaning of neutron noise, we can utilize point kinetic approximations to extract the integral parameters that characterize the reactor. To do this, we start by factorizing the time-dependent forward flux into its amplitude and shape function. Such that,
+\begin{equation}
+        \phi (\textbf{r}, E, t) = P(t) \psi (\textbf{r}, E, t)
+\end{equation}
+with the following normalization condition,
+\begin{equation}\label{eq:normalization}
+        \frac{\partial}{\partial t} \int_{\textbf{E}} \int_{\textbf{r}} \biggl( \frac{1}{v} \phi^{\dagger}(\textbf{r}, E) \psi (\textbf{r}, E, t) \biggr) d\textbf{r} dE = 0
+\end{equation}
+In this case, $\phi^{\dagger}(\textbf{r})$ is the solution of the adjoint equation. 
+
+Then, we split all the time-dependent components into the main values and the perturbations. Here, we define the initial condition (mean value) of the forward flux as follows,
+\begin{equation}
+        \phi_0(\textbf{r}, E) = P_0 \psi_0 (\textbf{r}, E)
+\end{equation}
+Therefore, we can write the noise flux as follows (neglecting second-order terms),
+\begin{equation}
+        \begin{aligned}
+                \delta \phi(\textbf{r}, E, t) &= \phi (\textbf{r}, E, t) - \phi_0(\textbf{r}, E)\\
+                &= \biggl( P_0 + \delta P(t) \biggr) \biggl( \frac{\phi_0(\textbf{r}, E)}{P_0} + \delta P(t) \biggr) - \phi_0(\textbf{r}, E) \\
+                &= \phi_0(\textbf{r}, E) \frac{ \delta P(t)}{P_0} + P_0 \delta \psi(\textbf{r}, E, t)
+        \end{aligned}
+        \label{eq:noise_component_time}
+\end{equation}
+Applying Fourier transforms to Equation \ref{eq:noise_component_time} yields the following.
+\begin{equation}\label{eq:noise_component_freq}
+        \delta \phi(\textbf{r}, E, \omega) = \phi_0(\textbf{r}, E) \frac{ \delta P(\omega)}{P_0} + P_0 \delta \psi(\textbf{r}, E, \omega)
+\end{equation}
+
+Equation \ref{eq:noise_component_freq} shows that the noise flux can be split into two components. The first term on the right-hand side is the point-kinetic term, and the second is the spatial component of the noise flux.
+
+The value of power perturbation can be determined as follows. We can multiply Eq \ref{eq:noise_component_freq} by $\phi^{\dagger}(\textbf{r})/v$ and integrate over all the spatial and energy domains, which leads to the following.
+\begin{equation}
+        \int_{\textbf{E}} \int_{\textbf{r}} \frac{1}{v} \phi^{\dagger}(\textbf{r}, E) \delta \phi(\textbf{r}, E, \omega) d\textbf{r} dE = \frac{ \delta P(\omega)}{P_0} \int_{\textbf{E}} \int_{\textbf{r}} \frac{1}{v} \phi^{\dagger}(\textbf{r}, E) \phi_0(\textbf{r}, E) d\textbf{r} dE + P_0 \int_{\textbf{E}} \int_{\textbf{r}} \frac{1}{v} \phi^{\dagger}(\textbf{r}, E) \delta \psi(\textbf{r}, E, \omega) d\textbf{r} dE
+\end{equation}
+
+Notice that due to the normalization in Equation \ref{eq:normalization} and the initial condition of the system, $\delta \psi(\textbf{r}, 0) = 0$ \cite{demaziereDevelopmentPointkineticVerification2017}. This yields to the following.
+\begin{equation}
+        \frac{ \delta P(\omega)}{P_0} = \frac{\int_{\textbf{E}} \int_{\textbf{r}} \frac{1}{v} \phi^{\dagger}(\textbf{r}) \delta \phi(\textbf{r}, \omega) d\textbf{r} dE}{\int_{\textbf{E}} \int_{\textbf{r}} \frac{1}{v} \phi^{\dagger}(\textbf{r}) \phi_0(\textbf{r}) d\textbf{r} dE}
+\end{equation}
+
+Continuing with the derivation of the point kinetics component, we start from time-dependent neutron diffusion equation, multiply both sides with adjoint fluxes as a weighting function, and integrate over the spatial domain, yielding the following.
+\begin{equation}
+    \begin{aligned}
+        \frac{dP_0}{dt} + \frac{d(\delta P(t))}{dt} &= \frac{\rho_0}{\Lambda} (P_0 + \delta P(t)) + \frac{\delta \rho(t)}{\Lambda} (P_0 + \delta P(t)) - \frac{\beta}{\Lambda} (P_0 + \delta P(t)) + \lambda (C_0 + \delta C(t))\\
+        \frac{dC_0}{dt} + \frac{d(\delta C(t))}{dt} &= \frac{\beta}{\Lambda} (P_0 + \delta P(t)) - \lambda (C_0 + \delta C(t))\\
+    \end{aligned}
+\end{equation}
+
+By neglecting second-order terms and eliminating the time-independent component, we can simplify the equation into:
+\begin{equation}
+    \begin{aligned}\label{eq:simple_PRKE}
+        \frac{d(\delta P(t))}{dt} &= \frac{\delta \rho(t)}{\Lambda} P_0 - \frac{\beta}{\Lambda} \delta P(t) + \lambda \delta C(t)\\
+        \frac{d(\delta C(t))}{dt} &= \frac{\beta}{\Lambda} \delta P(t) - \lambda \delta C(t)\\
+    \end{aligned}
+\end{equation}
+Applying the Fourier Transform to Equation \ref{eq:simple_PRKE} yields to:
+\begin{equation}
+    \begin{aligned}\label{eq:simple_PRKE_omega}
+        i \omega \delta P(\omega) &= \frac{P_0}{\Lambda} \delta \rho(\omega) - \frac{\beta}{\Lambda} \delta P(\omega) + \lambda \delta C(\omega)\\
+        i \omega \delta C(\omega) &= \frac{\beta}{\Lambda} \delta P(\omega) - \lambda \delta C(\omega)\\
+    \end{aligned}
+\end{equation}
+where $\omega = 2 \pi f$. Simplifying the precursor equation of Equation \ref{eq:simple_PRKE_omega}, yields:
+\begin{equation}
+    \begin{aligned}\label{eq:simple_PRKE_precursor}
+        \delta C(\omega) &= \frac{\beta}{\Lambda (i \omega + \lambda)} \delta P(\omega)\\
+    \end{aligned}
+\end{equation}
+Then, substituting Equation \ref{eq:simple_PRKE_precursor} to the power equation of Equation \ref{eq:simple_PRKE_omega}, yields to:
+\begin{equation}
+    \begin{aligned}\label{eq:simple_power_omega}
+        i \omega \delta P(\omega) &= \frac{P_0}{\Lambda} \delta \rho(\omega) - \frac{\beta}{\Lambda} \delta P(\omega) + \frac{\lambda \beta}{\Lambda (i \omega + \lambda)} \delta P(\omega)\\
+        \frac{P_0}{\Lambda} \delta \rho(\omega) &= \biggl( i \omega +  \frac{\beta}{\Lambda} - \frac{\lambda \beta}{\Lambda (i \omega + \lambda)} \biggr) \delta P(\omega) \\
+        \delta P(\omega) &= \delta \rho(\omega)P_0 \frac{1}{\Lambda \biggl( i \omega +  \frac{\beta}{\Lambda} - \frac{\lambda \beta}{\Lambda (i \omega + \lambda)} \biggr)} \\
+        \delta P(\omega) &= \delta \rho(\omega)P_0 G(\omega)\\
+    \end{aligned}
+\end{equation}
+Since we derive Equation \ref{eq:simple_power_omega} from Equation \ref{eq:time_2}, we can explicitly define $\delta \rho(\omega)$ as follows,
+\begin{equation}
+        \delta \rho(\omega) = \frac{\int_{\textbf{E}} \int_{\textbf{r}} \phi^{\dagger}(\textbf{r}, E) d\textbf{S}(\textbf{r}, E, \omega) d\textbf{r} dE}{\int_{\textbf{E}} \int_{\textbf{r}} \phi^{\dagger}(\textbf{r}, E) \textbf{F}(\textbf{r}, E) d\textbf{r} dE}
+\end{equation}
+where $d\textbf{S}(\textbf{r}, \omega)$ is the noise source in the system, and $\textbf{F}(\textbf{r})$  is the fission source in the forward equation. This means that we have two ways to calculate the zero-power reactor transfer function $G(\omega)$. They are,
+\begin{equation}
+        G(\omega) = \frac{1}{\Lambda \biggl( i \omega +  \frac{\beta}{\Lambda} - \frac{\lambda \beta}{\Lambda (i \omega + \lambda)} \biggr)} = \frac{\delta P (\omega) /P_0}{\delta \rho(\omega)}
+\end{equation}
+
+The zero-power reactor transfer function is one method for observing a system's behavior during a small sinusoidal perturbation. It could also be used to check whether the reactivity feedback is as expected from the design \cite{bellNuclearReactorTheory1970}.
+
+\subsubsection{Neutron Noise Models and Sources}
+
+Neutron noise sources can generally be divided into two categories. The first category is the localized absorbers of variable strength. Although terminology specifies absorbers, these types of noise typically refer to all types of cross-sections. This includes absorption, fission, and scattering \cite{pazsitNoiseTechniquesNuclear2010}. The absorbers of variable strength can be represented as fluctuations in the macroscopic cross-section at a given fixed location $\textbf{r}_0$ and the noise sources can be expressed as:
+\begin{equation}
+        \delta \Sigma_x (\textbf{r}, \omega) = \gamma (\omega) \delta (\textbf{r} - \textbf{r}_0)
+\end{equation}
+where $\gamma (\omega)$ is the noise source strength. Generally, the strength of the noise sources might depend on the noise frequency \cite{pazsitNoiseTechniquesNuclear2010}. Some examples of this type of noise include the perturbations traveling with the coolant flow \cite{jonssonTwogroupTheoryNeutron2011} and vibration in the control rod \cite{pazsitNeutronNoiseDiagnostics1983}. In terms of modeling the noise source in a solver, the localized absorbers of variable strength can be intuitively modeled as a perturbation of cross-sections in the center of computational nodes \cite{mylonakisCORESIMFlexible2021}.
+
+The second category is the localized vibrating absorber. The vibrating absorbers could include vibration of the fuel assembly \cite{chionisSIMULATE3KAnalysesNeutron2017} or vibration of the core barrel \cite{pazsitDevelopmentsCoreBarrelMotion2016}. In the vibration absorber, the perturbation is modeled as the displacement of the vibrating assembly from its nominal position. In a 2D case, the perturbation is defined as follows:
+\begin{equation}
+        \begin{aligned}
+                \delta \Sigma_{a} (x, y, \omega) = &\varepsilon_x (\omega) \delta(x-a_0) (\Sigma_{a,i,j} - \Sigma_{a,i-1,j}) + \\
+                &\varepsilon_x (\omega) \delta(x+a_0) (\Sigma_{a,i,j} - \Sigma_{a,i+1,j}) + \\           
+                &\varepsilon_y (\omega) \delta(x-b_0) (\Sigma_{a,i,j} - \Sigma_{a,i,j+1}) + \\
+                &\varepsilon_y (\omega) \delta(x+b_0) (\Sigma_{a,i,j} - \Sigma_{a,i,j-1})
+        \end{aligned}
+\end{equation}
+where $\varepsilon_x (\omega)$ is the displacement x-axis,  $\varepsilon_y (\omega)$ is the displacement y-axis, $a_0$ and $b_0$ are the equilibrium positions at the boundary of the vibrating assembly.
+
+If the amplitude of $\varepsilon_x (\omega)$ and $\varepsilon_y (\omega)$ significantly lower than the size of the reactor core d, then one can use a weak absorber approach. The vibrating motion of the absorber can be described as a two-dimensional problem, where the vibrating motion will move on a two-dimensional stochastic trajectory \cite{pazsitInvestigationSpaceDependentNoise1977}. The perturbation of vibrating absorbers can be represented as:
+\begin{equation}
+        \delta \Sigma_{a} (x, y, \omega) = \gamma \biggl( \delta (\textbf{r} - \textbf{r}_p - \varepsilon(t)) - \delta (\textbf{r} - \textbf{r}_p) \biggr)
+\end{equation}
+where $\textbf{r}_p$ is the equilibrium position of the rods in motion, and $\varepsilon(t)$ is the two-dimensional displacement of the rods in motion from the equilibrium position \cite{pazsitNoiseTechniquesNuclear2010}. This model is also called the $\varepsilon/d$ model. In terms of modeling the noise source in a solver, the localized vibrating absorbers can be modeled as a perturbation of cross-sections at the boundary of the vibrating region \cite{mylonakisCORESIMFlexible2021}.
+
+\subsubsection{Neutron Noise Source Unfolding}
+
+Neutron noise source unfolding is a method that is used to identify the type of noise source and locate the position at which the perturbations occur. Generally, the noise source unfolding method primarily depends on Green’s function. Hence, determining Green’s function from the neutron noise equation is necessary \cite{demaziereIdentificationLocalizationAbsorbers2005}. The following method uses Green’s function for the neutron noise unfolding.
+
+\paragraph{Inversion Method}
+
+As the name suggests, the inversion method inverts Green’s function to estimate the noise sources in the system. Recalling the definition of flux perturbations:
+\begin{equation}
+    \delta \phi (\textbf{r},\omega) = \int_{V_p} G(\textbf{r}, \textbf{r}_p, \omega) S(\textbf{r}_p, \omega) dV_p
+    \label{eq:inversion_definition}
+\end{equation}
+In matrix form, Equation \ref{eq:inversion_definition} can be written as matrix-vector multiplication:
+\begin{equation}
+    \delta \phi (\textbf{r},\omega) = G(\textbf{r}_p \rightarrow \textbf{r}, \omega) S(\textbf{r}_p, \omega)
+    \label{eq:inversion_definition_matrix}
+\end{equation}
+Therefore, the noise source can be determined by inverting the Green’s function such that:
+\begin{equation}
+    S(\textbf{r}_p, \omega) = G^{-1}(\textbf{r}_p \rightarrow \textbf{r}, \omega) \delta \phi (\textbf{r},\omega) 
+    \label{eq:source_inversion_matrix}
+\end{equation}
+
+Equation \ref{eq:inversion_definition_matrix} is trivial to solve if Green’s function and the flux perturbations at each computational node are known. However, in practice, only a few detectors can be used to measure the neutron flux. Thus, only a few elements of Green’s function and the flux perturbation can be obtained from the detectors. 
+
+An alternative proposed by \cite{demaziereIdentificationLocalizationAbsorbers2005} is to interpolate the detector readings to match the vector size $\delta \phi (\textbf{r},\omega)$. In the paper, \cite{demaziereIdentificationLocalizationAbsorbers2005} assumes that the detector is sensitive to thermal neutron and the noise source is known to be a perturbation of thermal absorption cross-section. Therefore, the interpolation is written as:
+\begin{equation}
+    S(\textbf{r}_p, \omega) = G^{-1}(\textbf{r}_p \rightarrow \textbf{r}_{\text{interp}}, \omega) \delta \phi (\textbf{r}_{\text{interp}},\omega) 
+    \label{eq:source_inversion_matrix2}
+\end{equation}
+where $G^{-1}(\textbf{r}_p \rightarrow \textbf{r}_{\text{interp}}$ has size $N \times N$, $\delta \phi (\textbf{r}_{\text{interp}},\omega)$ has size $N$, and $S(\textbf{r}_p, \omega)$ has size $N$.
+
+Using an interpolation method, \cite{demaziereIdentificationLocalizationAbsorbers2005} were able to reconstruct the noise source using an interpolation method. However, the inversion might have some problems in the boundaries because the interpolated thermal flux perturbation is forced to be equal to zero outside the reflector nodes. Even though the reconstruction at the boundaries produced poor approximation, the overall process is still providing promising results. The result of this method is highly dependent on the interpolation process. Incorrect interpolation would lead to inaccuracies in the unfolding.
+
+\paragraph{Zoning Method}
+
+The zoning method is an extension of the inversion method. The difference between the two lies in using zones in the zoning method instead of interpolation. If one assumes that the system is divided into several zones $Z_k$, where each of the zones has the same number of detectors, then the flux perturbation can be written as \cite{demaziereIdentificationLocalizationAbsorbers2005}:
+
+\begin{equation}
+    \delta \phi (\textbf{r}_{\text{meas}},\omega) = \sum_{k} G(\textbf{r}_{Z_k} \rightarrow \textbf{r}_{\text{meas}}, \omega) S(\textbf{r}_{Z_k}, \omega)
+    \label{eq:zoning_definition}
+\end{equation}
+Note that all of the $G(\textbf{r}_{Z_k} \rightarrow \textbf{r}_{\text{meas}}, \omega)$ are square matrices since $\delta \phi (\textbf{r}_{\text{meas}},\omega)$ and $S(\textbf{r}_{Z_k}, \omega)$ have the same size (number of detectors).
+
+If the fuel assemblies represented in the zone $Z_k$ are set not to be close to each other, the response of the thermal flux detector will be unique to each other. Having the fuel assemblies belonging to a given zone $Z_k$ evenly distributed throughout the core is an easy and practical way to achieve such a goal.
+
+Then, by inverting one of the matrices $G(\textbf{r}_{Z_k} \rightarrow \textbf{r}_{\text{meas}}, \omega)$ for zone $Z_l$, one can obtain:
+\begin{equation}
+    G^{-1}(\textbf{r}_{Z_l} \rightarrow \textbf{r}_{\text{meas}}, \omega) \times \delta \phi (\textbf{r}_{\text{meas}},\omega) = G^{-1}(\textbf{r}_{Z_l} \rightarrow \textbf{r}_{\text{meas}}, \omega) \biggl(\sum_{k} G(\textbf{r}_{Z_k} \rightarrow \textbf{r}_{\text{meas}}, \omega) S(\textbf{r}_{Z_k}, \omega) \biggr) + S(\textbf{r}_{Z_l}, \omega)
+    \label{eq:zoning_definition_2}
+\end{equation}
+Moving forward, we will assume that the noise source is located at $Z_s$, which might be at one of the $Z_k$ or at $Z_l$. We have two possible cases:
+\begin{enumerate}
+    \item If the noise source is located at the zone $ Z_l=Z_s$, then one can write:
+    \begin{equation}
+        G^{-1}(\textbf{r}_{Z_l} \rightarrow \textbf{r}_{\text{meas}}, \omega) \times \delta \phi (\textbf{r}_{\text{meas}},\omega) = S(\textbf{r}_{Z_l}, \omega)
+        \label{eq:zoning_case1}
+    \end{equation}
+    In this case, $S(\textbf{r}_{Z_l}) = S(\textbf{r}_{Z_s})$ is the “true” noise source vector. The noise source vector would have a distinct peak from any other zone, indicating that the noise source is in the zone $Z_l$. 
+
+    \item If the inversion is done to the matrix corresponding to zone $Z_l \neq Z_s$ (contains no noise source), then Equation \ref{eq:zoning_definition_2} becomes:
+    \begin{equation}
+        G^{-1}(\textbf{r}_{Z_l} \rightarrow \textbf{r}_{\text{meas}}, \omega) \times \delta \phi (\textbf{r}_{\text{meas}},\omega) = G^{-1}(\textbf{r}_{Z_l} \rightarrow \textbf{r}_{\text{meas}}, \omega) G(\textbf{r}_{Z_k} \rightarrow \textbf{r}_{\text{meas}}, \omega) S(\textbf{r}_{Z_k}, \omega)        
+        \label{eq:zoning_case2}
+    \end{equation}
+    This means that the zone $Z_l$ does not contain the noise source vector. The right-hand side of the equation will be relatively flat and no peak will be visible \cite{demaziereIdentificationLocalizationAbsorbers2005}.
+\end{enumerate}
+
+To simplify the analysis, we can perform the following calculation.
+\begin{equation}
+    G^{-1}(\textbf{r}_{Z_l} \rightarrow \textbf{r}_{\text{meas}}, \omega) \times \delta \phi (\textbf{r}_{\text{meas}},\omega) = S_{\text{fict}}(\textbf{r}_{Z_l}, \omega)
+    \label{eq:zoning_simple}
+\end{equation}
+where $Z_l \in Z_k$. This calculation is done for every zone, which results in $k$ number of $S_{\text{fict}}(\textbf{r}_{Z_l}, \omega)$. For each $S_{\text{fict}}(\textbf{r}_{Z_l}, \omega)$, it should return to one of the either cases. If the zone $Z_l$ If the signal contains a noise source, then one of the vector elements should be significantly higher than the others. On the other hand, if a zone $Z_l$ does not contain a noise source, the elements of $S_{\text{fict}}(\textbf{r}_{Z_l}, \omega)$ would not be different from each other.
+
+The zoning method generally improves the accuracy of the noise unfolding. Some errors were detected when the noise source was located near the boundary of several detectors. In this location, the detector response will not be unique to each other, making the Green’s function inaccurate \cite{demaziereIdentificationLocalizationAbsorbers2005}.
+
+\paragraph{Scanning method}
+
+The third method is the scanning method. This method compares the perturbations detected by the detector with the calculated response for all possible locations of the noise source within the system. The noise source is accurately identified when the calculated neutron noise matches the measured neutron noise \cite{demaziereIdentificationLocalizationAbsorbers2005}. This method was developed by \cite{karlssonLocalizationChannelInstability1999}, and extended by \cite{demaziereDevelopmentNoisebasedMethod2002}. Both investigations successfully determined the location of the unseated fuel assembly in the Swedish Forsmark-1 BWR. Both use Green’s function as the means to compare detector readings.
+
+This method starts with the definition of noise flux at a given location r induced by a noise source located at the location $\textbf{r}_p$ as follows:
+\begin{equation}
+    \delta \phi (\textbf{r}_i,\omega) = G(\textbf{r}_{p,j} \rightarrow \textbf{r}_i, \omega) S(\textbf{r}_{p,j}, \omega)
+    \label{eq:scanning_definition_matrix}
+\end{equation}
+Using Equation \ref{eq:scanning_definition_matrix} to compare with the detector reading will be difficult since the location and strength of the noise are unknown. If one has access to two detectors at locations A and B, the ratio between the neutron noise at these two locations can be used to eliminate the noise source strength:
+\begin{equation}
+    \frac{\delta \phi (\textbf{r}_A,\omega)}{\delta \phi (\textbf{r}_B,\omega)} = \frac{G(\textbf{r}_{p,j} \rightarrow \textbf{r}_A, \omega)}{G(\textbf{r}_{p,j} \rightarrow \textbf{r}_B, \omega)}
+    \label{eq:scanning_definition_frac}
+\end{equation}
+
+Then, the scanning algorithm consists of minimizing the following,
+\begin{equation}
+    \Delta(\textbf{r}) = \mathlarger{\mathlarger{\sum}}_{A,B} \biggl| \frac{\delta \phi (\textbf{r}_A,\omega)}{\delta \phi (\textbf{r}_B,\omega)} - \frac{G(\textbf{r}_{p,j} \rightarrow \textbf{r}_A, \omega)}{G(\textbf{r}_{p,j} \rightarrow \textbf{r}_B, \omega)} \biggr|
+    \label{eq:scanning_definition_min}
+\end{equation}
+Equation \ref{eq:scanning_definition_min} implies that the summation is done for all detector pairs for all locations $\textbf{r}$. If there exist $n$ number of detectors in the reactor, thus the number of detector pairs are as follows:
+\begin{equation}
+    N_{\text{detector pair}} = \frac{n \times (n+1)}{2}
+\end{equation}
+The location at which the minimum value of $\Delta(\textbf{r})$ is found indicates the location of the noise source. The magnitude of the noise source can be calculated as follows:
+\begin{equation}
+    S(\textbf{r}_p,\omega) = \frac{\delta \phi(r_m,\omega)}{G(\textbf{r}_{p} \rightarrow r_m, \omega)}
+\end{equation}
+for any detector m.
+
+The results from \cite{demaziereDevelopmentNoisebasedMethod2002} show that the scanning algorithm was able to locate any noise source correctly, provided there is no background. The drawback of this method is that it requires more computational power to compare every possible location of the noise source with every combination of detectors used for the evaluation.
+
+\section{Application to Reactor Diagnostics}
+
+The theory of neutron noise has been applied in various nuclear reactors by utilizing the noise characteristics of these reactors. The reference \cite{thiePowerReactorNoise1981} explained several reasons for using noise analysis in nuclear reactors. This includes the capability to perform specific measurements, design, or model verification, as well as simplicity, low cost, and no interference with operating procedures. Noise can also be used as a substitute for another test or inspection. The use of neutron noise analysis varies depending on the specific interest it is intended for \cite{torresNeutronNoiseAnalysis2019}. However, neutron noise theory is widely used for sensor surveillance \cite{hashemianMeasurementDynamicTemperatures2011, hashemianPracticalReviewMethods2010, montalvoAdvancedSurveillanceResistance2014}, core monitoring \cite{czibokRegularNeutronNoise2003, hashemianOnlineMonitoringApplications2011, ortiz-villafuerteBWROnlineMonitoring2006}, and core diagnostics \cite{pazsitDevelopmentsCoreBarrelMotion2016, montalvoFirstEvidencePivotal2016}. Table \ref{table:diagnostics} provides examples of noise analysis applications for various reactor types.
+
+\begin{table}[h]
+        \centering
+        \caption{Some examples of noise application for power reactors}
+        \begin{tabular}{ | m{3.5cm} |c| m{7cm} |c| } 
+         \hline
+         \textbf{Reactor Name} & \textbf{Type} & \textbf{Application}& \textbf{References} \\ 
+         \hline
+         Novovoronezh-1 & PWR &  Excessive looseness in the thermal shield & \cite{thiePowerReactorNoise1981} \\ 
+         \hline
+         Fukushima Daiichi-2 & BWR & Flow impingement caused excessive tube vibration & \cite{behringerObservationIncoreInstrument1977, mathisCharacterizationStudiesBWR41977}\\ 
+         \hline
+         Dresden & BWR & Monitor stability during startup & \cite{thieElementaryMethodsReactor1963} \\ 
+         \hline
+         Palisades & PWR & Detection of excessive and damaging flow-induced core barrel motion & \cite{fryAnalysisNeutrondensityOscillations1975} \\ 
+         \hline
+         High Flux Isotope Reactor (HFIR) & Research & Problems with abnormally loose control rods & \cite{behringerObservationIncoreInstrument1977, mathisCharacterizationStudiesBWR41977}\\ 
+         \hline
+         Experimental Breeder Reactor-1 (EBR-1) & FBR & Oscillatory fuel motion & \cite{thiePowerReactorNoise1981} \\ 
+         \hline
+         Dounreay Fast Reactor & FBR & Problems with abnormally loose control rods & \cite{barclayDevelopmentNoiseAnalysis1977} \\ 
+         \hline
+         Fort St. Vrain & Gas-cooled & Problems with motion of the core structure & \cite{thiePowerReactorNoise1981} \\ 
+         \hline
+         Browns Ferry-2 & BWR & Flow impingement caused excessive tube vibration & \cite{behringerObservationIncoreInstrument1977, mathisCharacterizationStudiesBWR41977} \\ 
+         \hline
+         Vermont Yankee & BWR & Flow impingement caused excessive tube vibration & \cite{behringerObservationIncoreInstrument1977, mathisCharacterizationStudiesBWR41977} \\ 
+         \hline
+        \end{tabular}
+        \label{table:diagnostics}
+\end{table}
+
+In the context of core monitoring and surveillance, one example is core barrel motion (CBM) monitoring [26]. This paper develops a methodology for investigating, diagnosing, and surveilling CBM. The surveillance was conducted at the core of Ringhals 2-4 in Sweden by inspecting the amplitude of the peaks in the normalized auto power spectral densities (APSDs) of the ex-core neutron detectors. 
+In this instance, the CBM was employed because visible vibrations were detected in the radial supports of the core barrel in the Ringhals reactors. In [43], the investigation focuses on the pendulum motion of the core barrel, or it is also known as the beam mode. During the Ringhals operation, monitoring of the beam mode indicated that the amplitude of the APSD increased throughout the fuel cycle. However, the APSD decreased after the refueling [44]. 
+
+In the context of reactor core diagnostics, noise analysis is useful for analyzing situations that require changes in state variables, as these changes affect the reactor's status. This was demonstrated in [11] by measuring the moderator temperature coefficient (MTC). Traditionally, at-power MTC measurement techniques require the reactor to be perturbed to induce the change of the moderator temperature. The implementation of the direct perturbation method is the MTC measurement at the Righals-4 reactor using the boron dilution method. The result of this method shows that the uncertainty of using boron dilution method was much more significant than expected due to the necessary reactivity corrections. This prompted the use of non-intrusive methods such as noise analysis for reactor diagnostics.
+
+Some noise experiments were done in two research reactors (AKR-2 and CROCUS) using two different types of neutron noise. The first type of perturbation was generated by a rotating neutron absorber with a varying absorption cross-section with respect to the rotation angle and the second one by fuel rods that oscillate in a controlled manner inside the reactor core [45], [46], [47]. The experiments consisted of two different parts representing different sources of periodic reactivity perturbation that created neutron flux oscillations. The experiments produced two different quantities of interest: the spectral power density (SPD) and the phase shift angle between detector pairs [13]. 
+
+AKR-2 reactor is a thermal, homogeneous, polyethylene-moderated zero-power reactor located at TU Dresden. For the first type of experiment in AKR-2, a piece of Cadmium is rotated in the reactor core. Cadmium was chosen due to the variable absorption reaction rate with respect to the rotation angle [48]. For the second type of experiment in AKR-2, the mechanical vibration consists of a neutron absorber that moves linearly back and forth in an experimental channel located outside of the reactor core [45]. The CROCUS reactor is an experimental reactor dedicated to research and teaching in radiation and reactor physics, located at the École Polytechnique Fédérale de Lausanne (EPFL). For noise analysis, the CROCUS reactor used the COLIBRI experimental setup consisting of a fuel rod oscillator and neutron detection instrumentation [45], [46], [47], [49]. 
+
+In terms of modeling validation, the CORTEX (COre monitoring Techniques: EXperimental validation and Demonstration) project used two approaches to implement noise analysis based on a given noise source [50]. The first approach uses the formulation of the linearized neutron noise equation in the frequency domain. From the equation, the neutron noise can be determined as a complex quantity. The second approach calculates the evolution of the spatial distribution of the flux as a function of time by solving the time-dependent neutron transport equation [19], [51]. 
+
+The CORTEX project concluded in 2021; its final phase involves implementing commercial nuclear power plants (NPPs). This is done by demonstrating the approaches to four different commercial reactors. Four reactors are used for the demonstration exercises: a German four-loop pre-Konvoi PWR, a Swiss three-loop pre-Konvoi PWR, a Czech VVER-1000 reactor, and a Hungarian VVER-440 reactor [50], [52]. For the German pre-Konvoi and Konvoi-type PWR, noise measurement and analysis have been topics of interest for several years. Numerous noise observations have been conducted on both reactors during the commissioning and operational phases. It has been observed that during its 30-year operation, fluctuations in neutron noise signals have occurred. These were mainly low-frequency neutron noise, which could cause problems for future reactor operations. Some knowledge of neutron noise and the reactor's operation is necessary to solve the problem [52], [53].
