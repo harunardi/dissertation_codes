@@ -193,7 +193,7 @@ for g in range(group):
             conv_new[m] = g * max(conv_tri) + conv_tri[n]
 
 additional_iter = 5
-max_num_source = 3
+max_num_source = 2
 freq = np.logspace(-2, 1, 10)
 add_iter = 0
 iter = 0
