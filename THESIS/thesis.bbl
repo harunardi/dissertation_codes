@@ -150,110 +150,6 @@
       \verb /Volumes/Harun-Files/Zotero/storage/8S4E9WT8/Moore - 1959 - The Power Noise Transfer Function of a Reactor.pdf
       \endverb
     \endentry
-    \entry{pazsitNoiseTechniquesNuclear2010}{incollection}{}
-      \name{author}{2}{}{%
-        {{hash=ad3129c3ab36ff080fc40cb99f31e6da}{%
-           family={Pázsit},
-           familyi={P\bibinitperiod},
-           given={Imre},
-           giveni={I\bibinitperiod}}}%
-        {{hash=dece9392251f156f2e026670e9acc498}{%
-           family={Demazière},
-           familyi={D\bibinitperiod},
-           given={Christophe},
-           giveni={C\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer, Boston, MA}%
-      }
-      \strng{namehash}{f0a60511e98334416b7963e3ec33ced1}
-      \strng{fullhash}{f0a60511e98334416b7963e3ec33ced1}
-      \strng{bibnamehash}{f0a60511e98334416b7963e3ec33ced1}
-      \strng{authorbibnamehash}{f0a60511e98334416b7963e3ec33ced1}
-      \strng{authornamehash}{f0a60511e98334416b7963e3ec33ced1}
-      \strng{authorfullhash}{f0a60511e98334416b7963e3ec33ced1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This chapter deals with neutron fluctuations in nuclear systems. Such neutron fluctuations, or neutron noise, fall into two categories: neutron noise in zero power systems and neutron noise in power reactors. The concepts, the theory, and the methodology of these fluctuations as well as their various applications for extracting information in a nonintrusive way about the system in question are described. A number of specific applications are described, where detection and analysis of zero power and power reactor noise make it possible to extract diagnostic information about the system by determining some parameters of the system during normal operation, or by detecting, identifying, and quantifying developing anomalies at an early stage and determining their severity. This chapter ends with an outline of future developments and actual issues in the field.}
-      \field{booktitle}{Handbook of {{Nuclear Engineering}}}
-      \field{isbn}{978-0-387-98130-7}
-      \field{langid}{english}
-      \field{title}{Noise {{Techniques}} in {{Nuclear Systems}}}
-      \field{year}{2010}
-      \field{pages}{1629\bibrangedash 1737}
-      \range{pages}{109}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/JFWPN29H/Pázsit and Demazière - 2010 - Noise Techniques in Nuclear Systems.pdf
-      \endverb
-      \keyw{Factorial Moment,Fuel Assembly,Neutron Detector,Noise Source,Spontaneous Fission}
-    \endentry
-    \entry{pazsitNeutronFluctuationsTreatise2008}{book}{}
-      \name{author}{2}{}{%
-        {{hash=ad3129c3ab36ff080fc40cb99f31e6da}{%
-           family={Pázsit},
-           familyi={P\bibinitperiod},
-           given={Imre},
-           giveni={I\bibinitperiod}}}%
-        {{hash=8bbaa23a603ede5d5f56038aaa4e20a4}{%
-           family={Pál},
-           familyi={P\bibinitperiod},
-           given={Lénárd},
-           giveni={L\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Amsterdam ; Boston}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{fullhash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{bibnamehash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{authorbibnamehash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{authornamehash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{authorfullhash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{annotation}{OCLC: ocn166362162}
-      \field{edition}{1st ed}
-      \field{isbn}{978-0-08-045064-3}
-      \field{langid}{english}
-      \field{shorttitle}{Neutron Fluctuations}
-      \field{title}{Neutron Fluctuations: A Treatise on the Physics on Branching Processes}
-      \field{year}{2008}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/8L9VTQAZ/Pázsit and Pál - 2008 - Neutron fluctuations a treatise on the physics on.pdf
-      \endverb
-      \keyw{Branching processes,Neutrons}
-    \endentry
-    \entry{uhrigRandomNoiseTechniques1970}{book}{}
-      \name{author}{1}{}{%
-        {{hash=b1f5eb13419e9e296a208a2750cbba4d}{%
-           family={Uhrig},
-           familyi={U\bibinitperiod},
-           given={Robert},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{fullhash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{bibnamehash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{authorbibnamehash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{authornamehash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{authorfullhash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Random {{Noise Techniques}} in {{Nuclear Reactor Systems}}}
-      \field{year}{1970}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/PZM6VALS/Random Noise Technique in Nuclear Reactor Systems (No OCR) (Robert E. Uhrig) (z-lib.org).pdf
-      \endverb
-    \endentry
     \entry{saitoTheoryPowerReactor1974b}{article}{}
       \name{author}{1}{}{%
         {{hash=5560d76b05cefb1824e2655155b0acb1}{%
@@ -269,8 +165,8 @@
       \strng{authornamehash}{5560d76b05cefb1824e2655155b0acb1}
       \strng{authorfullhash}{5560d76b05cefb1824e2655155b0acb1}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{An operating reactor has intrinsically fluctuating components in its state variables such as the thermal power, the outlet coolant temperature, the occupied region of control rods, etc. The fluctuations are generically called the reactor noise, the analysis of which, from both the theoretical and the experimental approach, is one of the problems of major concern in the field of nuclear science and engineering. The ultimate goal of the analysis lies in presenting the systematized methodology of diagnosis upon abnormality and malfunction of reactor components.}
@@ -345,8 +241,8 @@
       \strng{editorbibnamehash}{653d8722ede54849910e60f043e56412}
       \strng{editornamehash}{653d8722ede54849910e60f043e56412}
       \strng{editorfullhash}{653d8722ede54849910e60f043e56412}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The first observation of the statistical fluctuations of the number of neutrons in a reactor was the now famous Rossi-alpha experiment, named for Bruno Rossi who suggested and set up the measuring apparatus during the early days of Los Alamos. The original theoretical studies were formulated by Fermi, Feynman and de Hoffmann in 1944 (1) and again by de Hoffman (1946) (2) during the same period and issued in two Los Alamos reports: LADC-269 and LADC-256, respectively. Like most of the scientific and literary production of the time, the above-mentioned reports remained classified for several years.}
@@ -370,6 +266,284 @@
       \endverb
       \keyw{Ergodic Hypothesis,Factorial Moment,Neutron Count,Noise Analysis,Prompt Neutron}
     \endentry
+    \entry{fryExperienceReactorMalfunction1971}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4942c646e92fe085cd7399bf8a436e8d}{%
+           family={Fry},
+           familyi={F\bibinitperiod},
+           given={D.\bibnamedelimi N.},
+           giveni={D\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{4942c646e92fe085cd7399bf8a436e8d}
+      \strng{fullhash}{4942c646e92fe085cd7399bf8a436e8d}
+      \strng{bibnamehash}{4942c646e92fe085cd7399bf8a436e8d}
+      \strng{authorbibnamehash}{4942c646e92fe085cd7399bf8a436e8d}
+      \strng{authornamehash}{4942c646e92fe085cd7399bf8a436e8d}
+      \strng{authorfullhash}{4942c646e92fe085cd7399bf8a436e8d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Experience has been obtained with a continuous neutron-noise monitor at the High Flux Isotope Reactor (HFIR) and with neutron- and pressure-noise monitors at the Molten Salt Reactor Experiment (MSRE). Results at the HFIR show that the neutron-noise monitor can be used to detect control-rod-bearing failures. The neutron-noise monitor at the MSRE gave a continuous indication of the amount of helium void in the fuel salt circulated through the core. The value of noise analysis as a diagnostic aid was shown when the pressure-noise monitor at the MSRE aided in a diagnosis of off-gas line restrictions one week before other instruments confirmed the blockage.These experiences show that noise analysis can be used for some types of reactor malfunction diagnoses and parameter measurements when other methods cannot be used either because of the environment (radiation or temperature) or a lack of space for sensors.}
+      \field{issn}{0029-5450}
+      \field{journaltitle}{Nuclear Technology}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{Experience in {{Reactor Malfunction Diagnosis Using On-Line Noise Analysis}}}
+      \field{urlday}{4}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{volume}{10}
+      \field{year}{1971}
+      \field{urldateera}{ce}
+      \field{pages}{273\bibrangedash 282}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.13182/NT71-A30959
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/GFYPJB68/Fry - 1971 - Experience in Reactor Malfunction Diagnosis Using .pdf
+      \endverb
+    \endentry
+    \entry{fryAnalysisNeutrondensityOscillations1975}{article}{}
+      \name{author}{3}{}{%
+        {{hash=4942c646e92fe085cd7399bf8a436e8d}{%
+           family={Fry},
+           familyi={F\bibinitperiod},
+           given={D.\bibnamedelimi N.},
+           giveni={D\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=5ec873b4a4ecff41ef8176c62e54bffb}{%
+           family={Kryter},
+           familyi={K\bibinitperiod},
+           given={R.\bibnamedelimi C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=89e348653e81cf61527e6c727c9631b0}{%
+           family={Robinson},
+           familyi={R\bibinitperiod},
+           given={J.\bibnamedelimi C.},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{ef3fc70e08d220be323ef4b8b6c77e18}
+      \strng{fullhash}{ef3fc70e08d220be323ef4b8b6c77e18}
+      \strng{bibnamehash}{ef3fc70e08d220be323ef4b8b6c77e18}
+      \strng{authorbibnamehash}{ef3fc70e08d220be323ef4b8b6c77e18}
+      \strng{authornamehash}{ef3fc70e08d220be323ef4b8b6c77e18}
+      \strng{authorfullhash}{ef3fc70e08d220be323ef4b8b6c77e18}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Neutron noise signatures were obtained on August 3, 1973, that were due to abnormal movement of the core barrel at the Palisades Nuclear Plant. Frequency spectra, rms noise, and amplitude probability density were recorded as sensed by ex-core and in-core neutron detectors. These signatures will serve as reference data for future studies of core-barrel motion at the Palisades plant. Also, the results are presented in units that should make them useful for noise diagnosis in other pressurized water reactors.}
+      \field{issn}{0306-4549}
+      \field{journaltitle}{Annals of Nuclear Energy}
+      \field{month}{6}
+      \field{number}{2}
+      \field{series}{Proceedings of the {{European-American Committee}} on {{Reactor Physics Specialist Meeting}} on {{Reactor Noise}}: From {{Critical Assemblies}} to {{Power Reactors}}}
+      \field{title}{Analysis of Neutron-Density Oscillations Resulting from Core Barrel Motion in a {{PWR}} Nuclear Power Plant}
+      \field{urlday}{5}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{volume}{2}
+      \field{year}{1975}
+      \field{urldateera}{ce}
+      \field{pages}{341\bibrangedash 351}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/0306-4549(75)90037-7
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/98UWGEEU/Fry et al. - 1975 - Analysis of neutron-density oscillations resulting.pdf;/Volumes/Harun-Files/Zotero/storage/C4YKKDDL/0306454975900377.html
+      \endverb
+    \endentry
+    \entry{wachInvestigationJointEffect1974}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0a433726f175e402a61fc8b2cdb08047}{%
+           family={Wach},
+           familyi={W\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7b2df57de20b2edab2ed8aa7b485499a}{%
+           family={Kosály},
+           familyi={K\bibinitperiod},
+           given={G},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{df521285ce09290e94fd466cadae891a}
+      \strng{fullhash}{df521285ce09290e94fd466cadae891a}
+      \strng{bibnamehash}{df521285ce09290e94fd466cadae891a}
+      \strng{authorbibnamehash}{df521285ce09290e94fd466cadae891a}
+      \strng{authornamehash}{df521285ce09290e94fd466cadae891a}
+      \strng{authorfullhash}{df521285ce09290e94fd466cadae891a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The local effect caused by the steam-voids of a boiling water reactor in the noise signals of incore ion chambers has been proved by measurements and used for practical application in recent times. From the linear phase function of two detectors placed one above the other in the same radial position the mean transit time of the bubbles has been taken and used for the evaluation of the local steam-void velocity. The concepts of local and global driving sources of the neutron noise are introduced and their joint effect is investigated. The transfer function derived from the model is compared to the experimental results. The agreement between theoretical predictions and experimental findings supports the validity of the model.}
+      \field{journaltitle}{Atomkernenergie}
+      \field{number}{4}
+      \field{title}{Investigation of the {{Joint Effect}} of {{Local}} and {{Global Driving Sources}} in {{In-Core Neutron Noise Measurements}}}
+      \field{volume}{23}
+      \field{year}{1974}
+      \field{pages}{244\bibrangedash 250}
+      \range{pages}{7}
+    \endentry
+    \entry{nietoTwogroupReactorNoise1968}{article}{}
+      \name{author}{3}{}{%
+        {{hash=98b500968de29937d41855d1cca5ef3b}{%
+           family={Nieto},
+           familyi={N\bibinitperiod},
+           given={J.M.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9ab12db8ec1a35344f82008f775d3d64}{%
+           family={Akhtar},
+           familyi={A\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=cf2a7199e1d70e4760198beeffd1054f}{%
+           family={Ackermann},
+           familyi={A\bibinitperiod},
+           given={N.J.},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{317f5f38a70d1ee59b590f41c3f50618}
+      \strng{fullhash}{317f5f38a70d1ee59b590f41c3f50618}
+      \strng{bibnamehash}{317f5f38a70d1ee59b590f41c3f50618}
+      \strng{authorbibnamehash}{317f5f38a70d1ee59b590f41c3f50618}
+      \strng{authornamehash}{317f5f38a70d1ee59b590f41c3f50618}
+      \strng{authorfullhash}{317f5f38a70d1ee59b590f41c3f50618}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Wgevin's technique is applied to two energy group space independent reactor model. Detection statistics and fluctuations in production and decay rate of delayed neutron precursors are also taken into account. Expressions for the auto- and cross-correlation functions of the fluctuating sources associated with various random processes such as fission, capture, scattering, etc., are obtained and used in finding the auto- and cross-power spectral densities of the detection rates in fast and slow groups. Numerical estimates for various break frequencies for a representative set of parameters are found.}
+      \field{issn}{00223107}
+      \field{journaltitle}{Journal of Nuclear Energy}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{Two-Group Reactor Noise Analysis by {{Langevin}}'s Technique}
+      \field{urlday}{14}
+      \field{urlmonth}{1}
+      \field{urlyear}{2023}
+      \field{volume}{22}
+      \field{year}{1968}
+      \field{urldateera}{ce}
+      \field{pages}{675\bibrangedash 685}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/0022-3107(68)90070-1
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/GGEQ5Q57/Nieto et al. - 1968 - Two-group reactor noise analysis by Langevin's tec.pdf;/Volumes/Harun-Files/Zotero/storage/MFQSP2J8/0022310768900701.html
+      \endverb
+    \endentry
+    \entry{pazsitNoiseTechniquesNuclear2010}{incollection}{}
+      \name{author}{2}{}{%
+        {{hash=ad3129c3ab36ff080fc40cb99f31e6da}{%
+           family={Pázsit},
+           familyi={P\bibinitperiod},
+           given={Imre},
+           giveni={I\bibinitperiod}}}%
+        {{hash=dece9392251f156f2e026670e9acc498}{%
+           family={Demazière},
+           familyi={D\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer, Boston, MA}%
+      }
+      \strng{namehash}{f0a60511e98334416b7963e3ec33ced1}
+      \strng{fullhash}{f0a60511e98334416b7963e3ec33ced1}
+      \strng{bibnamehash}{f0a60511e98334416b7963e3ec33ced1}
+      \strng{authorbibnamehash}{f0a60511e98334416b7963e3ec33ced1}
+      \strng{authornamehash}{f0a60511e98334416b7963e3ec33ced1}
+      \strng{authorfullhash}{f0a60511e98334416b7963e3ec33ced1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This chapter deals with neutron fluctuations in nuclear systems. Such neutron fluctuations, or neutron noise, fall into two categories: neutron noise in zero power systems and neutron noise in power reactors. The concepts, the theory, and the methodology of these fluctuations as well as their various applications for extracting information in a nonintrusive way about the system in question are described. A number of specific applications are described, where detection and analysis of zero power and power reactor noise make it possible to extract diagnostic information about the system by determining some parameters of the system during normal operation, or by detecting, identifying, and quantifying developing anomalies at an early stage and determining their severity. This chapter ends with an outline of future developments and actual issues in the field.}
+      \field{booktitle}{Handbook of {{Nuclear Engineering}}}
+      \field{isbn}{978-0-387-98130-7}
+      \field{langid}{english}
+      \field{title}{Noise {{Techniques}} in {{Nuclear Systems}}}
+      \field{year}{2010}
+      \field{pages}{1629\bibrangedash 1737}
+      \range{pages}{109}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/JFWPN29H/Pázsit and Demazière - 2010 - Noise Techniques in Nuclear Systems.pdf
+      \endverb
+      \keyw{Factorial Moment,Fuel Assembly,Neutron Detector,Noise Source,Spontaneous Fission}
+    \endentry
+    \entry{pazsitNeutronFluctuationsTreatise2008}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ad3129c3ab36ff080fc40cb99f31e6da}{%
+           family={Pázsit},
+           familyi={P\bibinitperiod},
+           given={Imre},
+           giveni={I\bibinitperiod}}}%
+        {{hash=8bbaa23a603ede5d5f56038aaa4e20a4}{%
+           family={Pál},
+           familyi={P\bibinitperiod},
+           given={Lénárd},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam ; Boston}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{fullhash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{bibnamehash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{authorbibnamehash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{authornamehash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{authorfullhash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{OCLC: ocn166362162}
+      \field{edition}{1st ed}
+      \field{isbn}{978-0-08-045064-3}
+      \field{langid}{english}
+      \field{shorttitle}{Neutron Fluctuations}
+      \field{title}{Neutron Fluctuations: A Treatise on the Physics on Branching Processes}
+      \field{year}{2008}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/8L9VTQAZ/Pázsit and Pál - 2008 - Neutron fluctuations a treatise on the physics on.pdf
+      \endverb
+      \keyw{Branching processes,Neutrons}
+    \endentry
+    \entry{uhrigRandomNoiseTechniques1970}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b1f5eb13419e9e296a208a2750cbba4d}{%
+           family={Uhrig},
+           familyi={U\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{fullhash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{bibnamehash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{authorbibnamehash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{authornamehash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{authorfullhash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Random {{Noise Techniques}} in {{Nuclear Reactor Systems}}}
+      \field{year}{1970}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/PZM6VALS/Random Noise Technique in Nuclear Reactor Systems (No OCR) (Robert E. Uhrig) (z-lib.org).pdf
+      \endverb
+    \endentry
     \entry{thiePowerReactorNoise1981}{book}{}
       \name{author}{1}{}{%
         {{hash=e65de475016cdf9a1acd7b73495766fe}{%
@@ -388,8 +562,8 @@
       \strng{authornamehash}{e65de475016cdf9a1acd7b73495766fe}
       \strng{authorfullhash}{e65de475016cdf9a1acd7b73495766fe}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The author explains the fundamentals of statistics, correlation, and regression, along with Fourier series and related topics. Experimental and theoretical considerations in performing noise tests are also included.}
@@ -413,8 +587,8 @@
       \strng{authornamehash}{5560d76b05cefb1824e2655155b0acb1}
       \strng{authorfullhash}{5560d76b05cefb1824e2655155b0acb1}
       \field{extraname}{2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{03022927}
@@ -452,8 +626,8 @@
       \strng{authornamehash}{5560d76b05cefb1824e2655155b0acb1}
       \strng{authorfullhash}{5560d76b05cefb1824e2655155b0acb1}
       \field{extraname}{3}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annals of Nuclear Science and Engineering}
@@ -492,8 +666,8 @@
       \strng{authorbibnamehash}{8758f65ff19ebfd8da1589c787122c27}
       \strng{authornamehash}{8758f65ff19ebfd8da1589c787122c27}
       \strng{authorfullhash}{8758f65ff19ebfd8da1589c787122c27}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{978-0-89448-029-4}
@@ -524,8 +698,8 @@
       \strng{authorbibnamehash}{0d85469658e98e3a7a38c5f8d74dcf21}
       \strng{authornamehash}{0d85469658e98e3a7a38c5f8d74dcf21}
       \strng{authorfullhash}{0d85469658e98e3a7a38c5f8d74dcf21}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -550,8 +724,8 @@
       \strng{authornamehash}{2d97eb924852b6ea1f76aad423b874d0}
       \strng{authorfullhash}{2d97eb924852b6ea1f76aad423b874d0}
       \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{For that purpose, the spatial average temperature noise has to be measured throughout the core. Even if PWRs are poorly instrumented with respect to temperature detectors, it was proven that gamma-thermometers work as thermocouples in the frequency range of interest for the MTC noise analysis and could be used when estimating the MTC by noise analysis.}
@@ -652,8 +826,8 @@
       \strng{editorbibnamehash}{359862c874dd51ead1a60e6be1f27a3c}
       \strng{editornamehash}{359862c874dd51ead1a60e6be1f27a3c}
       \strng{editorfullhash}{359862c874dd51ead1a60e6be1f27a3c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{At EPFL, the CROCUS reactor has been used to carry out experiments with vibrating fuel rods. The paper presents a first attempt to employ the measured data to validate CORE SIM+, a neutron noise solver developed at Chalmers University of Technology. For this purpose, the original experimental data are processed in order to extract the necessary information. In particular, detector recordings are scrutinized and detrended, and used to estimate CPSDs of detector pairs. These values are then compared with the ones derived from the CORE SIM+ simulations of the experiments. The main trend of the experimental data along with the values for some detectors are successfully reproduced by CORE SIM+. Further work is necessary on both the experimental and computational sides in order to improve the validation process.}
@@ -719,8 +893,8 @@
       \strng{authorbibnamehash}{d4ddcddaf0d3c4293042f3f50f3f28ea}
       \strng{authornamehash}{d4ddcddaf0d3c4293042f3f50f3f28ea}
       \strng{authorfullhash}{1b497377b247116c12d776c3cede4fd5}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper deals with the analysis of reactor modulation experiments for code validation in the framework of the Horizon 2020 European project CORTEX. The analysis is based on a statistical based approach on spectral powers and their phase shift angles calculations. The treatment of individual oscillations as independent aids in elimination of possible biases and correlations of consecutive oscillations. Results from one of the experimental campaign performed at the AKR-2 and CROCUS reactors are also presented.}
@@ -745,8 +919,8 @@
       \strng{authorbibnamehash}{a193d62a6e7f1a06c2ce1a5e98272ddb}
       \strng{authornamehash}{a193d62a6e7f1a06c2ce1a5e98272ddb}
       \strng{authorfullhash}{a193d62a6e7f1a06c2ce1a5e98272ddb}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper discusses a method of digital power spectrum estimation involving the direct combination of the sample time function with sines and cosines. This treatment is in contrast to the normal indirect digital method which proceeds through the intermediary of the autocovariance function. All the practical design details necessary for the planning of a spectral estimation program are treated.}
@@ -770,56 +944,6 @@
       \verb /Volumes/Harun-Files/Zotero/storage/8C322WJZ/Welch - 1961 - A Direct Digital Method of Power Spectrum Estimation.pdf;/Volumes/Harun-Files/Zotero/storage/6BXGYTF9/5392439.html
       \endverb
     \endentry
-    \entry{fryAnalysisNeutrondensityOscillations1975}{article}{}
-      \name{author}{3}{}{%
-        {{hash=4942c646e92fe085cd7399bf8a436e8d}{%
-           family={Fry},
-           familyi={F\bibinitperiod},
-           given={D.\bibnamedelimi N.},
-           giveni={D\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-        {{hash=5ec873b4a4ecff41ef8176c62e54bffb}{%
-           family={Kryter},
-           familyi={K\bibinitperiod},
-           given={R.\bibnamedelimi C.},
-           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-        {{hash=89e348653e81cf61527e6c727c9631b0}{%
-           family={Robinson},
-           familyi={R\bibinitperiod},
-           given={J.\bibnamedelimi C.},
-           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-      }
-      \strng{namehash}{ef3fc70e08d220be323ef4b8b6c77e18}
-      \strng{fullhash}{ef3fc70e08d220be323ef4b8b6c77e18}
-      \strng{bibnamehash}{ef3fc70e08d220be323ef4b8b6c77e18}
-      \strng{authorbibnamehash}{ef3fc70e08d220be323ef4b8b6c77e18}
-      \strng{authornamehash}{ef3fc70e08d220be323ef4b8b6c77e18}
-      \strng{authorfullhash}{ef3fc70e08d220be323ef4b8b6c77e18}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Neutron noise signatures were obtained on August 3, 1973, that were due to abnormal movement of the core barrel at the Palisades Nuclear Plant. Frequency spectra, rms noise, and amplitude probability density were recorded as sensed by ex-core and in-core neutron detectors. These signatures will serve as reference data for future studies of core-barrel motion at the Palisades plant. Also, the results are presented in units that should make them useful for noise diagnosis in other pressurized water reactors.}
-      \field{issn}{0306-4549}
-      \field{journaltitle}{Annals of Nuclear Energy}
-      \field{month}{6}
-      \field{number}{2}
-      \field{series}{Proceedings of the {{European-American Committee}} on {{Reactor Physics Specialist Meeting}} on {{Reactor Noise}}: From {{Critical Assemblies}} to {{Power Reactors}}}
-      \field{title}{Analysis of Neutron-Density Oscillations Resulting from Core Barrel Motion in a {{PWR}} Nuclear Power Plant}
-      \field{urlday}{5}
-      \field{urlmonth}{9}
-      \field{urlyear}{2023}
-      \field{volume}{2}
-      \field{year}{1975}
-      \field{urldateera}{ce}
-      \field{pages}{341\bibrangedash 351}
-      \range{pages}{11}
-      \verb{doi}
-      \verb 10.1016/0306-4549(75)90037-7
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/98UWGEEU/Fry et al. - 1975 - Analysis of neutron-density oscillations resulting.pdf;/Volumes/Harun-Files/Zotero/storage/C4YKKDDL/0306454975900377.html
-      \endverb
-    \endentry
     \entry{bahramiNewApproachCalculation2020}{article}{}
       \name{author}{2}{}{%
         {{hash=4590eec6fa498857180907ce012a45cc}{%
@@ -840,8 +964,8 @@
       \strng{authornamehash}{1c19bbb794018ba6191a2530568ed36d}
       \strng{authorfullhash}{1c19bbb794018ba6191a2530568ed36d}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The telegrapher's theory was used to develop a new formulation for the neutron noise equation. Telegrapher's equation is supposed to demonstrate a more realistic approximation for neutron transport phenomena, especially in comparison to the diffusion theory. The physics behind such equation implies that the signal propagation speed is finite, instead of the infinite as in the case of ordinary diffusion. This paper presents the theory and results of the development of a new method for calculation of the neutron noise using the telegrapher's equation as its basis. In order to investigate the differences and strengths of the new method against the diffusion based neutron noise, a comparison was done between the behaviors of two methods. The neutron noise based on SN transport considered as a precision measuring point. The Green's function technique was used to calculate the neutron noise based on telegrapher's and diffusion methods as well as the transport. The amplitude and phase of Green's function associated with the properties of the medium and frequency of the noise source were obtained and their behavior was compared to the results of the transport. It was observed, the differences in some cases might be considerable. The effective speed of propagation for the noise perturbations were evaluated accordingly, resulting in considerable deviations in some cases.}
@@ -883,8 +1007,8 @@
       \strng{authornamehash}{e782c06792181b27c91271ef05d4ce7a}
       \strng{authorfullhash}{e782c06792181b27c91271ef05d4ce7a}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, the development of a so-called neutron noise simulator is reported. This simulator calculates both the direct and the adjoint reactor transfer function between a stationary noise source and its induced neutron noise for any 2-dimensional heterogeneous critical system. The main advantage of this neutron noise simulator is that any realistic core can be modelled, since the simulator is designed to rely on a set of material constants corresponding to the actual reactor operating conditions. The calculations are performed in the 2-group diffusion approximation and in the frequency domain. The spatial discretisation is carried out with respect to the finite difference scheme. The noise source, expressed as an ``absorber of variable strength'' type, is defined directly from the fluctuations of the macroscopic cross-sections and can be spatially distributed over the core or concentrated in a few discrete nodes. If the noise source is a point-source, the simulator actually estimates the 2-dimensional 2-group discretised Green's function of the system. From the calculated Green's function, the neutron noise induced by a ``vibrating absorber'' type of noise source can also be determined. Different benchmark cases show that this neutron noise simulator works satisfactorily.}
@@ -928,8 +1052,8 @@
       \strng{authorbibnamehash}{a4f93c0f9bf5f4b3ffa54cd05cf43f81}
       \strng{authornamehash}{a4f93c0f9bf5f4b3ffa54cd05cf43f81}
       \strng{authorfullhash}{a4f93c0f9bf5f4b3ffa54cd05cf43f81}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The concept of the dynamic adjoint was introduced by Hugo van Dam for calculating the in-core neutron noise in boiling water reactors in the mid-70's. This successful approach found numerous applications for calculating the neutron noise in both PWRs and BWRs since then. Although the advantages and disadvantages of using the direct (forward) or the adjoint (backward) approach for the calculation of the neutron noise were analysed in a number of publications, the direct relationship between the forward Green's function and the dynamic adjoint has not been discussed. On the other hand, in particle transport theory the relationship between the direct and adjoint Green's function has been discussed in detail, in which Mike Williams has had many seminal contributions. In this note we analyse the relationship between the direct Green's function and the dynamic adjoint in the spirit of Mike's work in neutron transport and radiation damage theory. The paper is closed with some personal remarks and reminiscences.}
@@ -1069,8 +1193,8 @@
       \strng{authorbibnamehash}{523040a56df732df118038018d4c8dde}
       \strng{authornamehash}{523040a56df732df118038018d4c8dde}
       \strng{authorfullhash}{5e769e75a999e915d035985cbdcc91ad}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{CORTEX is a EU H2020 project (2017-2021) devoted to the analysis of 'reactor neutron noise' in nuclear reactors, i.e. the small fluctuations occurring around the stationary state due to external or internal disturbances in the core. One important aspect of CORTEX is the development of neutron noise simulation codes capable of modeling the spatial variations of the noise distribution in a reactor. In this paper we illustrate the validation activities concerning the comparison of the simulation results obtained by several noise simulation codes with respect to experimental data produced at the zero-power reactors AKR-2 (operated at TUD, Germany) and CROCUS (operated at EPFL, Switzerland). Both research reactors are modeled in the time and frequency domains, using transport or diffusion theory. Overall, the noise simulators managed to capture the main features of the neutron noise behavior observed in the experimental campaigns carried out in CROCUS and AKR-2, even though computational biases exist close to the region where the noise-inducing mechanical vibration was located (the so-called "noise source"). In some of the experiments, it was possible to observe the spatial variation of the relative neutron noise, even relatively far from the noise source. This was achieved through reduced uncertainties using long measurements, the installation of numerous, robust and efficient detectors at a variety of positions in the near vicinity or inside the core, as well as new post-processing methods.}
@@ -1118,8 +1242,8 @@
       \strng{authorbibnamehash}{3ee05aaaa6ccbcb1cb2b91b43f136308}
       \strng{authornamehash}{3ee05aaaa6ccbcb1cb2b91b43f136308}
       \strng{authorfullhash}{3ee05aaaa6ccbcb1cb2b91b43f136308}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, a new method that can be used for checking the proper implementation of time- or frequency-dependent neutron transport models and for verifying their ability to recover some basic reactor physics properties is proposed. This method makes use of the application of a stationary perturbation to the system at a given frequency and extraction of the point-kinetic component of the system response. Even for strongly heterogeneous systems for which an analytical solution does not exist, the point-kinetic component follows, as a function of frequency, a simple analytical form. The comparison between the extracted point-kinetic component and its expected analytical form provides an opportunity to verify and validate neutron transport solvers. The proposed method is tested on two diffusion-based codes, one working in the time domain and the other working in the frequency domain. As long as the applied perturbation has a non-zero reactivity effect, it is demonstrated that the method can be successfully applied to verify and validate time- or frequency-dependent neutron transport solvers. Although the method is demonstrated in the present paper in a diffusion theory framework, higher order neutron transport methods could be verified based on the same principles.}
@@ -1165,8 +1289,8 @@
       \strng{authorbibnamehash}{46e40022c5dffb3f6549164f10963b3d}
       \strng{authornamehash}{46e40022c5dffb3f6549164f10963b3d}
       \strng{authorfullhash}{46e40022c5dffb3f6549164f10963b3d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Nuclear {{Reactor Theory}}}
@@ -1194,8 +1318,8 @@
       \strng{authorbibnamehash}{bffaa86935791ca8fa35a095734057df}
       \strng{authornamehash}{bffaa86935791ca8fa35a095734057df}
       \strng{authorfullhash}{bffaa86935791ca8fa35a095734057df}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In a previous paper, the kinetics, dynamics and the neutron noise in a Molten Salt Reactor (MSR) was investigated in a simple homogeneous reactor model in one-group diffusion theory. In this paper those investigations are extended to two-group theory in the same reactor model. In addition, unlike in the previous paper where in the quantitative work data from a thermal LWR were used, here material data of a conceptual MSR with a thermal spectrum and thorium fuel are used, along with data from both fast and thermal LWRs. Among other things, the relative weight and the range of the local component is investigated. It is found that the strong neutronic coupling in an MSR, which was pointed out in the preceding paper, diminishes the role of the local component as compared to light water reactors. Some further new features of the noise in MSR, not directly related to the two-group approach, are also found.}
@@ -1239,8 +1363,8 @@
       \strng{authorbibnamehash}{ed0e01a1d3af327243c35c7a40645a78}
       \strng{authornamehash}{ed0e01a1d3af327243c35c7a40645a78}
       \strng{authorfullhash}{ed0e01a1d3af327243c35c7a40645a78}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0029-5639, 1943-748X}
@@ -1289,8 +1413,8 @@
       \strng{authornamehash}{9496e3e8c7de2e6f91cee34f564545ac}
       \strng{authorfullhash}{9496e3e8c7de2e6f91cee34f564545ac}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The paper presents CORE SIM+, a tool developed for diffusion-based neutron noise simulations. The simulator is based on the 3-dimensional, two-energy group neutron diffusion equation in the frequency domain. The tool includes the necessary solvers to calculate the criticality problems associated with the system and then the response to a variety of perturbations such as absorbers of variable strength, perturbations travelling with the coolant flow and vibrations of core components. Numerical methods suitable for different types of problems have been implemented. A capability that allows to apply nonuniform computational meshes is available so that the discretization of the domain can be optimized with respect to the characteristics of the neutron noise sources. The simulator can generate neutron noise databases for nuclear power reactors via the Green's function method in a fully automated manner. These databases can be useful when studying the neutron noise response in a reactor and when training machine learning algorithms for core monitoring and diagnostics. As part of the verification process, the CORE SIM+ response of a realistic reactor model to a given perturbation at various frequencies is used to estimate the corresponding point-kinetic component, compared to an exact analytical expression. In addition, the Green's function generator is used to calculate the response of a system to a fuel cell vibration. The solution is then compared to the one of the direct solver of CORE SIM+. As part of the validation work, a neutron noise experiment with vibrations of fuel rods is simulated, showing a reasonable agreement with the measurements. A representative neutron noise database generated for a generic pressurized water reactor is described. From the database the simulations of fuel assembly and core barrel vibrations are chosen as illustrative examples for demonstrating the capabilities of the tool.}
@@ -1362,8 +1486,8 @@
       \strng{authorbibnamehash}{957afaf4152d2a60e4a95a68da9f83b9}
       \strng{authornamehash}{957afaf4152d2a60e4a95a68da9f83b9}
       \strng{authorfullhash}{1ccfcf9b4101bb482a25a1840b882c31}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{International {{Conference}} on {{Mathematics}} \& {{Computational Methods Applied}} to {{Nuclear Science}} \& {{Engineering}}}
@@ -1412,8 +1536,8 @@
       \strng{authorbibnamehash}{61989fe2d1293bfd0263f86d00ad3911}
       \strng{authornamehash}{dfd3d4712ff1c0076b8120c306503036}
       \strng{authorfullhash}{61989fe2d1293bfd0263f86d00ad3911}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Core-barrel motion (CBM) surveillance and diagnostics, based on the amplitude of the peaks of the normalized auto power spectral densities (APSDs) of the ex-core neutron detectors, have been performed and continuously developed in Sweden and were applied for monitoring of the three PWR units, Ringhals 2 to 4. From 2005, multiple measurements were taken during each fuel cycle, and these revealed a periodic behavior of the 8-Hz peak of the beam-mode motion: the amplitude increases within the cycle and returns to a lower value at the beginning of the next cycle. The work reported in this paper aims to clarify the physical reason for this behavior. A combination of a mode separation method in the time domain and a nonlinear curve-fitting procedure of the frequency spectra revealed that two types of vibration phenomena contribute to the beam-mode peak. The lower frequency peak around 7 Hz in the ex-core detector APSDs corresponds to the CBM, whose amplitude does not change during the cycle. The higher frequency peak around 8 Hz arises from the individual vibrations of the fuel assemblies, and its amplitude increases monotonically during the cycle. This paper gives an account of the work that has been made to verify the above hypothesis.}
@@ -1453,8 +1577,8 @@
       \strng{authornamehash}{ad3129c3ab36ff080fc40cb99f31e6da}
       \strng{authorfullhash}{ad3129c3ab36ff080fc40cb99f31e6da}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{1}
@@ -1483,8 +1607,8 @@
       \strng{authorbibnamehash}{1fd5728358cda1dc6510037bdb67b027}
       \strng{authornamehash}{1fd5728358cda1dc6510037bdb67b027}
       \strng{authorfullhash}{1fd5728358cda1dc6510037bdb67b027}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper investigates the possibility of localising a noise source of the type ``absorber of variable strength'' (or reactor oscillator) from as few as five neutron detectors evenly distributed throughout the core of a commercial nuclear reactor. The novelty of this investigation lies with the fact that the calculations are performed for a realistic 2-D heterogeneous reactor in the 2-group diffusion approximation, via the prior determination of the corresponding reactor transfer function. It is first demonstrated that the response of such a reactor to a localized perturbation deviates significantly from point-kinetics. The space-dependence of the induced neutron noise thus carries enough information about the location of the noise source, which makes it possible to determine its position from a few detector readings. The identification of the type of noise source is easily performed from the in-phase behaviour of the induced neutron noise. Different unfolding techniques are finally tested. All these techniques rely on the use of the reactor transfer function. One of these techniques is based on the comparison between the actual measured neutron noise and the neutron noise calculated for every possible location of the noise source. This technique is very reliable and almost insensitive to the contamination of the detector signals by background noise, but also extremely CPU consuming. Another technique, based on the piece-wise inversion of the reactor transfer function and requiring little CPU effort, was developed. Although this technique is much less reliable when background noise is present, this technique is useful to indicate a region of the reactor where a noise source is likely to be located.}
@@ -1527,8 +1651,8 @@
       \strng{authorbibnamehash}{e63e638bcc3366d56ed5092f250ca5ca}
       \strng{authornamehash}{e63e638bcc3366d56ed5092f250ca5ca}
       \strng{authorfullhash}{e63e638bcc3366d56ed5092f250ca5ca}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A method is elaborated and used for the locallsation of a channel type mstabthty in a boding water reactor (BWR) by neutron nmse techniques Locahsatlon means determining the radial position(s) of the fuel channel(s) m which the mstabduy phenomenon occurs The problem and its solution show clear resemblance to that of the locahsatlon of vibrating absorbers m pressurized water reactors However, the spatial structure of the neutron noise is different for the two cases, thus different loeahsatlon formulae need to be used. Besides, a new and very effective algorithm has been elaborated for the actual locahsatlon process The Iocahsataon method suggested was tested on simulated data with increasing sophistication, and then on measurement data taken at the occurrence of a local instablhty event in the Swe\&sh BWR Forsmark-1 m early 1997 The results clearly demonstrate the apphcabthty and usefulness of the method}
@@ -1567,8 +1691,8 @@
       \strng{authornamehash}{dece9392251f156f2e026670e9acc498}
       \strng{authorfullhash}{dece9392251f156f2e026670e9acc498}
       \field{extraname}{2}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -1613,8 +1737,8 @@
       \strng{authorbibnamehash}{bc4ed31ae252fd9b8a7d459b49b346c3}
       \strng{authornamehash}{aaf2ec6b49f0e2a03ad2d6be12ff0aec}
       \strng{authorfullhash}{bc4ed31ae252fd9b8a7d459b49b346c3}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{KWU pre-Konvoi PWRs (SIEMENS design) are commonly exhibiting high neutron noise levels which can lead to costly operational issues (i.e. activation of SCRAM system, operation of unrated core power, etc.). The frequency region of interest of neutron noise is below 1\,Hz, which is the typical frequency range of thermal-hydraulic phenomena. This feature seems to indicate that, coolant flow and temperature oscillations can have a key impact on neutron noise phenomena. Moreover, an increasing neutron noise trend (in term of normalized root mean square) was recently observed in many KWU-PWRs. This increasing trend has been speculated to be correlated with the introduction of a new fuel design type in the KWU-PWRs. This fact indicates that there should be some correlation between neutron noise spectral characteristics and fuel assemblies' performance. In order to advance in understanding this phenomenon, the transient nodal code SIMULATE-3K (S3K) has been used to simulate mechanical vibrations of fuel assemblies and thermal-hydraulic fluctuations of the core inlet flow and temperature. The simulated neutron detectors responses are analysed with noise analysis techniques and compared to real plant data. This analysis indicates that the cross-feedback between the mechanical and thermal-hydraulic disturbances complicate the identification of the origin of the perturbation source. The simulated results indicate that the neutron noise spectral characteristics can be associated separately to different causes. In this sense, the results of this work seem to indicate that the spectral features of the neutron noise are a consequence of both mechanical perturbations and thermal-hydraulic fluctuations.}
@@ -1659,8 +1783,8 @@
       \strng{authornamehash}{2f75042fdeb33a99368235bf4199fe25}
       \strng{authorfullhash}{2f75042fdeb33a99368235bf4199fe25}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -1690,8 +1814,8 @@
       \strng{authorbibnamehash}{ac46e6297e1f41ae93ade1612d695d60}
       \strng{authornamehash}{ac46e6297e1f41ae93ade1612d695d60}
       \strng{authorfullhash}{ac46e6297e1f41ae93ade1612d695d60}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Three methods exist for testing the response times of pressure transmitters in situ: the power interrupt test, the noise analysis technique, and the pink noise technique. The noise (or random signal) analysis technique is a passive in situ technique that does not interfere with plant operation, uses already existing plant sensors and instrumentation, accounts for the effects of process conditions on plant equipment performance, and includes any response-time delays caused by transmitter sensing lines. The power interrupt test is a simpler and less-time-consuming test than noise analysis for measuring the response time of force-balance pressure transmitters. The pink noise test is useful for pressure transmitters where process fluctuations do not normally exist or they are inadequate for using the noise analysis technique to test response time.}
@@ -1745,8 +1869,8 @@
       \strng{authorbibnamehash}{5a5bf277172dd7dcdc6216855b71ca2f}
       \strng{authornamehash}{7b2159709faabad3245246c9dfda7ae7}
       \strng{authorfullhash}{5a5bf277172dd7dcdc6216855b71ca2f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The dynamic response of several RTDs located at the cold leg of a PWR has been studied. A theoretical model for the heat transfer between the RTDs and the surrounding fluid is derived. It proposes a two real poles transfer function. By means of noise analysis techniques in the time domain (autoregressive models) and the Dynamic Data System methodology, the two time constants of the system can be found. A Monte Carlo simulation is performed in order to choose the proper sampling time to obtain both constants. The two poles are found and they permit an advance in situ surveillance of the sensor response time and the sensor dynamics performance. One of the poles is related to the inner dynamics whereas the other one is linked to the process and the inner dynamics. So surveillance on the process and on the inner dynamics can be distinguished.}
@@ -1804,8 +1928,8 @@
       \strng{authorbibnamehash}{2443c8fc36df9cd62676cd6d0dc23e2a}
       \strng{authornamehash}{079ca04aa6235997addf9b9b21a91b9a}
       \strng{authorfullhash}{2443c8fc36df9cd62676cd6d0dc23e2a}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The paper is devoted to the description of the regular neutron noise diagnostics measurements performed by KFKI AEKI at the four units of the Hungarian Paks NPP. Theoretical background, practical details and some results of the fuel assembly coolant flow surveillance measurements are outlined, emphasising their importance in practical plant operation. Control rod vibration monitoring methods and results are treated shortly, as well.}
@@ -1845,8 +1969,8 @@
       \strng{authornamehash}{f1039e47b169402fa1589f877c29edc5}
       \strng{authorfullhash}{f1039e47b169402fa1589f877c29edc5}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The nuclear power industry is working to reduce generation costs by adopting condition-based maintenance strategies and automating testing activities. These developments have stimulated great interest in on-line monitoring (OLM) technologies and new diagnostic and prognostic methods to anticipate, identify, and resolve equipment and process problems and ensure plant safety, efficiency, and immunity to accidents. This paper provides examples of these technologies with particular emphasis on eight key OLM applications: detecting sensing-line blockages, testing the response time of pressure transmitters, monitoring the calibration of pressure transmitters on-line, cross-calibrating temperature sensors in situ, assessing equipment condition, performing predictive maintenance of reactor internals, monitoring fluid flow, and extending the life of neutron detectors. These applications are discussed in the following sections. Emphasis is placed on the principles of a core OLM method -- noise analysis -- and the technical requirements for an integrated OLM system are summarized.}
@@ -1900,8 +2024,8 @@
       \strng{authorbibnamehash}{6d8f40707de0fdce7a0c234f4a875e87}
       \strng{authornamehash}{9c37e76b0c4015bf33a9a1baf77a4778}
       \strng{authorfullhash}{6d8f40707de0fdce7a0c234f4a875e87}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{A monitoring system for during operation early detection of an anomaly and/or faulty behavior of equipment and systems related to the dynamics of a boiling water reactor (BWR) has been developed. The monitoring system is based on the analysis of the ``noise'' or fluctuations of a signal from a sensor or measurement device. An efficient prime factor algorithm to compute the fast Fourier transform allows the continuous, real-time comparison of the normalized power spectrum density function of the signal against previously stored reference patterns in a continuously evolving matrix. The monitoring system has been successfully tested offline. Four examples of the application of the monitoring system to the detection and diagnostic of faulty equipment behavior are presented in this work: the detection of two different events of partial blockage at the jet pump inlet nozzle, miss-calibration of a recirculation mass flow sensor, and detection of a faulty data acquisition card. The events occurred at the two BWR Units of the Laguna Verde Nuclear Power Plant. The monitoring system and its possible coupling to the data and processing information system of the Laguna Verde Nuclear Power Plant are described. The signal processing methodology is presented along with the introduction of the application of the evolutionary matrix concept for determining the base signature of reactor equipment or component and the detection of off normal operation conditions.}
@@ -1952,8 +2076,8 @@
       \strng{authorbibnamehash}{796ad091ad8be9f474026760f025db8f}
       \strng{authornamehash}{796ad091ad8be9f474026760f025db8f}
       \strng{authorfullhash}{796ad091ad8be9f474026760f025db8f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The Division of Subatomic Physics and Plasma Physics (formerly Division of Nuclear Engineering) in Chalmers, Göteborg, and the Ringhals Nuclear Plant have investigated the core barrel vibrations in the Ringhals PWRs over the last 20 years. Based on the different symmetry properties of the vibration modes, a mode separation technique was developed to enhance the contributions from the different modes. Recent observations of wear at both the lower and upper core-barrel-support structures in the Ringhals PWRs indicated that vibration modes of the core barrel other than pendular (beam mode) and shell mode are likely to occur. A beam mode type movement alone is not able to explain such a wear, and therefore, it is fair to assume that the vibration mode in question is a small amplitude periodic tilting movement of the core barrel around a horizontal, diagonal pivot at the half height of the core. In this work, ex-core data taken in the Ringhals-4 PWR were analyzed in order to find evi- dence of such a tilting movement. First, cross spectra between various ex-core detectors were calculated and analyzed to locate the frequency range of the new vibrational mode. Then, a model based on symmetry considerations was derived in order to extract the sought mode from the spectra. The measurements were evaluated by the new mode enhancement technique. The results show that it is possible to enhance such a mode and find it in the spectra by properly combining the signals in the time domain.}
@@ -1988,8 +2112,8 @@
       \strng{authorbibnamehash}{33a09a8f6b365a8bbf6181a18c80658d}
       \strng{authornamehash}{33a09a8f6b365a8bbf6181a18c80658d}
       \strng{authorfullhash}{33a09a8f6b365a8bbf6181a18c80658d}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Using reactor noise techniques, a vibrating in-core instrument tube in the Mühleberg Boiling Water Reactor could be detected. The normalized auto power spectral density (NPSD) of the current fluctuations of a mini in-core chamber, fixed within the instrument tube, has been analyzed before and after repair. There was a strong evidence of a peak at the resonance frequency of the vibration at 2.6 Hz in the NPSD. It vanished promptly after the bypass-streaming at the lower core plate, being the physical origin of the vibrating instrument tube, was re-arranged.}
@@ -2043,8 +2167,8 @@
       \strng{authorbibnamehash}{40cd39a5ee1c56d14849076786e9cc99}
       \strng{authornamehash}{d5c3bcfb649d1bf6190ef3f14f879136}
       \strng{authorfullhash}{40cd39a5ee1c56d14849076786e9cc99}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Neutron noise analysis measurements were made in three BWR-4 reactors under full-power conditions to determine the noise characterization spectra of the reactors with two different instrument-tube cooling configurations. Both configurations were designed to prevent flow-induced vibration of the instrument tubes and subsequent damage of fuel channel boxes caused by impacts of the tubes with the boxes. Noise spectra from these three reactors were compared with spectra previously obtained prior to changing the instrument-tube cooling configuration, and no evidence of impacting was found.}
@@ -2084,8 +2208,8 @@
       \strng{authornamehash}{e65de475016cdf9a1acd7b73495766fe}
       \strng{authorfullhash}{e65de475016cdf9a1acd7b73495766fe}
       \field{extraname}{2}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0029-5639, 1943-748X}
@@ -2129,8 +2253,8 @@
       \strng{authorbibnamehash}{adc509cd4ad6a48ae2539177d3db375b}
       \strng{authornamehash}{adc509cd4ad6a48ae2539177d3db375b}
       \strng{authorfullhash}{adc509cd4ad6a48ae2539177d3db375b}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{0149-1970}
@@ -2181,8 +2305,8 @@
       \strng{authorbibnamehash}{36591570fa246a7cfcefc277ff2d29c6}
       \strng{authornamehash}{36591570fa246a7cfcefc277ff2d29c6}
       \strng{authorfullhash}{36591570fa246a7cfcefc277ff2d29c6}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Surveillance of core barrel vibrations has been performed in the Swedish Ringhals PWRs for several years. This surveillance is focused mainly on the pendular motion of the core barrel, which is known as the beam mode. The monitoring of the beam mode has suggested that its amplitude increases along the cycle and decreases after refuelling. In the last 5 years several measurements have been taken in order to understand this behaviour. Besides, a non-linear fitting procedure has been implemented in order to better distinguish the different components of vibration. By using this fitting procedure, two modes of vibration have been identified in the frequency range of the beam mode. Several results coming from the trend analysis performed during these years indicate that one of the modes is due to the core barrel motion itself and the other is due to the individual flow induced vibrations of the fuel elements. In this work, the latest results of this monitoring are presented.}
@@ -2226,8 +2350,8 @@
       \strng{authorbibnamehash}{a3f79e6873c80fd67a210eeda03cd2ae}
       \strng{authornamehash}{931ebdae0312708969e236c682465dfe}
       \strng{authorfullhash}{a3f79e6873c80fd67a210eeda03cd2ae}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This report gives an account of the work performed by the Department of Nuclear Engineering, Chalmers, in the frame of a research contract with Ringhals, Vattenfall AB, contract No. 614061-002. The contract constitutes Stage 14 of a long-term co-operative research work concerning diagnostics and monitoring of the BWR and PWR units. The work in Stage 14 has been performed between January 1st, and December 31st, 2011. In Stage 14 we have worked with three items as follows: 1. Analysis of three new ex-core measurements, taken at BOC, MOC and EOC, with the new curve fitting procedure; 2. An investigation of the ultra-low frequency oscillations in reactor power in R3 and R4; 3. Further development of the theory and simulations in order to determine the void content in R1 from the analysis of in-core measurements.}
@@ -2303,8 +2427,8 @@
       \strng{authornamehash}{9457ed415f5b1749a8d87167a5be0492}
       \strng{authorfullhash}{658f7e11817899a3a42719dd566669b4}
       \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the framework of the CORTEX project, the work package 2 targets the generation of high quality neutron noise experimental data for the subsequent validation of computer methods and models developed in work package 1. The AKR-2 reactor at TUD, and the CROCUS reactor at EPFL, are the experimental facilities where noise-specific experimental data are being generated. This report documents the experimental setup and measurements for each perturbation type and facility. An in-depth characterization of the whole acquisition chain was also performed in the framework of the qualification and comparison of the acquisition systems of TUD and EPFL, with regards to the industry-graded ISTec system (subtask 2.1.1).}
@@ -2374,8 +2498,8 @@
       \strng{authornamehash}{9457ed415f5b1749a8d87167a5be0492}
       \strng{authorfullhash}{e5f283cc8fb6ddd606901d99b2ff0aab}
       \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the framework of the CORTEX project, the work package 2 targets the generation of high quality neutron noise experimental data for the subsequent validation of computer methods and models developed in work package 1. The AKR-2 reactor at TUD, and the CROCUS reactor at EPFL, are the experimental facilities where noise-specific experimental data are being generated. This report documents the experimental setup and measurements for each perturbation type and facility. An in-depth characterization of the whole acquisition chain was also performed in the framework of the qualification and comparison of the acquisition systems of TUD and EPFL, with regards to the industry-graded ISTec system (subtask 2.1.1).}
@@ -2424,8 +2548,8 @@
       \strng{authorbibnamehash}{7947a91e2e41b164b55d84894ac4c627}
       \strng{authornamehash}{4f8bbb5c0c97d50e6c7b5864104a1bf1}
       \strng{authorfullhash}{7947a91e2e41b164b55d84894ac4c627}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the framework of the CORTEX project, the work package 2 targets the generation of high quality neutron noise experimental data for the subsequent validation of computer methods and models developed in work package 1. The AKR-2 reactor at TUD, and the CROCUS reactor at EPFL, are the experimental facilities where noise-specific experimental data are being generated. This report documents the setup and experiments for each perturbation type and facility of the third campaigns. The raw time series were already distributed to the members of the consortium. The associated experimental results will be documented in separate internal reports and distributed to the members of the consortium.}
@@ -2486,8 +2610,8 @@
       \strng{editorbibnamehash}{359862c874dd51ead1a60e6be1f27a3c}
       \strng{editornamehash}{359862c874dd51ead1a60e6be1f27a3c}
       \strng{editorfullhash}{359862c874dd51ead1a60e6be1f27a3c}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The transfer function is a basic characteristic of every nuclear reactor. It describes how a perturbation at a given place and time influences the neutron flux. In case of a known perturbation, the determination of characteristic reactor parameters is possible. The present paper shows an experimental method to determine the gain of the zero-power reactor transfer function (ZPTF) of the AKR-2 reactor at TU Dresden and the comparison to the theoretical shape of the ZPTF derived from kinetic parameters simulated with MCNP. For the experiments, a high-precision linear motor axis is used to insert an oscillating perturbation acting at frequencies smaller than the lower bound of the plateau region of the ZPTF. For higher frequencies, a rotating absorber is used. This device emulates an absorber of variable strength. The reactor response is detected with a He-3 counter. The data evaluation shows good agreement between measured and corresponding theoretical values of the gain of the ZPTF.}
@@ -2613,8 +2737,8 @@
       \strng{editorbibnamehash}{356ccfb13d6cd307bb0cdc532eb8ac32}
       \strng{editornamehash}{356ccfb13d6cd307bb0cdc532eb8ac32}
       \strng{editorfullhash}{89b1273ee89cc9b3c491433c205b1185}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The present article presents the mechanical characterization of the fuel rods oscillator developed for the purposes of the COLIBRI experimental program in CROCUS. COLIBRI aims at investigating the radiation noise related to fuel vibrations. The main motivation is the increased amplitudes in the neutron noise distributions recorded in ex- and in-core detectors that have been observed in recent years in Siemens pre-Konvoi type of pressurized water reactors. Several potential explanations have been put forward, but no definitive conclusions could yet be drawn. Among others, changes in fuel assembly or pin vibration patterns, due to recent modifications of assembly structural designs, were pointed out as a possible cause. Computational dynamic tools are currently developed within the Horizon 2020 European project CORTEX, to help with understanding the additional noise amplitude. The COLIBRI program is used for their validation. An in-core device was designed, tested, and licensed between 2015 and 2019 for fuel rods oscillation in CROCUS, in successive steps from out-of-pile tests with dummy fuel rods to critical in-core tests. The characterization of its mechanical behavior is presented, in air and in water, and as a function of the load, for safety and experimental purposes. The device allows simultaneously oscillating up to 18 fuel rods. The maximum oscillation amplitude is 5 mm, while the maximum allowed frequency is 2 Hz, i.e. in the frequency range in which the induced neutron flux fluctuations are most pronounced in nuclear power plants.}
@@ -2653,8 +2777,8 @@
       \strng{authornamehash}{2d97eb924852b6ea1f76aad423b874d0}
       \strng{authorfullhash}{2d97eb924852b6ea1f76aad423b874d0}
       \field{extraname}{2}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{howpublished}{https://www.ans.org/news/article-210/the-cortex-project-improving-nuclear-fleet-operational-availability/}
@@ -2699,8 +2823,8 @@
       \strng{authorbibnamehash}{b6a3cc2563ef28617b4d3106a38956e9}
       \strng{authornamehash}{97a38ebd0850172212e05df7432f9776}
       \strng{authorfullhash}{b6a3cc2563ef28617b4d3106a38956e9}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the framework of the European project CORTEX, included in the H2020 program, the experimental campaign carried out with the CROCUS reactor, at the École Polytechnique Fédérale de Lausanne (EPFL) in Switzerland, aims at setting up methodologies and tools for the analysis and the interpretation of neutron noise in view of their industrial applications. An important part of the CORTEX project deals with code development and validation. In this paper, a new methodology for the simulation of neutron noise has been formulated and implemented in the APOLLO3 code. In the first part of this paper, the experimental setup and the methodology for the experimental data analysis developed by CEA are presented. The experimental outcomes are reported in terms of Cross-Power Spectral Densities (CPSD) of detector responses. The results produced with CEA analysis are compared to those obtained by EPFL. The second part of the work presents the noise simulator based on an improved point-kinetics model employed in a fully heterogeneous 2D transport calculation including its theoretical derivation. The computed results, i.e. the temporal signals of the detector responses, are treated to recover the CPSDs to be compared to the experimental ones. In the third part of the work, the paper presents a series of interpretive exercises performed with the IPK noise model aiming at showing its simulation capabilities and at trying to address some of the discrepancies observed in the direct comparison. Beside the promising outcomes of the simulations, some work is still being done from the experimental and computational side for a better comprehension of the problem before the extension of the model to full 3D problems and industrial application.}
@@ -2754,8 +2878,8 @@
       \strng{authorbibnamehash}{aa377f5142a2480667de7559c40da7ea}
       \strng{authornamehash}{23a01509882588e042a6b2f8ef6d8794}
       \strng{authorfullhash}{aa377f5142a2480667de7559c40da7ea}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The behavior of low frequency neutron noise during the 30 years of operation of German KWU built PWRs is reviewed. The role of various factors influencing neutron noise such as sub-cooled boiling, power and enrichment uprates, fuel type and mechanical fuel assembly design is discussed. Simulation results of temperature driven neutron noise with Studsvik's S3K dynamic core simulator are shown and compared to measurements. Hypotheses for recent increases and decreases of low frequency neutron noise are compared with evidence from operating history.}
@@ -2808,8 +2932,8 @@
       \strng{authorbibnamehash}{1b2725b135cfac7ff77c60d3169b563e}
       \strng{authornamehash}{5f81946e5404d6726b84d4e74c65f41d}
       \strng{authorfullhash}{1b2725b135cfac7ff77c60d3169b563e}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Low-frequency neutronic noise with magnitudes of up to ten percent of the reactor power have been observed in Konvoi-type PWR in Germany in the last years. Several attempts were made to identify the reasons for increased magnitudes of the neutronic fluctuations in comparison with pre-Konvoi reactors, and various hypotheses have been created to explain this effect. In this paper, results of noise simulations performed with use of the reactor dynamics code DYN3D are presented. Fluctuations of the coolant inlet temperature and mass flow rate were considered. Besides of un-correlated fluctuations, correlated temperature fluctuations were simulated. In a preliminary analysis with harmonic temperature oscillations, the importance of existing correlations between temperature fluctuations in the individual fuel assemblies was pointed out. In our analyses, the correlations between fluctuations in the individual fuel assemblies were obtained based on an experimentally validated coolant mixing model. However, the features of the neutronic noise found in the simulations do not correspond to the measurements. Obviously, more complex mechanisms than only temperature and/or mass flow fluctuations have to be considered. Simulated generic fluctuations of the local moderator density, that were introduced independently from thermal hydraulics, indicate that potentially deformations or vibrations of the fuel rod lattice or turbulent fluctuations of the coolant temperature and density inside the fuel rod bundles leading to variations of the local moderator content might be responsible for the observed neutronic noise. Therefore, advanced models coupling neutronics, thermal hydraulics, turbulence and mechanical modelling have to be developed.}
@@ -2851,8 +2975,8 @@
       \strng{authorbibnamehash}{9720cf244a5a736d64b11fe1eb978d43}
       \strng{authornamehash}{9720cf244a5a736d64b11fe1eb978d43}
       \strng{authorfullhash}{9720cf244a5a736d64b11fe1eb978d43}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{6}
@@ -2882,8 +3006,8 @@
       \strng{authorbibnamehash}{938f7d0c67cfb95654e7d48d3ba3e255}
       \strng{authornamehash}{938f7d0c67cfb95654e7d48d3ba3e255}
       \strng{authorfullhash}{938f7d0c67cfb95654e7d48d3ba3e255}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In order to be able to calculate the space- and frequency-dependent neutron noise in real inhomogeneous systems in two-group theory, a code was developed for the calculation of the Green's function (dynamic transfer function) of such systems. This paper reports on the development as well as the test and application of the numerical tools employed. The code that was developed yields the space-dependence of the fluctuations of the neutron flux induced by fluctuating properties of the medium in the two-group diffusion approximation and in a two-dimensional representation of heterogeneous systems, for both critical systems and non-critical systems with an external source. Some applications of these tools to power reactor noise analysis are then described, including the unfolding of the parameters of the noise source from the~induced neutron noise, measured at a few discrete locations throughout the core. Other concrete applications concern the study of the space-dependence of the Decay Ratio in Boiling Water Reactors, the noise-based estimation of the Moderator Temperature Coefficient of reactivity in Pressurized Water Reactors, the modeling of the beam- and shell-mode core-barrel vibrations in Pressurized Water Reactors, and the investigation of the validity of the point-kinetic approximation in subcritical systems driven by an external source. In most of these applications, calculations performed using the code are compared with at-power plant measurements. Power reactor noise analysis applications of the above type, i.e. core monitoring without disturbing plant operation, is of particular interest in the framework of the extensive program of power uprates worldwide.}
@@ -2923,8 +3047,8 @@
       \strng{authorbibnamehash}{a5848055ed94e1f92986123e148b3e2e}
       \strng{authornamehash}{a5848055ed94e1f92986123e148b3e2e}
       \strng{authorfullhash}{a5848055ed94e1f92986123e148b3e2e}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{03064549}
@@ -2965,8 +3089,8 @@
       \strng{authorbibnamehash}{60a1ee26109f37e286e4ff779cae3065}
       \strng{authornamehash}{60a1ee26109f37e286e4ff779cae3065}
       \strng{authorfullhash}{60a1ee26109f37e286e4ff779cae3065}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Thesis (Nucl.E.)--Massachusetts Institute of Technology, Dept. of Nuclear Engineering, 1979.}
@@ -3012,8 +3136,8 @@
       \strng{authorbibnamehash}{90666b5031369ad625be69e766b14dbb}
       \strng{authornamehash}{54744a53078bf0a0470aafd3e907ea8b}
       \strng{authorfullhash}{90666b5031369ad625be69e766b14dbb}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this study, the neutron noise, i.e. the stationary fluctuations of the neutron flux around its mean value, is calculated in 2-group diffusion theory using the Analytical Nodal Method. A brief description of the calculation of the static flux is also included. The static solution is benchmarked against a reference solution in the case of a homogeneous core. The same calculational scheme for the neutron noise as for the static flux is used. As a dynamical benchmark, the calculated neutron noise for a 2D fully homogeneous reactor is compared with the analytical solution of a centered noise source at different frequencies. The numerical solution is also benchmarked to an off-centered source where the analytical solution is determined using the power reactor approximation, extended to two energy groups. The results of the benchmarks are that the numerical calculations using ANM accurately match the analytical solutions.}
@@ -3053,8 +3177,8 @@
       \strng{authornamehash}{dece9392251f156f2e026670e9acc498}
       \strng{authorfullhash}{dece9392251f156f2e026670e9acc498}
       \field{extraname}{3}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{This paper deals with the development, validation, and demonstration of an innovative neutronic tool. The novelty of the tool resides in its versatility, since many different systems can be investigated and different kinds of calculations can be performed. More precisely, both critical systems and subcritical systems with an external neutron source can be studied, and static and dynamic cases in the frequency domain (i.e. for stationary fluctuations) can be considered. In addition, the tool has the ability to determine the different eigenfunctions of any nuclear core. For each situation, the static neutron flux, the different eigenmodes and eigenvalues, the first-order neutron noise, and their adjoint functions are estimated, as well as the effective multiplication factor of the system. The main advantages of the tool, which is entirely MatLab based, lie with the robustness of the implemented numerical algorithms, its high portability between different computer platforms and operative systems, and finally its ease of use since no input deck writing is required. The present version of the tool, which is based on two-group diffusion theory, is mostly suited to investigate thermal systems. The definition of both the static and dynamic core configurations directly from the static macroscopic cross-sections and their fluctuations, respectively, makes the tool particularly well suited for research and education. Some of the many benchmark cases used to validate the tool are briefly reported. The static and dynamic capabilities of the tool are also demonstrated for the following configurations: a vibrating control rod, a perturbation traveling upwards with the core flow, and a high frequency localized perturbation. The tool is freely available on direct request to the author of the present paper.}
@@ -3099,8 +3223,8 @@
       \strng{authorbibnamehash}{0da8caa832021464503ec8fd1c01be39}
       \strng{authornamehash}{0da8caa832021464503ec8fd1c01be39}
       \strng{authorfullhash}{0da8caa832021464503ec8fd1c01be39}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{langid}{english}
@@ -3135,8 +3259,8 @@
       \strng{authorbibnamehash}{84aa5e8a773113bbba615de3e89f56ad}
       \strng{authornamehash}{84aa5e8a773113bbba615de3e89f56ad}
       \strng{authorfullhash}{84aa5e8a773113bbba615de3e89f56ad}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper presents the development of a neutron noise simulator for fine-mesh applications. The neutron noise of power nuclear reactors deals with the fluctuations of the neutron flux that are induced by fluctuations or oscillations of the reactor properties, i.e. displacement of core components, temperature or density variations, etc. Since the appearance of these perturbations can be problematic for the operation of nuclear reactors, it is desirable to be able to analyze their possible effects. The comparison between the modelling of such perturbations and possible measurements also gives the possibility to determine the driving perturbation in an operating nuclear reactor. One modelling approach is to solve numerically the neutron noise diffusion equation. This paper presents CORE SIM+, an under-development numerical tool oriented to neutron noise problems that require the fine-mesh spatial discretization of the reactor core.}
@@ -3186,8 +3310,8 @@
       \strng{authornamehash}{91a43760388138eaa84fc88474495872}
       \strng{authorfullhash}{91a43760388138eaa84fc88474495872}
       \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The paper presents the development of a strategy for the fine-mesh full-core computation of neutron noise in nuclear reactors. Reactor neutron noise is related to fluctuations of the neutron flux induced by stationary perturbations of the properties of the system. Its monitoring and analysis can provide useful insights in the reactor operations. The model used in the work relies on the neutron diffusion approximation and requires the solution of both the criticality (eigenvalue) and neutron noise equations. A highresolution spatial discretization of the equations is important for an accurate evaluation of the neutron noise because of the strong gradients that may arise from the perturbations. Considering the size of a nuclear reactor, the application of a fine mesh generates large systems of equations which can be challenging to solve. Then, numerical methods that can provide efficient solutions for these kinds of problems using a reasonable computational effort, are investigated. In particular the power method accelerated with the Chebychev or JFNK-based techniques for the eigenvalue problem, and GMRES with the Symmetric Gauss-Seidel, ILU, SPAI preconditioners for the solution of linear systems, are evaluated with the computation of neutron noise in the case of localized perturbations in 1-D and 2-D simplified reactor cores and in a 3D realistic reactor core.}
@@ -3235,8 +3359,8 @@
       \strng{authorbibnamehash}{12e5198bb4489021e0863d7d46ffe9a8}
       \strng{authornamehash}{12e5198bb4489021e0863d7d46ffe9a8}
       \strng{authorfullhash}{12e5198bb4489021e0863d7d46ffe9a8}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Traditional neutron noise analysis addresses the description of time-dependent flux fluctuations induced by small global or local perturbations of the macroscopic cross-sections, which may occur in nuclear reactors due to stochastic density fluctuations of the coolant, to vibrations of fuel elements, control rods or any other structures in the core. Neutron noise equations are obtained by assuming small perturbations of macroscopic cross-sections around a steady-state neutron field and by subsequently taking the Fourier transform in the frequency domain. In this work, we present the new 3-D multigroup diffusion neutron noise solver implemented in APOLLO3{®}, the new multi-purpose deterministic nuclear code under development in CEA. We illustrate the capacities of this new 3-D diffusion neutron noise solver by performing two neutron noise simulations in a large pressurized water reactor with heavy baffle in three dimensions: a cross-sections oscillation and a traveling perturbation. Moreover, we give a separate analysis of the neutron noise anomaly recently observed in KWU PWRs while proving the existence of steady-state like global noise modes in the low frequency spectrum.}
@@ -3267,8 +3391,8 @@
       \strng{authornamehash}{1c19bbb794018ba6191a2530568ed36d}
       \strng{authorfullhash}{1c19bbb794018ba6191a2530568ed36d}
       \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{In this paper, the neutron noise based on transport theory and diffusion noise theory using Green's function technique is calculated. As the neutron noise is used for core diagnostic, surveillance and monitoring, calculation of neutron noise precisely can play an important role in monitoring and safety. We compare the accuracy of Green's function based on transport and diffusion theory in order to survey the differences between these theories. In this study some deviation between results obtained two theories are observed, and the impact of dimensions, cross sections and frequency on the results investigated.}
@@ -3308,8 +3432,8 @@
       \strng{authornamehash}{ad3129c3ab36ff080fc40cb99f31e6da}
       \strng{authorfullhash}{ad3129c3ab36ff080fc40cb99f31e6da}
       \field{extraname}{2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The validity of the use of the diffusion approximation in neutron noise theory is investigated through a comparison with P1 theory. The motivation comes from the fact that both static and dynamic perturbations act as non-isotropic sources in the P1 expansion of the static angular flux and the angular noise, respectively, and the neglection of these terms, which would allow the use of diffusion theory, is not obvious. In addition, the effect of noise sources that affect primarily the scattering cross section (diffusion coefficient) has not been the subject of a thorough investigation before. The P1 theory of static and dynamic perturbations is developed in this paper and the results show the corrections introduced by P1 theory. It is found that for cases when the fluctuation of the absorption cross section dominates, the quantitative difference between the diffusion and P1 theory results is negligible in general. For cases when the perturbation leads to the fluctuation of the scattering cross section only, such as in cases of density fluctuations in a heavy water moderator or even a small light water reactor, P1 theory needs to be used and the results differ markedly from the noise induced by an equivalent absorption cross section fluctuation in diffusion theory. Some concrete cases are investigated both qualitatively and quantitatively.}
@@ -3353,8 +3477,8 @@
       \strng{authorbibnamehash}{a5a828da436b1009e95fe34aea91ba34}
       \strng{authornamehash}{a5a828da436b1009e95fe34aea91ba34}
       \strng{authorfullhash}{a5a828da436b1009e95fe34aea91ba34}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, the neutron noise, i.e. the stationary fluctuations of the neutron flux around its mean value, is calculated in 2-group P1 and diffusion theories for a 2-region slab reactor using Green's function technique. The applicability of diffusion theory for different types and locations of the perturbation, as well as different frequencies, is assessed. Material data, i.e. nuclear cross-sections and kinetic parameters, representative of a Light Water Reactor (LWR) and of a Heavy Water Reactor (HWR), respectively, are used in this work. It is demonstrated that for practical situations in LWRs and HWRs, there is no significant advantage to use P1 theory since diffusion theory gives acceptable results. The largest deviations between the two formalisms are observed in regions of large gradients of the static neutron flux, such as close to the reflector interface and close to the perturbation. Such observations are in agreement with theoretical expectations. This study also indicates that neglecting the effect of cross-section perturbation on the diffusion coefficient gives a rather small impact on the solution. This allows drastically simplifying the determination of the neutron noise. When using numerical techniques for such a determination the memory requirements and computational effort can be significantly reduced.}
@@ -3398,8 +3522,8 @@
       \strng{authorbibnamehash}{6e860394691cf41533afce5d91be9cbf}
       \strng{authornamehash}{6e860394691cf41533afce5d91be9cbf}
       \strng{authorfullhash}{6e860394691cf41533afce5d91be9cbf}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The simplified P3 (SP3) approximation to the multigroup neutron transport equation in arbitrary geometries is derived using a variational analysis. This derivation yields the SP3 equations along with material interface and Marshak-like boundary conditions. The multigroup SP3 approximation is reformulated as a system of within-group problems that can be solved iteratively. An ``explicit'' iterative algorithm for solving the within-group problem is described, Fourier analyzed, and shown to be more efficient than the traditional FLIP implicit algorithm. Numerical results compare diffusion (P1), simplified P2 (SP2), and simplified P3 calculations of a mixed-oxide (MOX) fuel benchmark problem to a reference transport calculation. The SP3 approximation can eliminate much of the inaccuracy in the diffusion and SP2 calculations of MOX fuel problems.}
@@ -3458,8 +3582,8 @@
       \strng{authorbibnamehash}{52e73570601213f858c15f564583bdb2}
       \strng{authornamehash}{80f99e949a23132e3c2be1618bf169cc}
       \strng{authorfullhash}{52e73570601213f858c15f564583bdb2}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Calculation of neutron noise precisely can play an important role in monitoring and safety, as the knowledge from neutron noise analysis is useful for core monitoring, diagnostics and surveillance of a power reactor core. In this work, we propose applying the SP3 transport approximation for neutron noise calculation. Generally, the SP3 approximation theory is capable of capturing partly the neutron transport effect without a severe increase in computational burden and code complexity than diffusion theory. As a preliminary work, a prototype code called CORCA-NOISE is developed and integrated into the industry SP3 solver CORCA-PIN. Numerical results on two benchmarks show some deviation of the noise function derived from SP3 and diffusion theories, which means that further theoretical analysis and numerical simulations are necessary to demonstrate the effectiveness of SP3 noise theory.}
@@ -3508,8 +3632,8 @@
       \strng{authorbibnamehash}{5a717c261a182026ac925306cbebd058}
       \strng{authornamehash}{5a717c261a182026ac925306cbebd058}
       \strng{authorfullhash}{5a717c261a182026ac925306cbebd058}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The method of discrete ordinates is investigated for neutron noise simulations in the frequency domain. For this purpose, the solver NOISE-SN is developed and used to simulate two neutron noise problems that are respectively derived from the two-dimensional systems described in the neutron transport simulation benchmarks C4V and C5G7. In the first problem based on the C4V system, NOISE-SN is compared to the diffusion-based simulator CORE SIM+. These results show that NOISE-SN and CORE SIM+ calculate similar spatial distributions of neutron noise, although significant differences can be found at the location of the perturbation and at locations with strong variations of material properties, where the discrete ordinates method is expected to be more accurate than diffusion theory. Then NOISE-SN calculations are performed to test different SN approximations, and the fictitious source method that may be applied to mitigate possible numerical artifacts, known as the ray effect. In the second problem based on the C5G7 system, the choice of a low order of discrete ordinates in NOISE-SN leads to unphysical values of the neutron noise because of the ray effect. The increase of the order of discrete ordinates or introducing a fictitious source in the equations to be solved alleviates the issue. The second option is shown to remove the ray effect without a high order of discrete ordinates and thus without too expensive calculations, even though the strength of the fictitious source needs to be tuned carefully to avoid very slow convergence rates.}
@@ -3557,8 +3681,8 @@
       \strng{authorbibnamehash}{34db7961a67b202f317a6b659b529717}
       \strng{authornamehash}{34db7961a67b202f317a6b659b529717}
       \strng{authorfullhash}{34db7961a67b202f317a6b659b529717}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The neutron noise equation contains a fixed source term where the neutron angular flux is present. Deterministic noise solvers have tended to solve for and store this angular flux term in a preprocessing step. This can be a substantial memory burden as the angular flux is a function of space, energy, and angle. This can limit these solvers to smaller problems and can limit the obtainable angular resolution. This paper proposes solving the neutron noise equation and the standard eigenvalue neutron transport equation simultaneously, reducing the memory footprint of a noise solve while making frequency-domain method of characteristics solvers practical. This approach is demonstrated using the random ray method but is applicable to any sweep-based methods. Using the random ray method also has the advantage of exact geometry representation, no ray effects, and cheaper transport sweeps, all of which have been problematic. These advantages are illustrated on several noise problems.}

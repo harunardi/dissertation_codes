@@ -7,7 +7,7 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage[bookmarksdepth=3,linktoc=all,colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
 \usepackage[capitalize]{cleveref}
-\usepackage[style=ieee]{biblatex}
+\usepackage[style=ieee, dashed=false]{biblatex}
 
 % Added packages
 \usepackage{graphicx}
@@ -23,6 +23,7 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{csvsimple}
 \usepackage{longtable}
+\usepackage[acronym,toc]{glossaries}
 
 % \usepackage{ruledchapters}  % example of compliant heading format, uncomment to use
 
@@ -31,10 +32,12 @@
 % uncomment the below to show a grid on all pages
 % \usepackage[grid, gridunit=in, gridcolor=blue!40, subgridcolor=blue!20]{eso-pic}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addbibresource{./references.bib}
 
 \newcounter{counterforappendices}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \title{A Reactor Physics Framework to Detect Anomalies in HTGR Core}
@@ -46,12 +49,15 @@
 \committee{
     Professor Tomasz Kozlowski, Director of Research, Chair\\
     Professor Angela Di Fulvio\\
-    Assistant Syed Bahauddin Alam\\
+    Assistant Professor Syed Bahauddin Alam\\
     Professor Eduard-Wilhelm Kirr\\
     Professor Christophe Demazière}
 \maketitle
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter
+
+\include{acronyms}
 
 \begin{abstract}
 This is a comprehensive study of caffeine consumption by graduate
@@ -99,6 +105,7 @@ process with me, always offering support and love.
 %\item[$\mu$g] Micrograms (of caffeine, generally).
 %\end{symbollist}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \mainmatter
 
 \chapter{Introduction}
@@ -122,9 +129,9 @@ process with me, always offering support and love.
 
 We conclude that graduate students like coffee.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % per Graduate College preference, place the \appendix and the appendices content before the
 % bibliography (here) only if the appendices contain references.
-
 \backmatter
 
 \printbibliography[heading=bibintoc,title={References}]
