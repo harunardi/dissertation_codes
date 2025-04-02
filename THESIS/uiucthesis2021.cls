@@ -166,7 +166,7 @@
   {\bfseries}%
   {~\mdseries\titlerule*[0.5em]{.}\bfseries\contentspage}
 }
-\setcounter{tocdepth}{0}
+\setcounter{tocdepth}{2}
 \let\thesis@listoftables=\listoftables
 \def\listoftables{\newpage%
     \addcontentsline{toc}{chapter}{\listtablename}%
