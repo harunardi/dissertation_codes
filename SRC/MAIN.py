@@ -263,10 +263,11 @@ def main():
                                 dTOT_hexx[g][n] = 0
             else:
                 pass
-            if type_noise == 'FVX' or type_noise == 'FAV':
-                if level != 4:
-                    print('Vibrating Assembly type noise only works if level = 4. Changing level to 4')
-                    level = 4
+
+#            if type_noise == 'FVX' or type_noise == 'FAV':
+#                if level != 4:
+#                    print('Vibrating Assembly type noise only works if level = 4. Changing level to 4')
+#                    level = 4
 
             hex_centers, hex_vertices = generate_pointy_hex_grid(s, I_max, J_max)
             triangle_neighbors_global = find_triangle_neighbors_2D(all_triangles, precision=6)

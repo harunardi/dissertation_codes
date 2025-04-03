@@ -25,7 +25,7 @@ h_hexx = s / np.sqrt(3) # Triangle side or hexagon radius
 h = h_hexx / (2**(level-1))
 
 # INITIALIZATION
-input_name = f"TASK3_TEST22_2DTriMG_HTTR_LVL2_AVS_NONCENTER" 
+input_name = f"TASK3_TEST03k_2DTriMG_HTTR_LVL2_AVS_NONCENTER" 
 case_name = f"{input_name}_level{level}"
 
 # BC
