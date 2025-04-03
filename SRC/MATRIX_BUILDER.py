@@ -269,3 +269,88 @@ class MatrixBuilderNoise2DHexx:
         dS = -dTOT_mat + dSCAT_mat + dNUFIS_mat
         return M.tocsr(), dS
 
+##############################################################################
+class MatrixBuilderForward3DRect:
+    def __init__(self, group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS):
+        self.group = group
+        self.N = N
+        self.conv = conv
+        self.TOT = TOT
+        self.SIGS_reshaped = SIGS_reshaped
+        self.BC = BC
+        self.dx = dx
+        self.dy = dy
+        self.dz = dz
+        self.D = D
+        self.chi = chi
+        self.NUFIS = NUFIS
+
+    def build_forward_matrices(self):
+        D_mat = FORWARD_D_3D_rect_matrix(self.group, self.BC, self.conv, self.dx, self.dy, self.dz, self.D)
+        TOT_mat = FORWARD_TOT_3D_rect_matrix(self.group, self.N, self.conv, self.TOT)
+        SCAT_mat = FORWARD_SCAT_3D_rect_matrix(self.group, self.N, self.conv, self.SIGS_reshaped)
+        M = D_mat + TOT_mat - SCAT_mat
+        F = FORWARD_NUFIS_3D_rect_matrix(self.group, self.N, self.conv, self.chi, self.NUFIS)
+        return M.tocsr(), F.tocsr()
+
+class MatrixBuilderAdjoint3DRect:
+    def __init__(self, group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS):
+        self.group = group
+        self.N = N
+        self.conv = conv
+        self.TOT = TOT
+        self.SIGS_reshaped = SIGS_reshaped
+        self.BC = BC
+        self.dx = dx
+        self.dy = dy
+        self.dz = dz
+        self.D = D
+        self.chi = chi
+        self.NUFIS = NUFIS
+
+    def build_adjoint_matrices(self):
+        TOT_mat = ADJOINT_TOT_3D_rect_matrix(self.group, self.N, self.conv, self.TOT)
+        SCAT_mat = ADJOINT_SCAT_3D_rect_matrix(self.group, self.N, self.conv, self.SIGS_reshaped)
+        D_mat = ADJOINT_D_3D_rect_matrix(self.group, self.BC, self.conv, self.dx, self.dy, self.dz, self.D)
+        F = ADJOINT_NUFIS_3D_rect_matrix(self.group, self.N, self.conv, self.chi, self.NUFIS)
+        M = D_mat + TOT_mat - SCAT_mat
+        return M.tocsr(), F.tocsr()
+
+class MatrixBuilderNoise2DRect:
+    def __init__(self, group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT, dSIGS_reshaped, dNUFIS):
+        self.group = group
+        self.N = N
+        self.conv = conv
+        self.TOT = TOT
+        self.SIGS_reshaped = SIGS_reshaped
+        self.BC = BC
+        self.dx = dx
+        self.dy = dy
+        self.dz = dz
+        self.D = D
+        self.chi = chi
+        self.NUFIS = NUFIS
+        self.keff = keff
+        self.v = v
+        self.Beff = Beff
+        self.omega = omega
+        self.l = l
+        self.dTOT = dTOT
+        self.dSIGS_reshaped = dSIGS_reshaped
+        self.dNUFIS = dNUFIS
+
+    def build_noise_matrices(self):
+        chi_p = self.chi
+        chi_d = self.chi
+        k_complex = 1/self.keff* ((self.l * self.Beff) / (self.l + 1j * self.omega))
+        D_mat = NOISE_D_3D_rect_matrix(self.group, self.BC, self.conv, self.dx, self.dy, self.dz, self.D)
+        TOT_mat = NOISE_TOT_3D_rect_matrix(self.group, self.N, self.conv, self.TOT)
+        FREQ_mat = NOISE_FREQ_3D_rect_matrix(self.group, self.N, self.conv, self.omega, self.v)
+        SCAT_mat = NOISE_SCAT_3D_rect_matrix(self.group, self.N, self.conv, self.SIGS_reshaped)
+        NUFIS_mat = NOISE_NUFIS_3D_rect_matrix(self.group, self.N, self.conv, chi_p, chi_d, self.NUFIS, k_complex, self.Beff, self.keff)
+        M = FREQ_mat - D_mat + TOT_mat - NUFIS_mat - SCAT_mat
+        dTOT_mat = NOISE_dTOT_3D_rect_matrix(self.group, self.N, self.conv, self.dTOT)
+        dSCAT_mat = NOISE_dSCAT_3D_rect_matrix(self.group, self.N, self.conv, self.dSIGS_reshaped)
+        dNUFIS_mat = NOISE_dNUFIS_3D_rect_matrix(self.group, self.N, self.conv, chi_p, chi_d, self.dNUFIS, k_complex, self.Beff, self.keff)
+        dS = -dTOT_mat + dSCAT_mat + dNUFIS_mat
+        return M.tocsr(), dS

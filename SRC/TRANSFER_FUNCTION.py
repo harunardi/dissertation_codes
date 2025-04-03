@@ -28,7 +28,9 @@ sys.path.append('../')
 #from INPUTS.TASK1_TEST07_2DMG_C3_VandV import *
 #from INPUTS.TASK1_TEST09_2DMG_PWRMOX_VandV import *
 
-from INPUTS.TASK1_TEST18_2DTriMG_HTTR2G_VandV import *
+from INPUTS.TASK1_TEST14_3DMG_PWRMOX1 import *
+
+#from INPUTS.TASK1_TEST18_2DTriMG_HTTR2G_VandV import *
 
 # Restore the original sys.path
 sys.path = original_sys_path
@@ -532,6 +534,194 @@ def main():
             for g in range(group):
                 NUMER += trapezoid(PHI_ADJ_temp_reshaped[g] * S_NUMER_reshaped[g], dx=h**2/4*np.sqrt(3), axis = 0)
                 DENOM += trapezoid(PHI_ADJ_temp_reshaped[g] * S_DENOM_reshaped[g], dx=h**2/4*np.sqrt(3), axis = 0)
+
+            dRHO.append(NUMER / DENOM)
+
+        G_0 = []
+        mag_G_0 = []
+        phase_G_0 = []
+        for f in range(len(freq)):
+            transfer_function = dPOWER[f]/dRHO[f]
+            G_0.append(transfer_function)
+            mag_G_0.append(abs(transfer_function))
+            phase_G_0.append(np.degrees(np.angle(transfer_function)))
+
+        # OUTPUT
+        print(f'Generating JSON output')
+        output = {}
+        G_0_groupname = f'G_0'
+        G_0_list = [{"real": x.real, "imaginary": x.imag} for x in G_0]
+        output[G_0_groupname] = G_0_list
+
+        # Save data to JSON file
+        with open(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_G_0_output.json', 'w') as json_file:
+            json.dump(output, json_file, indent=4)
+
+        # Plotting magnitude
+        plt.figure(figsize=(8, 6))  # Create a new figure
+        plt.plot(freq, mag_G_0, marker='o')
+        plt.xscale('log')
+        plt.yscale('log')
+        plt.xlabel('Frequency (Hz)')
+        plt.ylabel('Magnitude of Neutron Noise')
+        plt.title('Plot of Transfer Function (Magnitude)')
+        plt.savefig(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_Magnitude.png')
+
+        # Plotting phase
+        plt.figure(figsize=(8, 6))  # Create another new figure
+        plt.plot(freq, phase_G_0, marker='o')
+        plt.xscale('log')
+        plt.xlabel('Frequency (Hz)')
+        plt.ylim(-120, 0)
+        plt.ylabel('Phase of Neutron Noise')
+        plt.title('Plot of Transfer Function (Phase)')
+        plt.savefig(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_Phase.png')
+
+    elif geom_type =='3D rectangular':
+        output_dir = f'../OUTPUTS/{case_name}'
+        x = globals().get("x")
+        y = globals().get("y")
+        z = globals().get("z")
+        dx = globals().get("dx")
+        dy = globals().get("dy")
+        dz = globals().get("dz")
+        I_max = globals().get("I_max")
+        J_max = globals().get("J_max")
+        K_max = globals().get("K_max")
+        N = globals().get("N")
+        group = globals().get("group")
+        D = globals().get("D")
+        TOT = globals().get("TOT")
+        SIGS_reshaped = globals().get("SIGS_reshaped")
+        chi = globals().get("chi")
+        NUFIS = globals().get("NUFIS")
+        BC = globals().get("BC")
+
+        # Forward Simulation
+        solver_type = 'forward'
+        os.makedirs(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}', exist_ok=True)
+        conv = convert_index_3D_rect(D, I_max, J_max, K_max)
+        conv_array = np.array(conv)
+
+        matrix_builder = MatrixBuilderForward3DRect(group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS)
+        M, F_FORWARD = matrix_builder.build_forward_matrices()
+
+        solver = SolverFactory.get_solver_power3DRect(solver_type, group, N, conv, M, F, dx, dy, dz, precond, tol=1E-10)
+        keff, PHI_temp = solver.solve()
+        PHI, PHI_reshaped, PHI_reshaped_plot = PostProcessor.postprocess_power3DRect(phi_temp, conv, group, N, I_max, J_max, K_max)
+
+        output = {"keff": keff.real}
+        for g in range(len(PHI_reshaped)):
+            phi_groupname = f'PHI{g + 1}_{solver_type.upper()}'
+            output[phi_groupname] = [val.real for val in PHI_reshaped[g]]
+
+        with open(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_output.json', 'w') as json_file:
+            json.dump(output, json_file, indent=4)
+
+        PHI_temp_reshaped = np.reshape(PHI_temp, (group, max(conv)))
+
+        # Adjoint Simulation
+        solver_type = 'adjoint'
+        os.makedirs(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}', exist_ok=True)
+        conv = convert_index_3D_rect(D, I_max, J_max, K_max)
+        conv_array = np.array(conv)
+
+        matrix_builder = MatrixBuilderAdjoint3DRect(group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS)
+        M, F_ADJOINT = matrix_builder.build_adjoint_matrices()
+
+        solver = SolverFactory.get_solver_power3DRect(solver_type, group, N, conv, M, F, dx, dy, dz, precond, tol=1E-10)
+        keff, PHI_ADJ_temp = solver.solve()
+        PHI_ADJ, PHI_ADJ_reshaped, PHI_ADJ_reshaped_plot = PostProcessor.postprocess_power3DRect(PHI_ADJ_temp, conv, group, N, I_max, J_max, K_max)
+
+        output = {"keff": keff.real}
+        for g in range(len(PHI_ADJ_reshaped)):
+            phi_groupname = f'PHI{g + 1}_{solver_type.upper()}'
+            output[phi_groupname] = [val.real for val in PHI_ADJ_reshaped[g]]
+
+        with open(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_output.json', 'w') as json_file:
+            json.dump(output, json_file, indent=4)
+
+        PHI_ADJ_temp_reshaped = np.reshape(PHI_ADJ_temp, (group, max(conv)))
+
+        # Noise Simulation
+        solver_type = 'noise'
+        v = globals().get("v")
+        Beff = globals().get("Beff")
+        omega = globals().get("omega")
+        l = globals().get("l")
+        dTOT = globals().get("dTOT")
+        dSIGS_reshaped = globals().get("dSIGS_reshaped")
+        dNUFIS = globals().get("dNUFIS")
+
+        os.makedirs(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}', exist_ok=True)
+        conv = convert_index_3D_rect(D, I_max, J_max, K_max)
+        conv_array = np.array(conv)
+
+        with open(f'{output_dir}/{case_name}_TRANSFER/{case_name}_FORWARD/{case_name}_FORWARD_output.json', 'r') as json_file:
+            forward_output = json.load(json_file)
+        keff = forward_output["keff"]
+        PHI_all = []
+        for i in range(group):
+            phi_key = f"PHI{i+1}_FORWARD"
+            PHI_all.append(forward_output[phi_key])
+
+        PHI = np.zeros(max(conv) * group)
+        for g in range(group):
+            PHI_indices = g * max(conv) + (conv_array - 1)
+            PHI[PHI_indices] = PHI_all[g]
+
+        dPOWER = []
+        dRHO = []
+
+        freq = np.logspace(-4, 4, num=101)
+
+        for f in range(len(freq)):
+            ff = freq[f]
+            print(f'Solving for frequency {ff:.3e}')
+            omega = 2 * np.pi * ff
+
+            matrix_builder = MatrixBuilderNoise3DRect(group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT, dSIGS_reshaped, dNUFIS)
+            M, dS = matrix_builder.build_noise_matrices()
+
+            solver = SolverFactory.get_solver_fixed3DRect(solver_type, group, N, conv, M, dS, PHI, dx, dy, dz, precond, tol=1e-10)
+
+            dPHI_temp = solver.solve()
+            dPHI, dPHI_reshaped, dPHI_reshaped_plot = PostProcessor.postprocess_fixed3DRect(dPHI_temp, conv, group, N, I_max, J_max, K_max)
+            output = {}
+            for g in range(len(dPHI_reshaped)):
+                dPHI_groupname = f'dPHI{g + 1}'
+                dPHI_list = [{"real": x.real, "imaginary": x.imag} for x in dPHI_reshaped[g]]
+                output[dPHI_groupname] = dPHI_list
+    
+            with open(f'{output_dir}/{case_name}_TRANSFER/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_freq{f}_output.json', 'w') as json_file:
+                json.dump(output, json_file, indent=4)
+
+            dPHI_temp_reshaped = np.reshape(dPHI_temp, (group, max(conv)))
+
+            v1_PP = v1[0][0]
+            v2_PP = v2[0][0]
+            v_new = [v1_PP, v2_PP]
+
+            NUMER = 0
+            DENOM = 0
+            for g in range(group):
+                NUMER += trapezoid((1/v_new[g]) * (PHI_ADJ_temp_reshaped[g] * dPHI_temp_reshaped[g]), dx=dx, axis = 0)
+                DENOM += trapezoid((1/v_new[g]) * (PHI_ADJ_temp_reshaped[g] * PHI_temp_reshaped[g]), dx=dx, axis = 0)
+
+            dPOWER.append(NUMER / DENOM)
+
+            S_NUMER = dS.dot(PHI)
+            S_NUMER_reshaped = np.reshape(S_NUMER, (group, max(conv)))
+            S_DENOM = F_FORWARD.dot(PHI)
+            S_DENOM_reshaped = np.reshape(S_DENOM, (group, max(conv)))
+            S_NUMER_reshaped = np.nan_to_num(S_NUMER_reshaped, nan=0)
+            S_DENOM_reshaped = np.nan_to_num(S_DENOM_reshaped, nan=0)
+
+            NUMER = 0
+            DENOM = 0
+            for g in range(group):
+                NUMER += trapezoid(PHI_ADJ_temp_reshaped[g] * S_NUMER_reshaped[g], dx=dx, axis = 0)
+                DENOM += trapezoid(PHI_ADJ_temp_reshaped[g] * S_DENOM_reshaped[g], dx=dx, axis = 0)
 
             dRHO.append(NUMER / DENOM)
 

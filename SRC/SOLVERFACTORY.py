@@ -4,6 +4,8 @@ from METHODS import PowerMethodSolver2DRect
 from METHODS import FixedSourceSolver2DRect
 from METHODS import PowerMethodSolver2DHexx
 from METHODS import FixedSourceSolver2DHexx
+from METHODS import PowerMethodSolver3DRect
+from METHODS import FixedSourceSolver3DRect
 #from SRC_ALL.METHODS import PowerMethodSolver1D
 #from SRC_ALL.METHODS import FixedSourceSolver1D
 #from SRC_ALL.METHODS import PowerMethodSolver2DRect
@@ -51,5 +53,19 @@ class SolverFactory:
     def get_solver_fixed2DHexx(solver_type, group, conv_tri, M, dS, PHI, precond, tol):
         if solver_type == 'noise':
             return FixedSourceSolver2DHexx(group, conv_tri, M, dS, PHI, precond, tol)
+        else:
+            raise ValueError(f"Unknown solver type: {solver_type}")    
+
+    @staticmethod
+    def get_solver_power3DRect(solver_type, group, N, conv, M, F, dx, dy, dz, precond, tol):
+        if solver_type in ['forward', 'adjoint']:
+            return PowerMethodSolver3DRect(group, N, conv, M, F, dx, dy, dz, precond, tol)
+        else:
+            raise ValueError(f"Unknown solver type: {solver_type}")
+
+    @staticmethod
+    def get_solver_fixed3DRect(solver_type, group, N, conv, M, dS, PHI, dx, dy, dz, precond, tol):
+        if solver_type == 'noise':
+            return FixedSourceSolver3DRect(group, N, conv, M, dS, PHI, dx, dy, dz, precond, tol)
         else:
             raise ValueError(f"Unknown solver type: {solver_type}")    

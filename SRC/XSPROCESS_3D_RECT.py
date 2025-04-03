@@ -17,7 +17,7 @@ x, y = 0, 0
 
 #######################################################################################################
 # Function to convert 3D rectangular indexes
-def convert_index(D, I_max, J_max, K_max):
+def convert_index_3D_rect(D, I_max, J_max, K_max):
     conv = [0] * (I_max * J_max * K_max)
     tmp_conv = 0
     for k in range(K_max):
@@ -65,7 +65,7 @@ def load_output_hdf5(filename):
     return output_dict
 
 ##############################################################################
-def FORWARD_D_3D_matrix(group, BC, conv, dx, dy, dz, D):
+def FORWARD_D_3D_rect_matrix(group, BC, conv, dx, dy, dz, D):
     def DIFXCOEF(D_west, D_mid, D_east, dx):
         a1 = (2*D_mid*D_west)/((D_west+D_mid)*dx**2)
         a2 = (2*D_mid*D_west)/((D_west+D_mid)*dx**2) + (2*D_east*D_mid)/((D_east+D_mid)*dx**2)
@@ -245,7 +245,7 @@ def FORWARD_D_3D_matrix(group, BC, conv, dx, dy, dz, D):
     print("D_mat generated")
     return matrix
 
-def FORWARD_TOT_matrix(g, N, conv, TOT):
+def FORWARD_TOT_3D_rect_matrix(g, N, conv, TOT):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv))
     for group in range(g):
@@ -254,7 +254,7 @@ def FORWARD_TOT_matrix(g, N, conv, TOT):
     print("TOT_mat generated")
     return matrix
 
-def FORWARD_SCAT_matrix(g, N, conv, SIGS):
+def FORWARD_SCAT_3D_rect_matrix(g, N, conv, SIGS):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv))
     if g == 1:
@@ -268,7 +268,7 @@ def FORWARD_SCAT_matrix(g, N, conv, SIGS):
     print("SCAT_mat generated")
     return matrix
 
-def FORWARD_NUFIS_matrix(g, N, conv, chi, NUFIS):
+def FORWARD_NUFIS_3D_rect_matrix(g, N, conv, chi, NUFIS):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv,g*max_conv))
     for i in range(g):
@@ -279,7 +279,7 @@ def FORWARD_NUFIS_matrix(g, N, conv, chi, NUFIS):
     return matrix
 
 ##############################################################################
-def ADJOINT_D_3D_matrix(group, BC, conv, dx, dy, dz, D):
+def ADJOINT_D_3D_rect_matrix(group, BC, conv, dx, dy, dz, D):
     def DIFXCOEF(D_west, D_mid, D_east, dx):
         a1 = (2*D_mid*D_west)/((D_west+D_mid)*dx**2)
         a2 = (2*D_mid*D_west)/((D_west+D_mid)*dx**2) + (2*D_east*D_mid)/((D_east+D_mid)*dx**2)
@@ -459,7 +459,7 @@ def ADJOINT_D_3D_matrix(group, BC, conv, dx, dy, dz, D):
     print("D_mat generated")
     return matrix
 
-def ADJOINT_TOT_matrix(g, N, conv, TOT):
+def ADJOINT_TOT_3D_rect_matrix(g, N, conv, TOT):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv))
     for group in range(g):
@@ -468,7 +468,7 @@ def ADJOINT_TOT_matrix(g, N, conv, TOT):
     print("TOT_mat generated")
     return matrix.transpose()
 
-def ADJOINT_SCAT_matrix(g, N, conv, SIGS):
+def ADJOINT_SCAT_3D_rect_matrix(g, N, conv, SIGS):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv))
     if g == 1:
@@ -482,7 +482,7 @@ def ADJOINT_SCAT_matrix(g, N, conv, SIGS):
     print("SCAT_mat generated")
     return matrix.transpose()
 
-def ADJOINT_NUFIS_matrix(g, N, conv, chi, NUFIS):
+def ADJOINT_NUFIS_3D_rect_matrix(g, N, conv, chi, NUFIS):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv,g*max_conv))
     for i in range(g):
@@ -493,7 +493,7 @@ def ADJOINT_NUFIS_matrix(g, N, conv, chi, NUFIS):
     return matrix.transpose()
 
 ##############################################################################
-def NOISE_D_3D_matrix(group, BC, conv, dx, dy, dz, D):
+def NOISE_D_3D_rect_matrix(group, BC, conv, dx, dy, dz, D):
     def DIFXCOEF(D_west, D_mid, D_east, dx):
         a1 = (2*D_mid*D_west)/((D_west+D_mid)*dx**2)
         a2 = (2*D_mid*D_west)/((D_west+D_mid)*dx**2) + (2*D_east*D_mid)/((D_east+D_mid)*dx**2)
@@ -673,7 +673,7 @@ def NOISE_D_3D_matrix(group, BC, conv, dx, dy, dz, D):
     print("D_mat generated")
     return matrix
 
-def NOISE_TOT_matrix(g, N, conv, TOT):
+def NOISE_TOT_3D_rect_matrix(g, N, conv, TOT):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv))
     for group in range(g):
@@ -682,7 +682,7 @@ def NOISE_TOT_matrix(g, N, conv, TOT):
     print("TOT_mat generated")
     return matrix
 
-def NOISE_SCAT_matrix(g, N, conv, SIGS):
+def NOISE_SCAT_3D_rect_matrix(g, N, conv, SIGS):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv))
     if g == 1:
@@ -696,7 +696,7 @@ def NOISE_SCAT_matrix(g, N, conv, SIGS):
     print("SCAT_mat generated")
     return matrix
 
-def NOISE_NUFIS_matrix(g, N, conv, chi_p, chi_d, NUFIS, k_complex, Beff, keff):
+def NOISE_NUFIS_3D_rect_matrix(g, N, conv, chi_p, chi_d, NUFIS, k_complex, Beff, keff):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv,g*max_conv), dtype=complex)
     for i in range(g):
@@ -706,7 +706,7 @@ def NOISE_NUFIS_matrix(g, N, conv, chi_p, chi_d, NUFIS, k_complex, Beff, keff):
     print("NUFIS_mat generated")
     return matrix
 
-def NOISE_FREQ_matrix(g, N, conv, omega, v):
+def NOISE_FREQ_3D_rect_matrix(g, N, conv, omega, v):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv), dtype=complex)
     for group in range(g):
@@ -715,7 +715,7 @@ def NOISE_FREQ_matrix(g, N, conv, omega, v):
     print("FREQ_mat generated")
     return matrix
 
-def NOISE_dTOT_matrix(g, N, conv, dTOT):
+def NOISE_dTOT_3D_rect_matrix(g, N, conv, dTOT):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv), dtype=complex)
     for group in range(g):
@@ -724,7 +724,7 @@ def NOISE_dTOT_matrix(g, N, conv, dTOT):
     print("dTOT_mat generated")
     return matrix
 
-def NOISE_dSCAT_matrix(g, N, conv, dSIGS):
+def NOISE_dSCAT_3D_rect_matrix(g, N, conv, dSIGS):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv, g*max_conv), dtype=complex)
     if g == 1:
@@ -738,7 +738,7 @@ def NOISE_dSCAT_matrix(g, N, conv, dSIGS):
     print("dSCAT_mat generated")
     return matrix
 
-def NOISE_dNUFIS_matrix(g, N, conv, chi_p, chi_d, dNUFIS, k_complex, Beff, keff):
+def NOISE_dNUFIS_3D_rect_matrix(g, N, conv, chi_p, chi_d, dNUFIS, k_complex, Beff, keff):
     max_conv = max(conv)
     matrix = lil_matrix((g*max_conv,g*max_conv), dtype=complex)
     for i in range(g):

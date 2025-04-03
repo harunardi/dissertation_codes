@@ -32,8 +32,14 @@ sys.path.append('../')
 #from INPUTS.TASK1_TEST08_2DMG_BIBLIS_VandV import * # No noise case
 #from INPUTS.TASK1_TEST09_2DMG_PWRMOX_VandV import *
 
+#from INPUTS.TASK1_TEST10_3DMG_CSTest02_VandV import * # No noise case
+#from INPUTS.TASK1_TEST11_3DMG_CSTest08_VandV import * # Forward only
+#from INPUTS.TASK1_TEST12_3DMG_CSTest09_VandV import * # Forward only
+#from INPUTS.TASK1_TEST13_3DMG_PWRMOX import *
+from INPUTS.TASK1_TEST14_3DMG_PWRMOX1 import *
+
 #from INPUTS.TASK1_TEST15_2DTriMG_3ring import * # No noise case
-from INPUTS.TASK1_TEST16_2DTriMG_HOMOG_VandV import *
+#from INPUTS.TASK1_TEST16_2DTriMG_HOMOG_VandV import *
 #from INPUTS.TASK1_TEST17_2DTriMG_VVER400_VandV import * # No noise case
 #from INPUTS.TASK1_TEST18_2DTriMG_HTTR2G_VandV import *
 #from INPUTS.TASK1_TEST19_2DTriMG_HTTR4G import * # No noise case
@@ -283,6 +289,111 @@ def main():
             for g in range(group):
                 plot_triangular(dPHI_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI', title=f'2D Plot of dPHI{g+1} Hexx Magnitude', case_name=case_name, output_dir=output_dir, solve=solver_type.upper(), process_data="magnitude")
                 plot_triangular(dPHI_temp_reshaped[g], x, y, tri_indices, g+1, cmap='viridis', varname='dPHI', title=f'2D Plot of dPHI{g+1} Hexx Phase', case_name=case_name, output_dir=output_dir, solve=solver_type.upper(), process_data="phase")
+
+    elif geom_type =='3D rectangular':
+        x = globals().get("x")
+        y = globals().get("y")
+        z = globals().get("z")
+        dx = globals().get("dx")
+        dy = globals().get("dy")
+        dz = globals().get("dz")
+        I_max = globals().get("I_max")
+        J_max = globals().get("J_max")
+        K_max = globals().get("K_max")
+        N = globals().get("N")
+        group = globals().get("group")
+        D = globals().get("D")
+        TOT = globals().get("TOT")
+        SIGS_reshaped = globals().get("SIGS_reshaped")
+        chi = globals().get("chi")
+        NUFIS = globals().get("NUFIS")
+        BC = globals().get("BC")
+
+        output_dir = f'../OUTPUTS/{case_name}'
+        Utils.create_directories(solver_type, output_dir, case_name)
+        conv = convert_index_3D_rect(D, I_max, J_max, K_max)
+        conv_array = np.array(conv)
+        if solver_type in ['forward', 'adjoint']:
+            if solver_type == 'forward':
+                matrix_builder = MatrixBuilderForward3DRect(group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS)
+                M, F = matrix_builder.build_forward_matrices()
+            elif solver_type == 'adjoint':
+                matrix_builder = MatrixBuilderAdjoint3DRect(group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS)
+                M, F = matrix_builder.build_adjoint_matrices()
+
+            solver = SolverFactory.get_solver_power3DRect(solver_type, group, N, conv, M, F, dx, dy, dz, precond, tol=1E-10)
+            keff, phi_temp = solver.solve()
+
+            PHI, PHI_reshaped, PHI_reshaped_plot = PostProcessor.postprocess_power3DRect(phi_temp, conv, group, N, I_max, J_max, K_max)
+            PostProcessor.save_output_power3DRect(output_dir, case_name, keff, PHI_reshaped, solver_type)
+            for g in range(group):
+                image_files = []
+                for k in range(K_max):
+                    filename_PHI = plot_heatmap_3D(PHI_reshaped_plot[g, k, :, :], g+1, k+1, x, y, cmap='viridis', varname='PHI', title=f'2D Plot of PHI{g+1}, Z={k+1}', output_dir=output_dir, case_name=case_name, process_data='magnitude', solve=solver_type.upper())
+                    image_files.append(filename_PHI)
+
+                # Create a GIF from the saved images
+                gif_filename_PHI = f'{output_dir}/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_PHI_animation_G{g+1}.gif'
+
+                # Open images and save as GIF
+                images_PHI = [Image.open(img) for img in image_files]
+                images_PHI[0].save(gif_filename_PHI, save_all=True, append_images=images_PHI[1:], duration=300, loop=0)
+                print(f"GIF saved as {gif_filename_PHI}")
+
+        elif solver_type == 'noise':
+            v = globals().get("v")
+            Beff = globals().get("Beff")
+            omega = globals().get("omega")
+            l = globals().get("l")
+            dTOT = globals().get("dTOT")
+            dSIGS_reshaped = globals().get("dSIGS_reshaped")
+            dNUFIS = globals().get("dNUFIS")
+
+            # Load data from JSON file
+            with open(f'{output_dir}/{case_name}_FORWARD/{case_name}_FORWARD_output.json', 'r') as json_file:
+                forward_output = json.load(json_file)
+
+            # Access keff and PHI from the loaded data
+            keff = forward_output["keff"]
+            PHI_all = []
+            for i in range(group):
+                phi_key = f"PHI{i+1}_FORWARD"
+                PHI_all.append(forward_output[phi_key])
+
+            PHI = np.zeros(max(conv) * group)
+            for g in range(group):
+                PHI_indices = g * max(conv) + (conv_array - 1)
+                PHI[PHI_indices] = PHI_all[g]
+
+            matrix_builder = MatrixBuilderNoise3DRect(group, N, conv, TOT, SIGS_reshaped, BC, dx, dy, dz, D, chi, NUFIS, keff, v, Beff, omega, l, dTOT, dSIGS_reshaped, dNUFIS)
+            M, dS = matrix_builder.build_noise_matrices()
+
+            solver = SolverFactory.get_solver_fixed3DRect(solver_type, group, N, conv, M, dS, PHI, dx, dy, dz, precond, tol=1e-10)
+
+            dPHI_temp = solver.solve()
+            dPHI, dPHI_reshaped, dPHI_reshaped_plot = PostProcessor.postprocess_fixed3DRect(dPHI_temp, conv, group, N, I_max, J_max, K_max)
+            PostProcessor.save_output_fixed3DRect(output_dir, case_name, keff, dPHI_reshaped, solver_type)
+            for g in range(group):
+                image_mag_files = []
+                image_phase_files = []
+                for k in range(K_max):
+                    filename_mag = plot_heatmap_3D(dPHI_reshaped_plot[g, k, :, :], g+1, k+1, x, y, cmap='viridis', varname='dPHI', title=f'2D Plot of dPHI{g+1}, Z={k+1}, Magnitude', output_dir=output_dir, case_name=case_name, process_data='magnitude', solve=solver_type.upper())
+                    filename_phase = plot_heatmap_3D(dPHI_reshaped_plot[g, k, :, :], g+1, k+1, x, y, cmap='viridis', varname='dPHI', title=f'2D Plot of dPHI{g+1}, Z={k+1}, Phase', output_dir=output_dir, case_name=case_name, process_data='phase', solve=solver_type.upper())
+                    image_mag_files.append(filename_mag)
+                    image_phase_files.append(filename_phase)
+
+                # Create a GIF from the saved images
+                gif_filename_mag = f'{output_dir}/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_dPHI_animation_magnitude_G{g+1}.gif'
+                gif_filename_phase = f'{output_dir}/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_dPHI_animation_phase_G{g+1}.gif'
+
+                # Open images and save as GIF
+                images_mag = [Image.open(img) for img in image_mag_files]
+                images_mag[0].save(gif_filename_mag, save_all=True, append_images=images_mag[1:], duration=300, loop=0)
+                print(f"GIF saved as {gif_filename_mag}")
+
+                images_phase = [Image.open(img) for img in image_phase_files]
+                images_phase[0].save(gif_filename_phase, save_all=True, append_images=images_phase[1:], duration=300, loop=0)
+                print(f"GIF saved as {gif_filename_phase}")
 
     elapsed_time = time.time() - start_time
     print(f'Time elapsed: {elapsed_time:.3e} seconds')

@@ -152,3 +152,68 @@ class PostProcessor:
 
         with open(f'{output_dir}/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_output.json', 'w') as json_file:
             json.dump(output, json_file, indent=4)
+
+    @staticmethod
+    def postprocess_power3DRect(phi_temp, conv, group, N, I_max, J_max, K_max):
+        phi = np.zeros(group * N)
+        conv_array = np.array(conv)
+        non_zero_indices = np.nonzero(conv)[0]
+        phi_temp_indices = conv_array[non_zero_indices] - 1
+
+        for g in range(group):
+            phi_temp_start = g * max(conv)
+            phi[g * N + non_zero_indices] = phi_temp[
+                phi_temp_start + phi_temp_indices
+            ].real
+
+            for n in range(N):
+                if conv[n] == 0:
+                    phi[g * N + n] = np.nan
+        
+        phi_reshaped = np.reshape(phi, (group, N))
+        phi_reshaped_plot = np.reshape(phi, (group, K_max, J_max, I_max))
+
+        return phi, phi_reshaped, phi_reshaped_plot
+
+    @staticmethod
+    def save_output_power3DRect(output_dir, case_name, keff, phi_reshape, solver_type):
+        output = {"keff": keff.real}
+        for g in range(len(phi_reshape)):
+            phi_groupname = f'PHI{g + 1}_{solver_type.upper()}'
+            output[phi_groupname] = [val.real for val in phi_reshape[g]]
+
+        with open(f'{output_dir}/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_output.json', 'w') as json_file:
+            json.dump(output, json_file, indent=4)
+
+    @staticmethod
+    def postprocess_fixed4DRect(dPHI_temp, conv, group, N, I_max, J_max, K_max):
+        dPHI = np.zeros(group * N, dtype=complex)
+        conv_array = np.array(conv)
+        non_zero_indices = np.nonzero(conv)[0]
+        phi_temp_indices = conv_array[non_zero_indices] - 1
+
+        for g in range(group):
+            dPHI_temp_start = g * max(conv)
+            dPHI[g * N + non_zero_indices] = dPHI_temp[
+                dPHI_temp_start + phi_temp_indices
+            ]
+
+            for n in range(N):
+                if conv[n] == 0:
+                    dPHI[g * N + n] = np.nan
+
+        dPHI_reshaped = np.reshape(dPHI, (group, N))
+        dPHI_reshaped_plot = np.reshape(dPHI, (group, K_max, J_max, I_max))
+
+        return dPHI, dPHI_reshaped, dPHI_reshaped_plot
+
+    @staticmethod
+    def save_output_fixed3DRect(output_dir, case_name, keff, dPHI_reshape, solver_type):
+        output = {}
+        for g in range(len(dPHI_reshape)):
+            dPHI_groupname = f'dPHI{g + 1}'
+            dPHI_list = [{"real": x.real, "imaginary": x.imag} for x in dPHI_reshape[g]]
+            output[dPHI_groupname] = dPHI_list
+
+        with open(f'{output_dir}/{case_name}_{solver_type.upper()}/{case_name}_{solver_type.upper()}_output.json', 'w') as json_file:
+            json.dump(output, json_file, indent=4)

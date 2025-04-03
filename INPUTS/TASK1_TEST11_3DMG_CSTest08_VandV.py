@@ -12,7 +12,7 @@ os.environ['PYTHONDONTWRITEBYTECODE'] = '1'
 sys.dont_write_bytecode = True
 
 # Load the JSON data from the file
-with open('INPUTS/TASK1_TEST11_3DMG_CSTest08_VandV.json', 'r') as f:
+with open('../INPUTS/TASK1_TEST11_3DMG_CSTest08_VandV.json', 'r') as f:
     data = json.load(f)
 
 # Access each matrix using its key
@@ -31,10 +31,14 @@ FLX2_CORESIM = data['FLX2_CORESIM']
 
 ## INITIALIZATION
 case_name = "TASK1_TEST11_3DMG_CSTest08_VandV"
+geom_type = "3D rectangular"
 I_max = len(D1[0][0]) # N row
 J_max = len(D1[0]) # N column
 K_max = len(D1)
 group = 2
+x = np.arange(0, I_max*dx, dx)
+y = np.arange(0, J_max*dy, dy)
+z = np.arange(0, K_max*dz, dz)
 
 # BC
 BC = [3, 3, 3, 3, 3, 3] # N, S, E, W, T, B
@@ -89,3 +93,8 @@ SIGS_reshaped = [[SIGS11_reshaped, SIGS21_reshaped], [SIGS12_reshaped, SIGS22_re
 TOT = TOT_reshaped
 chi = chi_reshaped
 NUFIS = NUFIS_reshaped
+
+precond = 2
+# None = 0
+# ILU = 1
+# LU = 2
