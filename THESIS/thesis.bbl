@@ -479,6 +479,66 @@
       \endverb
       \keyw{Factorial Moment,Fuel Assembly,Neutron Detector,Noise Source,Spontaneous Fission}
     \endentry
+    \entry{leppanenSerpentMonteCarlo2015}{article}{}
+      \name{author}{5}{}{%
+        {{hash=ad84adbe4323fc9ca7336d61b01c91e3}{%
+           family={Leppänen},
+           familyi={L\bibinitperiod},
+           given={Jaakko},
+           giveni={J\bibinitperiod}}}%
+        {{hash=b4a98bcdbe4390609b8e38da1bef83ba}{%
+           family={Pusa},
+           familyi={P\bibinitperiod},
+           given={Maria},
+           giveni={M\bibinitperiod}}}%
+        {{hash=3d92291c3838cebea7b9fb8bcbc02b2d}{%
+           family={Viitanen},
+           familyi={V\bibinitperiod},
+           given={Tuomas},
+           giveni={T\bibinitperiod}}}%
+        {{hash=7e2382390a02c518a797f9e3a72b6448}{%
+           family={Valtavirta},
+           familyi={V\bibinitperiod},
+           given={Ville},
+           giveni={V\bibinitperiod}}}%
+        {{hash=10bd4e1e33fc2c4703be97283bb07df8}{%
+           family={Kaltiaisenaho},
+           familyi={K\bibinitperiod},
+           given={Toni},
+           giveni={T\bibinitperiod}}}%
+      }
+      \strng{namehash}{be0da16cc46e248ac5cf3bf6556a4fb1}
+      \strng{fullhash}{433ce0da2ea763981f05678cb0eefd11}
+      \strng{bibnamehash}{433ce0da2ea763981f05678cb0eefd11}
+      \strng{authorbibnamehash}{433ce0da2ea763981f05678cb0eefd11}
+      \strng{authornamehash}{be0da16cc46e248ac5cf3bf6556a4fb1}
+      \strng{authorfullhash}{433ce0da2ea763981f05678cb0eefd11}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The Serpent Monte Carlo reactor physics burnup calculation code has been developed at VTT Technical Research Centre of Finland since 2004, and is currently used in over 100 universities and research organizations around the world. This paper presents the brief history of the project, together with the currently available methods and capabilities and plans for future work. Typical user applications are introduced in the form of a summary review on Serpent-related publications over the past few years.}
+      \field{issn}{03064549}
+      \field{journaltitle}{Annals of Nuclear Energy}
+      \field{langid}{english}
+      \field{month}{8}
+      \field{shorttitle}{The {{Serpent Monte Carlo}} Code}
+      \field{title}{The {{Serpent Monte Carlo}} Code: {{Status}}, Development and Applications in 2013}
+      \field{urlday}{26}
+      \field{urlmonth}{9}
+      \field{urlyear}{2022}
+      \field{volume}{82}
+      \field{year}{2015}
+      \field{urldateera}{ce}
+      \field{pages}{142\bibrangedash 150}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1016/j.anucene.2014.08.024
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/K4RB4FSG/Leppänen et al. - 2015 - The Serpent Monte Carlo code Status, development .pdf
+      \endverb
+    \endentry
     \entry{pazsitNeutronFluctuationsTreatise2008}{book}{}
       \name{author}{2}{}{%
         {{hash=ad3129c3ab36ff080fc40cb99f31e6da}{%
@@ -1577,8 +1637,8 @@
       \strng{authornamehash}{ad3129c3ab36ff080fc40cb99f31e6da}
       \strng{authorfullhash}{ad3129c3ab36ff080fc40cb99f31e6da}
       \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{1}
@@ -2112,8 +2172,8 @@
       \strng{authorbibnamehash}{33a09a8f6b365a8bbf6181a18c80658d}
       \strng{authornamehash}{33a09a8f6b365a8bbf6181a18c80658d}
       \strng{authorfullhash}{33a09a8f6b365a8bbf6181a18c80658d}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Using reactor noise techniques, a vibrating in-core instrument tube in the Mühleberg Boiling Water Reactor could be detected. The normalized auto power spectral density (NPSD) of the current fluctuations of a mini in-core chamber, fixed within the instrument tube, has been analyzed before and after repair. There was a strong evidence of a peak at the resonance frequency of the vibration at 2.6 Hz in the NPSD. It vanished promptly after the bypass-streaming at the lower core plate, being the physical origin of the vibrating instrument tube, was re-arranged.}
@@ -2167,8 +2227,8 @@
       \strng{authorbibnamehash}{40cd39a5ee1c56d14849076786e9cc99}
       \strng{authornamehash}{d5c3bcfb649d1bf6190ef3f14f879136}
       \strng{authorfullhash}{40cd39a5ee1c56d14849076786e9cc99}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Neutron noise analysis measurements were made in three BWR-4 reactors under full-power conditions to determine the noise characterization spectra of the reactors with two different instrument-tube cooling configurations. Both configurations were designed to prevent flow-induced vibration of the instrument tubes and subsequent damage of fuel channel boxes caused by impacts of the tubes with the boxes. Noise spectra from these three reactors were compared with spectra previously obtained prior to changing the instrument-tube cooling configuration, and no evidence of impacting was found.}
@@ -2305,8 +2365,8 @@
       \strng{authorbibnamehash}{36591570fa246a7cfcefc277ff2d29c6}
       \strng{authornamehash}{36591570fa246a7cfcefc277ff2d29c6}
       \strng{authorfullhash}{36591570fa246a7cfcefc277ff2d29c6}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Surveillance of core barrel vibrations has been performed in the Swedish Ringhals PWRs for several years. This surveillance is focused mainly on the pendular motion of the core barrel, which is known as the beam mode. The monitoring of the beam mode has suggested that its amplitude increases along the cycle and decreases after refuelling. In the last 5 years several measurements have been taken in order to understand this behaviour. Besides, a non-linear fitting procedure has been implemented in order to better distinguish the different components of vibration. By using this fitting procedure, two modes of vibration have been identified in the frequency range of the beam mode. Several results coming from the trend analysis performed during these years indicate that one of the modes is due to the core barrel motion itself and the other is due to the individual flow induced vibrations of the fuel elements. In this work, the latest results of this monitoring are presented.}
@@ -2878,8 +2938,8 @@
       \strng{authorbibnamehash}{aa377f5142a2480667de7559c40da7ea}
       \strng{authornamehash}{23a01509882588e042a6b2f8ef6d8794}
       \strng{authorfullhash}{aa377f5142a2480667de7559c40da7ea}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The behavior of low frequency neutron noise during the 30 years of operation of German KWU built PWRs is reviewed. The role of various factors influencing neutron noise such as sub-cooled boiling, power and enrichment uprates, fuel type and mechanical fuel assembly design is discussed. Simulation results of temperature driven neutron noise with Studsvik's S3K dynamic core simulator are shown and compared to measurements. Hypotheses for recent increases and decreases of low frequency neutron noise are compared with evidence from operating history.}
@@ -3089,8 +3149,8 @@
       \strng{authorbibnamehash}{60a1ee26109f37e286e4ff779cae3065}
       \strng{authornamehash}{60a1ee26109f37e286e4ff779cae3065}
       \strng{authorfullhash}{60a1ee26109f37e286e4ff779cae3065}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Thesis (Nucl.E.)--Massachusetts Institute of Technology, Dept. of Nuclear Engineering, 1979.}

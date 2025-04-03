@@ -1,19 +1,19 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'thesis.blg'
-[93] biber-darwin:340> INFO - === Wed Apr  2, 2025, 19:19:01
-[111] Biber.pm:419> INFO - Reading 'thesis.bcf'
-[266] Biber.pm:979> INFO - Found 95 citekeys in bib section 0
-[282] Biber.pm:4419> INFO - Processing section 0
-[294] Biber.pm:4610> INFO - Looking for bibtex file './references.bib' for section 0
-[337] bibtex.pm:1713> INFO - LaTeX decoding ...
-[1100] bibtex.pm:1519> INFO - Found BibTeX data source './references.bib'
-[1983] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1983] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1983] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[1983] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[2049] bbl.pm:660> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
-[2144] bbl.pm:763> INFO - Output to thesis.bbl
-[2145] Biber.pm:131> WARN - legacy year field '2017-04-16/2017-04-20' in entry 'chionisSIMULATE3KAnalysesNeutron2017' is not an integer - this will probably not sort properly.
-[2145] Biber.pm:131> WARN - legacy year field '2016-05-01/2016-05-05' in entry 'montalvoFirstEvidencePivotal2016' is not an integer - this will probably not sort properly.
-[2145] Biber.pm:131> WARN - legacy year field '0029-03/2020-04-02' in entry 'demaziereMonteCarlobasedDynamic29' is not an integer - this will probably not sort properly.
-[2145] Biber.pm:133> INFO - WARNINGS: 3
+[108] biber:340> INFO - === Wed Apr  2, 2025, 20:50:00
+[158] Biber.pm:419> INFO - Reading 'thesis.bcf'
+[274] Biber.pm:979> INFO - Found 96 citekeys in bib section 0
+[298] Biber.pm:4419> INFO - Processing section 0
+[334] Biber.pm:4610> INFO - Looking for bibtex file './references.bib' for section 0
+[417] bibtex.pm:1713> INFO - LaTeX decoding ...
+[1262] bibtex.pm:1519> INFO - Found BibTeX data source './references.bib'
+[2538] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2538] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2538] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[2539] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[2615] bbl.pm:660> INFO - Writing 'thesis.bbl' with encoding 'UTF-8'
+[2710] bbl.pm:763> INFO - Output to thesis.bbl
+[2711] Biber.pm:131> WARN - legacy year field '2017-04-16/2017-04-20' in entry 'chionisSIMULATE3KAnalysesNeutron2017' is not an integer - this will probably not sort properly.
+[2711] Biber.pm:131> WARN - legacy year field '2016-05-01/2016-05-05' in entry 'montalvoFirstEvidencePivotal2016' is not an integer - this will probably not sort properly.
+[2711] Biber.pm:131> WARN - legacy year field '0029-03/2020-04-02' in entry 'demaziereMonteCarlobasedDynamic29' is not an integer - this will probably not sort properly.
+[2711] Biber.pm:133> INFO - WARNINGS: 3

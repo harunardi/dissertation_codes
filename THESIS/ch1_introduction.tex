@@ -13,6 +13,19 @@ In this work, computational models of neutron noise are developed based on the n
 
 \section{Objectives}
 
+The main objective of this work is to develop and demonstrate core diagnostics in HTGR system using neutron noise method. The following objectives are identified to advance this goal:
+\begin{enumerate}
+    \item Develop numerical solver to perform forward, adjoint, and noise (in frequency domain) calculation.
+    \item Determine the characteristics of noise in HTGRs compared to LWRs through the zero-power reactor transfer function.
+    \item Determine the distinct characteristics of noise sources in LWRs and HTGRs, namely absorber of variable strength and fuel assembly vibration.
+    \item Perform noise unfolding in prismatic HTGRs using existing methods.
+    \item Explore improvements in noise unfolding methods through noise flux interpolation
+\end{enumerate}
+
+Objective (1) focuses on the development of a numerical solver that could perform simulations in rectangular and hexagonal geometries using provided macroscopic cross-sections. The numerical solver is necessary for the overall goal, especially for hexagonal geometries using box-scheme finite difference. This solver will be used to model and simulate neutron noise in HTGR systems, which is the focus of objective (2). The HTGR model used in this case is the HTTR benchmark model. The HTTR benchmark is modeled in Monte Carlo code Serpent \cite{leppanenSerpentMonteCarlo2015}. This Serpent model is a heterogeneous model with various materials. The details of the HTTR model will be provided in the following sections. This model is mainly used to generate homogenize cross-sections for the solver. 
+
+After obtaining the model, objective (3) and (4) focuses on modeling various neutron noise models and unfolding methods that existed in literature. These models and methods are mainly developed for LWR systems. However, it is meaningful to apply the methods and model to understand the different behavior of HTGR system under small perturbations. The novelty of this works relies on objective (5). Using all the information known from previous objectives, it is important to extend these models and methods to reflect the important physics of HTGR system and leveraging all the known parameters from forward and adjoint calculations.
+
 \section{Outline}
 
 How does this relate to coffee? We direct the reader to Refs.
