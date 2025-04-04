@@ -7,8 +7,6 @@ Neutron noise has been studied since the early adaptation of power reactors. Thi
 Neutron noise serves several beneficial purposes, one for core monitoring and diagnostics. The monitoring and diagnostics encompass a wide range of nuclear reactor operations, including steady-state and transient operations. During the operation of any system, perturbations are unavoidable, including in nuclear reactor systems. The perturbations could be significant, such as control rod insertion, loss of forced cooling, and many other examples that could lead to unexpected behavior in the transient operation \cite{ottIntroductoryNuclearReactor1985}. Detecting any anomalies or perturbations would enable operators to respond appropriately to the problem. This will prevent any accident from occurring \cite{ferrierReactorNoise1963}. 
 
 Various aspects can cause the effects of perturbation. For example, several technological processes such as mechanical vibrations in the fuel assemblies and absorbers, boiling of the coolant/moderator in a Boiling Water Reactor (BWR), and instability of flow dynamics in the system may cause some perturbations that will lead to fluctuations of reactor system behavior \cite{thiePowerReactorNoise1981}. Reactor diagnostics using noise analysis have been widely employed globally. Noise analysis relies on measuring fluctuations in process parameters, such as neutron flux, around their mean values. Using noise analysis, non-intrusive, online core monitoring can be done more accurately \cite{demaziereDevelopmentNonintrusiveMethod2002}. These fluctuations represent the localized and instantaneous phenomenon in the nuclear reactor. It is described as the deviation around the mean values
-
-The chapter is structured as follows. First, we provide an overview of the theoretical aspects of neutron noise. This includes the theory underlying some past experiments and the theory behind the computational methods used for neutron noise analysis. Second, we highlighted some historical context of neutron noise analysis. Third, we provide examples of the application of neutron noise to reactor diagnostics, including past noise experiments for diagnostics and the computational methods that contributed to these experiments. Fourth, we review some computational tools and their approaches to solving neutron noise analysis. These computational tools have been developed for the last few years. Lastly, we propose extensions to the neutron noise method and discuss how these extensions would impact neutron noise analysis. This includes, but is not limited to, the use of machine learning for neutron noise analysis and the application of neutron noise to advanced reactor technologies. 
  
 \section{Theory of Power Reactor Noise and Its Approaches}
 
@@ -358,9 +356,10 @@ The results from \cite{demaziereDevelopmentNoisebasedMethod2002} show that the s
 
 The theory of neutron noise has been applied in various nuclear reactors by utilizing the noise characteristics of these reactors. The reference \cite{thiePowerReactorNoise1981} explained several reasons for using noise analysis in nuclear reactors. This includes the capability to perform specific measurements, design, or model verification, as well as simplicity, low cost, and no interference with operating procedures. Noise can also be used as a substitute for another test or inspection. The use of neutron noise analysis varies depending on the specific interest it is intended for \cite{torresNeutronNoiseAnalysis2019}. However, neutron noise theory is widely used for sensor surveillance \cite{hashemianMeasurementDynamicTemperatures2011, hashemianPracticalReviewMethods2010, montalvoAdvancedSurveillanceResistance2014}, core monitoring \cite{czibokRegularNeutronNoise2003, hashemianOnlineMonitoringApplications2011, ortiz-villafuerteBWROnlineMonitoring2006}, and core diagnostics \cite{pazsitDevelopmentsCoreBarrelMotion2016, montalvoFirstEvidencePivotal2016}. Table \ref{table:diagnostics} provides examples of noise analysis applications for various reactor types.
 
-\begin{table}[h]
+\begin{table}[ht]
         \centering
         \caption{Some examples of noise application for power reactors}
+        {\renewcommand{\arraystretch}{2}%
         \begin{tabular}{ | m{3.5cm} |c| m{7cm} |c| } 
          \hline
          \textbf{Reactor Name} & \textbf{Type} & \textbf{Application}& \textbf{References} \\ 
@@ -385,7 +384,7 @@ The theory of neutron noise has been applied in various nuclear reactors by util
          \hline
          Vermont Yankee & BWR & Flow impingement caused excessive tube vibration & \cite{behringerObservationIncoreInstrument1977, mathisCharacterizationStudiesBWR41977} \\ 
          \hline
-        \end{tabular}
+        \end{tabular}} \quad
         \label{table:diagnostics}
 \end{table}
 

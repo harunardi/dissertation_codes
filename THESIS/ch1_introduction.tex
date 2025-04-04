@@ -1,44 +1,70 @@
-\label{ch:intro}
+\label{ch:introduction}
 
 \section{Motivation}
 
-The development of advanced reactors has been rising for the last several years. This is backed with the support of the financial market through startups and private funds, and also supportive public perception of nuclear in recent years. With the 
+Core diagnostics have been a key component of nuclear reactor operation to ensure reactor safety and performance. As a multicomponent system, perturbations in nuclear reactors are unavoidable. For power reactors, neutron noise is defined as the stochastic or random process that always happens in a nuclear reactor \cite{saitoTheoryPowerReactor1974b}. In the past, neutron noise experiments were developed to perfom online monitoring and diagnostic of research reactors. Some examples include continuous neutron noise monitoring at the \gls*{HFIR}, neutron and pressure noise monitors at the \gls*{MSRE} \cite{fryExperienceReactorMalfunction1971}, neutron noise diagnostics at the Palisades Nuclear Generating Station in Michigan \cite{fryAnalysisNeutrondensityOscillations1975}, and German measurements in \gls*{BWR} that showed vibrations quantified using neutron noise simulations \cite{wachInvestigationJointEffect1974}. 
 
-Core diagnostics have been a key component of nuclear reactor operation to ensure reactor safety and performance. As a multicomponent system, perturbations in nuclear reactors are unavoidable. In the past, neutron noise experiments were developed to study the effect of perturbations in zero-power reactors \cite{akcasuApplicationLangevinTechnique1966,cohnSimplifiedTheoryPile1960,moorePowerNoiseTransfer1959}. Neutron noise is defined as the stochastic or random process that always happens in a nuclear reactor \cite{saitoTheoryPowerReactor1974b}. Another meaning also defines noise as the fluctuation in the output of the detector when the incident radiation is steady \cite{pacilioAnalysisReactorNoise1979}. The results show that the neutron noise method could be used to detect anomalies in zero-power reactors. Later, the neutron noise method was used to detect anomalies in power reactors. Some examples include continuous neutron noise monitoring at the \gls*{HFIR}, neutron and pressure noise monitors at the \gls*{MSRE} \cite{fryExperienceReactorMalfunction1971}, neutron noise diagnostics at the Palisades Nuclear Generating Station in Michigan \cite{fryAnalysisNeutrondensityOscillations1975}, and German measurements in \gls*{BWR} that showed vibrations quantified using neutron noise simulations \cite{wachInvestigationJointEffect1974}. 
+The success of core diagnostics using neutron noise experiments motivates the development of computational models of neutron noise. In the early days, the computational models revolves around accurately modeling perturbations in a reactor as cross section perturbations \cite{saitoTheoryPowerReactor1974,saitoTheoryPowerReactor1974a}. Further development of the model led to the concept of noise unfolding method, which is a method to detect the location of neutron noise and determine the magnitude of neutron noise. There are three main methods that have been developed to unfold neutron noise: the inversion method, the zoning method, and the scanning method. All of the methods require the Green function matrix to solve the problem \cite{pazsitNoiseTechniquesNuclear2010}. The input for these methods is the noise fluxes from the detector readings, and the output is the noise locations and magnitude.
 
-The success of core diagnostics using neutron noise experiments motivates the development of computational models of neutron noise. The computational model of neutron noise was developed first for zero-power reactors, similar to the experiments. The early computational model introduces the concept of noise equivalent source \cite{cohnSimplifiedTheoryPile1960}. Then, \cite{akcasuApplicationLangevinTechnique1966} further detailed how this concept of a noise equivalent source can be included in the neutron transport equation. In the paper, \cite{akcasuApplicationLangevinTechnique1966} developed the space and energy-dependent theory of neutron noise using the Langevin technique. The Langevin technique has been extensively used in studies such as Brownian motion and thermodynamics. \cite{akcasuApplicationLangevinTechnique1966} also evaluated the equivalent source of noise as fluctuations of all the phenomena that contribute to the neutron transport equation. That includes capture, fission, scattering, and external sources. To validate the application of Langevin technique, the paper included the correlations of the count rates of two detectors at two different phase points in a zero-power reactor system. Further investigation in \cite{nietoTwogroupReactorNoise1968} took advantage of the Langevin technique to model the analysis of two groups of neutron noise. The paper suggested the simplification of neutron transport into two-group neutron diffusion theory and applied the Langevin technique to the said theory. In the application of two groups, \cite{nietoTwogroupReactorNoise1968} reported that the space-independent model and explicit expressions for the auto- and cross-power spectral densities of the two groups can be obtained. These results show a consistent correlation between the noise source and the power spectral density in the measurement of neutrons from experiments of a zero-power reactor system. 
-
-Further development of the model led to the concept of noise unfolding method, which is a method to detect the location of neutron noise and determine the magnitude of neutron noise. There are three main methods that have been developed to unfold neutron noise: the inversion method, the zoning method, and the scanning method. All of the methods require the Green function matrix to solve the problem \cite{pazsitNoiseTechniquesNuclear2010}. The input for these methods is the noise fluxes from the detector readings, and the output is the noise locations and magnitude.
+The development of advanced reactors has been rising for the last several years. This is backed with the support of the financial market through startups and private funds, and also supportive public perception of nuclear in recent years. While many developers focuses on inherent reactor safety of advanced reactors, it is also important to develop a monitoring and diagnostic methods in advanced reactors.
 
 In this work, computational models of neutron noise are developed based on the neutron diffusion equation in the frequency domain. The solver is developed using the box-scheme finite difference for rectangular and hexagonal geometries. The main goal of the solver is application to \glspl*{HTGR}. However, application to rectangular geometries is also provided to differentiate the characteristics of \glspl*{HTGR} and \glspl*{LWR} systems. In this work, code-to-code comparisons are provided. Methods for unfolding neutron noise are also developed in the simulator to highlight the advantages and disadvantages of the methods. 
-
 
 \section{Objectives}
 
 The main objective of this work is to develop and demonstrate core diagnostics in HTGR system using neutron noise method. The following objectives are identified to advance this goal:
 \begin{enumerate}
-    \item Develop numerical solver to perform forward, adjoint, and noise (in frequency domain) calculation.
+    \item Develop a numerical solver to perform forward, adjoint, and noise (in frequency domain) calculations, based on multigroup diffusion theory, in cartesian and hexagonal geometry.
     \item Determine the characteristics of noise in HTGRs compared to LWRs through the zero-power reactor transfer function.
-    \item Determine the distinct characteristics of noise sources in LWRs and HTGRs, namely absorber of variable strength and fuel assembly vibration.
+    \item Determine the distinct characteristics of noise sources in LWRs and HTGRs for absorber of variable strength and fuel assembly vibration.
     \item Perform noise unfolding in prismatic HTGRs using existing methods.
-    \item Explore improvements in noise unfolding methods through noise flux interpolation
+    \item Derive new noise unfolding methods and demonstrate their performance relative to the existing methods.
 \end{enumerate}
 
-Objective (1) focuses on the development of a numerical solver that could perform simulations in rectangular and hexagonal geometries using provided macroscopic cross-sections. The numerical solver is necessary for the overall goal, especially for hexagonal geometries using box-scheme finite difference. This solver will be used to model and simulate neutron noise in HTGR systems, which is the focus of objective (2). The HTGR model used in this case is the HTTR benchmark model. The HTTR benchmark is modeled in Monte Carlo code Serpent \cite{leppanenSerpentMonteCarlo2015}. This Serpent model is a heterogeneous model with various materials. The details of the HTTR model will be provided in the following sections. This model is mainly used to generate homogenize cross-sections for the solver. 
+Objective 1 focuses on the development of a numerical solver that could perform simulations in rectangular and hexagonal geometries using provided macroscopic cross-sections. This solver will be used to model and simulate neutron noise in HTGR systems, which is the focus of Objective 2. The HTGR model used in this case is the HTTR benchmark model. The HTTR benchmark is modeled in Monte Carlo code Serpent \cite{leppanenSerpentMonteCarlo2015}. This Serpent model is a heterogeneous model with various materials. The details of the HTTR model will be provided in the following sections. This model is mainly used to generate homogenize cross-sections for the solver. 
 
-After obtaining the model, objective (3) and (4) focuses on modeling various neutron noise models and unfolding methods that existed in literature. These models and methods are mainly developed for LWR systems. However, it is meaningful to apply the methods and model to understand the different behavior of HTGR system under small perturbations. The novelty of this works relies on objective (5). Using all the information known from previous objectives, it is important to extend these models and methods to reflect the important physics of HTGR system and leveraging all the known parameters from forward and adjoint calculations.
+After obtaining the model, Objective 3 and 4 focuses on modeling various neutron noise models and unfolding methods that existed in literature. These models and methods are mainly developed for LWR systems. However, it is meaningful to apply the methods and model to understand the different behavior of HTGR system under small perturbations. The novelty of this works relies on Objective 5. Using all the information known from previous Objectives, it is important to extend these models and methods to reflect the important physics of HTGR system and leveraging all the known parameters from forward and adjoint calculations.
+
+Objectives 1, 2, and 3 are preliminary and background work necessary to advance beyond the current state-of-the-art. Objective 4 establishes baseline performance of existing noise unfolding methods, which is improved by new methods derived in Objective 5. Objectives 3, 4, and 5 all contribute a new body of knowledge. Objective 3 contributes a quantitative explanation of LWR and HTGR neutron physics differences. Objective 4 contributes a consistent performance comparison of existing noise unfolding methods for the HTGR reactor. Objective 5 derives new noise unfolding methods and demonstrates their superior performance relative to existing methods. Objective 5 is a new and original contribution to the body of knowledge.
+
+\section{Relevant Works}
+
+Relevant works and toolsets that are related to the objectives are presented in this section. These works are compared with current work to identify the gaps in the method. The discussion is divided into two criteria. Namely, neutron noise solver and noise unfolding method.
+
+For the neutron noise solver, this work focuses on solving the neutron noise equation using a deterministic approach, namely the diffusion method. This work primarily follows the CORE SIM+ simulator developed at Chalmers University of Technology, Sweden. CORE SIM+ is a 3D neutron diffusion solver that can solve forward, adjoint, and noise problems for rectangular geometries \cite{mylonakisCORESIMFlexible2021}. This simulator has been used to simulate neutron noise for experiments and has been validated using experimental data \cite{mylonakisCORESIMSIMULATIONS2021,hursinModelingNoiseExperiments2023}. CORE SIM+ uses box-scheme finite difference for spatial discretization, and frequency domain analysis. The difference between the simulator and this work is the energy treatment. This work uses a multigroup approach, while CORE SIM+ only uses two group approach. Having a multigroup approach is generally beneficial to advanced reactors, especially HTGR, since the neutron spectrum is different from PWRs \cite{ardiansyahEvaluationPBMR400Core2021}. Another code to be used for comparison is FEMFFUSION, which was developed in Spain as the time-domain counterpart of CORE SIM+ in the CORTEX project \cite{demaziereCORTEXProjectImproving2020}. FEMFFUSION uses time-domain for noise analysis and the finite element method for discretization. FEMFFUSION can also solve the neutron transport equation using simplified spherical harmonic ($\text{SP}_\text{N}$) approximations. Table \ref{table:other_works} summarizes the different approaches in the simulators.
+
+\begin{table}[ht]
+    \centering
+    \caption{Summary of features of simulators for noise calculation}
+    {\renewcommand{\arraystretch}{1.5}%
+    \begin{tabular}{ | >{\raggedright\arraybackslash}m{3.0cm} | >{\centering\arraybackslash}m{3.5cm} |>{\centering\arraybackslash}m{3.0cm} | >{\centering\arraybackslash}m{3.5cm} | } 
+     \hline
+     \textbf{Parameter} & \textbf{CORE SIM+} & \textbf{FEMFFUSION}& \textbf{Current Work} \\ 
+     \hline
+     Working domain & Frequency &  Time and Frequency & Frequency \\ 
+     \hline
+     Neutron transport method & Diffusion & Diffusion and $\text{SP}_\text{N}$ & Diffusion\\ 
+     \hline
+     Energy group & Two group & Multigroup & Multigroup \\ 
+     \hline
+     Spatial discretization & Box-scheme finite difference (rectangular only) & Finite element & Box-scheme finite difference (rectangular and triangular) \\ 
+     \hline
+     Code language & Matlab & C++ & Python\\ 
+     \hline
+    \end{tabular}} \quad
+    \label{table:other_works}
+\end{table}
+
+In terms of neutron noise unfolding method, \cite{demaziereIdentificationLocalizationAbsorbers2005} provided the theory and derivation of noise unfolding method. The unfolding method is used to diagnose an absorber of variable strength noise source. This is further supported by \cite{hosseiniNoiseSourceReconstruction2014} by providing several additional cases that are solved using hybrid method. This work will focus on improving the existing method to solve generalized noise source. Compared to both papers, the approach in this work will focus on noise flux reconstruction, that later can be integrated with known inverse of Green’s function matrix.
 
 \section{Outline}
 
-How does this relate to coffee? We direct the reader to Refs.
-
-Equations are numbered within chapters:
-\begin{align}
-    a
-    &= b + c \\
-    d
-    &= \frac{e}{f}.
-\end{align}
+This dissertation describes the motivation, objectives, methodology, results, and conclusions towards the advancement of the neutron noise unfolding methods and its application HTGR core.
+The remainder of this dissertation is organized as follows.
+Chapter \ref{ch:literature_review} presents a literature review of neutron noise methods, its applications for diagnostics, and neutron noise unfolding method.
+Chapter 3 provide the development of computational tools for forward, adjoint, and noise calculations, and also verification of results in 2D, 3D rectangular and hexagonal geometries.
+Chapter 4 focuses on the application of neutron noise methods for AVS and FAV in 2D and 3D HTTR core, including application of existing neutron noise unfolding methods
+Chapter 5 introduces the novel methods of neutron noise unfolding and their application to 2D and 3D HTTR core.
 
 % input individual chapters files
 % \input{1-introduction}

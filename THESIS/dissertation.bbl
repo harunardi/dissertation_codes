@@ -19,137 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{akcasuApplicationLangevinTechnique1966}{article}{}
-      \name{author}{2}{}{%
-        {{hash=121f5c10a1dfbf0979ebbb4395e75352}{%
-           family={Akcasu},
-           familyi={A\bibinitperiod},
-           given={A.\bibnamedelimi Ziya},
-           giveni={A\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
-        {{hash=7f4960a900aebfd47e4bd0c89a2db9b1}{%
-           family={Osborn},
-           familyi={O\bibinitperiod},
-           given={R.\bibnamedelimi K.},
-           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Taylor \& Francis}%
-      }
-      \strng{namehash}{1b2240bb1aebd3a7b858a8ca24cef57c}
-      \strng{fullhash}{1b2240bb1aebd3a7b858a8ca24cef57c}
-      \strng{bibnamehash}{1b2240bb1aebd3a7b858a8ca24cef57c}
-      \strng{authorbibnamehash}{1b2240bb1aebd3a7b858a8ca24cef57c}
-      \strng{authornamehash}{1b2240bb1aebd3a7b858a8ca24cef57c}
-      \strng{authorfullhash}{1b2240bb1aebd3a7b858a8ca24cef57c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The space- and energy-dependent theory of reactor-noise analysis has been developed using Langevin's technique starting from the transport equations. The theory includes delayed neutrons. The correlation function and the power spectral density for the detection rate, as well as for the neutron density, have been obtained. The application of the general theory to simple reactor models has been discussed and illustrated by considering the one-speed transport and one-speed diffusion approximations. The connection between Langevin's technique and the doublet theory based on the Liouville equation has been established. It has been found that both formulations yield identical results and that the postulates of Langevin's technique are justified for the study of neutron distributions.}
-      \field{issn}{0029-5639}
-      \field{journaltitle}{Nuclear Science and Engineering}
-      \field{month}{9}
-      \field{number}{1}
-      \field{title}{Application of {{Langevin}}'s {{Technique}} to {{Space-}} and {{Energy-Dependent Noise Analysis}}}
-      \field{urlday}{19}
-      \field{urlmonth}{4}
-      \field{urlyear}{2023}
-      \field{volume}{26}
-      \field{year}{1966}
-      \field{urldateera}{ce}
-      \field{pages}{13\bibrangedash 25}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.13182/NSE66-A17183
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/7BG9QZ47/Akcasu and Osborn - 1966 - Application of Langevin’s Technique to Space- and .pdf
-      \endverb
-    \endentry
-    \entry{cohnSimplifiedTheoryPile1960}{article}{}
-      \name{author}{1}{}{%
-        {{hash=b746c947322a2651624c7c78bae8bc8d}{%
-           family={Cohn},
-           familyi={C\bibinitperiod},
-           given={Charles\bibnamedelima Erwin},
-           giveni={C\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Taylor \& Francis}%
-      }
-      \strng{namehash}{b746c947322a2651624c7c78bae8bc8d}
-      \strng{fullhash}{b746c947322a2651624c7c78bae8bc8d}
-      \strng{bibnamehash}{b746c947322a2651624c7c78bae8bc8d}
-      \strng{authorbibnamehash}{b746c947322a2651624c7c78bae8bc8d}
-      \strng{authornamehash}{b746c947322a2651624c7c78bae8bc8d}
-      \strng{authorfullhash}{b746c947322a2651624c7c78bae8bc8d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{A theoretical treatment is given of the statistical fluctuations in neutron population which occur in nuclear reactors. The absolute magnitude and frequency dependence of the spectral density of these fluctuations is obtained. The model used assumes that the fluctuations arise from a ``noise-equivalent source'' whose strength can be easily calculated from fundamental considerations. Calculations are also presented of the fundamental statistical errors in criticality measurements.}
-      \field{issn}{0029-5639}
-      \field{journaltitle}{Nuclear Science and Engineering}
-      \field{month}{5}
-      \field{number}{5}
-      \field{title}{A {{Simplified Theory}} of {{Pile Noise}}}
-      \field{urlday}{31}
-      \field{urlmonth}{8}
-      \field{urlyear}{2023}
-      \field{volume}{7}
-      \field{year}{1960}
-      \field{urldateera}{ce}
-      \field{pages}{472\bibrangedash 475}
-      \range{pages}{4}
-      \verb{doi}
-      \verb 10.13182/NSE60-4
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/BTZZBE2X/Cohn - 1960 - A Simplified Theory of Pile Noise.pdf
-      \endverb
-    \endentry
-    \entry{moorePowerNoiseTransfer1959}{article}{}
-      \name{author}{1}{}{%
-        {{hash=9bfefe95a0ed67f9afa5c0c83ee929a2}{%
-           family={Moore},
-           familyi={M\bibinitperiod},
-           given={M.\bibnamedelimi N.},
-           giveni={M\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Taylor \& Francis}%
-      }
-      \strng{namehash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
-      \strng{fullhash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
-      \strng{bibnamehash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
-      \strng{authorbibnamehash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
-      \strng{authornamehash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
-      \strng{authorfullhash}{9bfefe95a0ed67f9afa5c0c83ee929a2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{A formalism is developed to calculate the power noise transfer function for any kinetic model under the assumption that noise may originate in any or all loops of the system. Reactor kinetic equations are generalized to the macrostochastic equations satisfied by the pile noise. From these, the differential equations of the various correlation functions are determined and solved for the noise spectra. The case of a single feedback, one-delay group model is treated in detail.}
-      \field{issn}{0029-5639}
-      \field{journaltitle}{Nuclear Science and Engineering}
-      \field{month}{11}
-      \field{number}{5}
-      \field{title}{The {{Power Noise Transfer Function}} of a {{Reactor}}}
-      \field{urlday}{31}
-      \field{urlmonth}{8}
-      \field{urlyear}{2023}
-      \field{volume}{6}
-      \field{year}{1959}
-      \field{urldateera}{ce}
-      \field{pages}{448\bibrangedash 452}
-      \range{pages}{5}
-      \verb{doi}
-      \verb 10.13182/NSE59-A25684
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/8S4E9WT8/Moore - 1959 - The Power Noise Transfer Function of a Reactor.pdf
-      \endverb
-    \endentry
     \entry{saitoTheoryPowerReactor1974b}{article}{}
       \name{author}{1}{}{%
         {{hash=5560d76b05cefb1824e2655155b0acb1}{%
@@ -165,8 +34,8 @@
       \strng{authornamehash}{5560d76b05cefb1824e2655155b0acb1}
       \strng{authorfullhash}{5560d76b05cefb1824e2655155b0acb1}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{An operating reactor has intrinsically fluctuating components in its state variables such as the thermal power, the outlet coolant temperature, the occupied region of control rods, etc. The fluctuations are generically called the reactor noise, the analysis of which, from both the theoretical and the experimental approach, is one of the problems of major concern in the field of nuclear science and engineering. The ultimate goal of the analysis lies in presenting the systematized methodology of diagnosis upon abnormality and malfunction of reactor components.}
@@ -180,91 +49,6 @@
       \verb{file}
       \verb /Volumes/Harun-Files/Zotero/storage/5HPZ7Z8X/Saito - ON THE THEORY OF POWER REACTOR NOISEmI.pdf
       \endverb
-    \endentry
-    \entry{pacilioAnalysisReactorNoise1979}{incollection}{}
-      \name{author}{5}{}{%
-        {{hash=923cb37626f81a6445005d70b0669b47}{%
-           family={Pacilio},
-           familyi={P\bibinitperiod},
-           given={N.},
-           giveni={N\bibinitperiod}}}%
-        {{hash=921f04523d8ddbe9faef81aa79532c10}{%
-           family={Colombino},
-           familyi={C\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=a91343335eab18e0de9f8bee10a0c15f}{%
-           family={Mosiello},
-           familyi={M\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=f769c38d8cc98975b5b9bb5775815107}{%
-           family={Norelli},
-           familyi={N\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod}}}%
-        {{hash=cf787d39358651e894cd1ad2d48511ee}{%
-           family={Jorio},
-           familyi={J\bibinitperiod},
-           given={V.\bibnamedelimi M.},
-           giveni={V\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-      }
-      \name{editor}{3}{}{%
-        {{hash=d4cacce125833f0a78272bf62dba6636}{%
-           family={Henley},
-           familyi={H\bibinitperiod},
-           given={Ernest\bibnamedelima J.},
-           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-        {{hash=4ea5525df8304cc8dc29f2fb02907d2c}{%
-           family={Lewins},
-           familyi={L\bibinitperiod},
-           given={Jeffery},
-           giveni={J\bibinitperiod}}}%
-        {{hash=3ba040afe0807cfeff6870dfd0015c66}{%
-           family={Becker},
-           familyi={B\bibinitperiod},
-           given={Martin},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Boston, MA}%
-      }
-      \list{publisher}{1}{%
-        {Springer US}%
-      }
-      \strng{namehash}{f7ceabb9c8fd614a66c4dde95a97af74}
-      \strng{fullhash}{7cf8922e8ba2845ae7831776437f9325}
-      \strng{bibnamehash}{7cf8922e8ba2845ae7831776437f9325}
-      \strng{authorbibnamehash}{7cf8922e8ba2845ae7831776437f9325}
-      \strng{authornamehash}{f7ceabb9c8fd614a66c4dde95a97af74}
-      \strng{authorfullhash}{7cf8922e8ba2845ae7831776437f9325}
-      \strng{editorbibnamehash}{653d8722ede54849910e60f043e56412}
-      \strng{editornamehash}{653d8722ede54849910e60f043e56412}
-      \strng{editorfullhash}{653d8722ede54849910e60f043e56412}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{The first observation of the statistical fluctuations of the number of neutrons in a reactor was the now famous Rossi-alpha experiment, named for Bruno Rossi who suggested and set up the measuring apparatus during the early days of Los Alamos. The original theoretical studies were formulated by Fermi, Feynman and de Hoffmann in 1944 (1) and again by de Hoffman (1946) (2) during the same period and issued in two Los Alamos reports: LADC-269 and LADC-256, respectively. Like most of the scientific and literary production of the time, the above-mentioned reports remained classified for several years.}
-      \field{booktitle}{Advances in {{Nuclear Science}} and {{Technology}}: {{Volume}} 11}
-      \field{isbn}{978-1-4613-2862-9}
-      \field{langid}{english}
-      \field{shorttitle}{The {{Analysis}} of {{Reactor Noise}}}
-      \field{title}{The {{Analysis}} of {{Reactor Noise}}: {{Measuring Statistical Fluctuations}} in {{Nuclear Systems}}}
-      \field{urlday}{13}
-      \field{urlmonth}{3}
-      \field{urlyear}{2023}
-      \field{year}{1979}
-      \field{urldateera}{ce}
-      \field{pages}{67\bibrangedash 134}
-      \range{pages}{68}
-      \verb{doi}
-      \verb 10.1007/978-1-4613-2862-9_2
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/77E9JTAC/Pacilio et al. - 1979 - The Analysis of Reactor Noise Measuring Statistic.pdf
-      \endverb
-      \keyw{Ergodic Hypothesis,Factorial Moment,Neutron Count,Noise Analysis,Prompt Neutron}
     \endentry
     \entry{fryExperienceReactorMalfunction1971}{article}{}
       \name{author}{1}{}{%
@@ -283,8 +67,8 @@
       \strng{authorbibnamehash}{4942c646e92fe085cd7399bf8a436e8d}
       \strng{authornamehash}{4942c646e92fe085cd7399bf8a436e8d}
       \strng{authorfullhash}{4942c646e92fe085cd7399bf8a436e8d}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Experience has been obtained with a continuous neutron-noise monitor at the High Flux Isotope Reactor (HFIR) and with neutron- and pressure-noise monitors at the Molten Salt Reactor Experiment (MSRE). Results at the HFIR show that the neutron-noise monitor can be used to detect control-rod-bearing failures. The neutron-noise monitor at the MSRE gave a continuous indication of the amount of helium void in the fuel salt circulated through the core. The value of noise analysis as a diagnostic aid was shown when the pressure-noise monitor at the MSRE aided in a diagnosis of off-gas line restrictions one week before other instruments confirmed the blockage.These experiences show that noise analysis can be used for some types of reactor malfunction diagnoses and parameter measurements when other methods cannot be used either because of the environment (radiation or temperature) or a lack of space for sensors.}
@@ -332,8 +116,8 @@
       \strng{authorbibnamehash}{ef3fc70e08d220be323ef4b8b6c77e18}
       \strng{authornamehash}{ef3fc70e08d220be323ef4b8b6c77e18}
       \strng{authorfullhash}{ef3fc70e08d220be323ef4b8b6c77e18}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Neutron noise signatures were obtained on August 3, 1973, that were due to abnormal movement of the core barrel at the Palisades Nuclear Plant. Frequency spectra, rms noise, and amplitude probability density were recorded as sensed by ex-core and in-core neutron detectors. These signatures will serve as reference data for future studies of core-barrel motion at the Palisades plant. Also, the results are presented in units that should make them useful for noise diagnosis in other pressurized water reactors.}
@@ -377,8 +161,8 @@
       \strng{authorbibnamehash}{df521285ce09290e94fd466cadae891a}
       \strng{authornamehash}{df521285ce09290e94fd466cadae891a}
       \strng{authorfullhash}{df521285ce09290e94fd466cadae891a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The local effect caused by the steam-voids of a boiling water reactor in the noise signals of incore ion chambers has been proved by measurements and used for practical application in recent times. From the linear phase function of two detectors placed one above the other in the same radial position the mean transit time of the bubbles has been taken and used for the evaluation of the local steam-void velocity. The concepts of local and global driving sources of the neutron noise are introduced and their joint effect is investigated. The transfer function derived from the model is compared to the experimental results. The agreement between theoretical predictions and experimental findings supports the validity of the model.}
@@ -390,54 +174,73 @@
       \field{pages}{244\bibrangedash 250}
       \range{pages}{7}
     \endentry
-    \entry{nietoTwogroupReactorNoise1968}{article}{}
-      \name{author}{3}{}{%
-        {{hash=98b500968de29937d41855d1cca5ef3b}{%
-           family={Nieto},
-           familyi={N\bibinitperiod},
-           given={J.M.},
-           giveni={J\bibinitperiod}}}%
-        {{hash=9ab12db8ec1a35344f82008f775d3d64}{%
-           family={Akhtar},
-           familyi={A\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=cf2a7199e1d70e4760198beeffd1054f}{%
-           family={Ackermann},
-           familyi={A\bibinitperiod},
-           given={N.J.},
-           giveni={N\bibinitperiod}}}%
+    \entry{saitoTheoryPowerReactor1974}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5560d76b05cefb1824e2655155b0acb1}{%
+           family={Saito},
+           familyi={S\bibinitperiod},
+           given={Keiichi},
+           giveni={K\bibinitperiod}}}%
       }
-      \strng{namehash}{317f5f38a70d1ee59b590f41c3f50618}
-      \strng{fullhash}{317f5f38a70d1ee59b590f41c3f50618}
-      \strng{bibnamehash}{317f5f38a70d1ee59b590f41c3f50618}
-      \strng{authorbibnamehash}{317f5f38a70d1ee59b590f41c3f50618}
-      \strng{authornamehash}{317f5f38a70d1ee59b590f41c3f50618}
-      \strng{authorfullhash}{317f5f38a70d1ee59b590f41c3f50618}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \strng{namehash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{fullhash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{bibnamehash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{authorbibnamehash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{authornamehash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{authorfullhash}{5560d76b05cefb1824e2655155b0acb1}
+      \field{extraname}{2}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Wgevin's technique is applied to two energy group space independent reactor model. Detection statistics and fluctuations in production and decay rate of delayed neutron precursors are also taken into account. Expressions for the auto- and cross-correlation functions of the fluctuating sources associated with various random processes such as fission, capture, scattering, etc., are obtained and used in finding the auto- and cross-power spectral densities of the detection rates in fast and slow groups. Numerical estimates for various break frequencies for a representative set of parameters are found.}
-      \field{issn}{00223107}
-      \field{journaltitle}{Journal of Nuclear Energy}
+      \field{issn}{03022927}
+      \field{journaltitle}{Annals of Nuclear Science and Engineering}
       \field{langid}{english}
-      \field{month}{11}
-      \field{number}{11}
-      \field{title}{Two-Group Reactor Noise Analysis by {{Langevin}}'s Technique}
+      \field{month}{2}
+      \field{title}{On the {{Theory}} of {{Power Reactor Noise-II}}}
       \field{urlday}{14}
       \field{urlmonth}{1}
       \field{urlyear}{2023}
-      \field{volume}{22}
-      \field{year}{1968}
+      \field{volume}{1}
+      \field{year}{1974}
       \field{urldateera}{ce}
-      \field{pages}{675\bibrangedash 685}
-      \range{pages}{11}
+      \field{pages}{107\bibrangedash 128}
+      \range{pages}{22}
       \verb{doi}
-      \verb 10.1016/0022-3107(68)90070-1
+      \verb 10.1016/0302-2927(74)90056-7
       \endverb
       \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/GGEQ5Q57/Nieto et al. - 1968 - Two-group reactor noise analysis by Langevin's tec.pdf;/Volumes/Harun-Files/Zotero/storage/MFQSP2J8/0022310768900701.html
+      \verb /Volumes/Harun-Files/Zotero/storage/RE69TCDD/Saito - 1974 - On the theory of power reactor noise—II.pdf
+      \endverb
+    \endentry
+    \entry{saitoTheoryPowerReactor1974a}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5560d76b05cefb1824e2655155b0acb1}{%
+           family={Saito},
+           familyi={S\bibinitperiod},
+           given={Keiichi},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{fullhash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{bibnamehash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{authorbibnamehash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{authornamehash}{5560d76b05cefb1824e2655155b0acb1}
+      \strng{authorfullhash}{5560d76b05cefb1824e2655155b0acb1}
+      \field{extraname}{3}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annals of Nuclear Science and Engineering}
+      \field{langid}{english}
+      \field{title}{On the {{Theory}} of {{Power Reactor Noise-III}}}
+      \field{volume}{1}
+      \field{year}{1974}
+      \field{pages}{209\bibrangedash 221}
+      \range{pages}{13}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/ABEGJVYA/Saito - ON THE THEORY OF POWER REACTOR NOISE--Ill.pdf
       \endverb
     \endentry
     \entry{pazsitNoiseTechniquesNuclear2010}{incollection}{}
@@ -462,8 +265,8 @@
       \strng{authorbibnamehash}{f0a60511e98334416b7963e3ec33ced1}
       \strng{authornamehash}{f0a60511e98334416b7963e3ec33ced1}
       \strng{authorfullhash}{f0a60511e98334416b7963e3ec33ced1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This chapter deals with neutron fluctuations in nuclear systems. Such neutron fluctuations, or neutron noise, fall into two categories: neutron noise in zero power systems and neutron noise in power reactors. The concepts, the theory, and the methodology of these fluctuations as well as their various applications for extracting information in a nonintrusive way about the system in question are described. A number of specific applications are described, where detection and analysis of zero power and power reactor noise make it possible to extract diagnostic information about the system by determining some parameters of the system during normal operation, or by detecting, identifying, and quantifying developing anomalies at an early stage and determining their severity. This chapter ends with an outline of future developments and actual issues in the field.}
@@ -513,8 +316,8 @@
       \strng{authorbibnamehash}{433ce0da2ea763981f05678cb0eefd11}
       \strng{authornamehash}{be0da16cc46e248ac5cf3bf6556a4fb1}
       \strng{authorfullhash}{433ce0da2ea763981f05678cb0eefd11}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{The Serpent Monte Carlo reactor physics burnup calculation code has been developed at VTT Technical Research Centre of Finland since 2004, and is currently used in over 100 universities and research organizations around the world. This paper presents the brief history of the project, together with the currently available methods and capabilities and plans for future work. Typical user applications are introduced in the form of a summary review on Serpent-related publications over the past few years.}
@@ -539,262 +342,55 @@
       \verb /Volumes/Harun-Files/Zotero/storage/K4RB4FSG/Leppänen et al. - 2015 - The Serpent Monte Carlo code Status, development .pdf
       \endverb
     \endentry
-    \entry{pazsitNeutronFluctuationsTreatise2008}{book}{}
-      \name{author}{2}{}{%
-        {{hash=ad3129c3ab36ff080fc40cb99f31e6da}{%
-           family={Pázsit},
-           familyi={P\bibinitperiod},
-           given={Imre},
-           giveni={I\bibinitperiod}}}%
-        {{hash=8bbaa23a603ede5d5f56038aaa4e20a4}{%
-           family={Pál},
-           familyi={P\bibinitperiod},
-           given={Lénárd},
-           giveni={L\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Amsterdam ; Boston}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{fullhash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{bibnamehash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{authorbibnamehash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{authornamehash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \strng{authorfullhash}{04e10a8eef4e2d283f6e002a6a30f404}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{annotation}{OCLC: ocn166362162}
-      \field{edition}{1st ed}
-      \field{isbn}{978-0-08-045064-3}
-      \field{langid}{english}
-      \field{shorttitle}{Neutron Fluctuations}
-      \field{title}{Neutron Fluctuations: A Treatise on the Physics on Branching Processes}
-      \field{year}{2008}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/8L9VTQAZ/Pázsit and Pál - 2008 - Neutron fluctuations a treatise on the physics on.pdf
-      \endverb
-      \keyw{Branching processes,Neutrons}
-    \endentry
-    \entry{uhrigRandomNoiseTechniques1970}{book}{}
-      \name{author}{1}{}{%
-        {{hash=b1f5eb13419e9e296a208a2750cbba4d}{%
-           family={Uhrig},
-           familyi={U\bibinitperiod},
-           given={Robert},
-           giveni={R\bibinitperiod}}}%
-      }
-      \strng{namehash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{fullhash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{bibnamehash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{authorbibnamehash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{authornamehash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \strng{authorfullhash}{b1f5eb13419e9e296a208a2750cbba4d}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Random {{Noise Techniques}} in {{Nuclear Reactor Systems}}}
-      \field{year}{1970}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/PZM6VALS/Random Noise Technique in Nuclear Reactor Systems (No OCR) (Robert E. Uhrig) (z-lib.org).pdf
-      \endverb
-    \endentry
-    \entry{thiePowerReactorNoise1981}{book}{}
-      \name{author}{1}{}{%
-        {{hash=e65de475016cdf9a1acd7b73495766fe}{%
-           family={Thie},
-           familyi={T\bibinitperiod},
-           given={Joseph\bibnamedelima A.},
-           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {ANS}%
-      }
-      \strng{namehash}{e65de475016cdf9a1acd7b73495766fe}
-      \strng{fullhash}{e65de475016cdf9a1acd7b73495766fe}
-      \strng{bibnamehash}{e65de475016cdf9a1acd7b73495766fe}
-      \strng{authorbibnamehash}{e65de475016cdf9a1acd7b73495766fe}
-      \strng{authornamehash}{e65de475016cdf9a1acd7b73495766fe}
-      \strng{authorfullhash}{e65de475016cdf9a1acd7b73495766fe}
-      \field{extraname}{1}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The author explains the fundamentals of statistics, correlation, and regression, along with Fourier series and related topics. Experimental and theoretical considerations in performing noise tests are also included.}
-      \field{isbn}{978-0-89448-025-6}
-      \field{langid}{english}
-      \field{title}{Power {{Reactor Noise}}}
-      \field{year}{1981}
-    \endentry
-    \entry{saitoTheoryPowerReactor1974}{article}{}
-      \name{author}{1}{}{%
-        {{hash=5560d76b05cefb1824e2655155b0acb1}{%
-           family={Saito},
-           familyi={S\bibinitperiod},
-           given={Keiichi},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{fullhash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{bibnamehash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{authorbibnamehash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{authornamehash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{authorfullhash}{5560d76b05cefb1824e2655155b0acb1}
-      \field{extraname}{2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{03022927}
-      \field{journaltitle}{Annals of Nuclear Science and Engineering}
-      \field{langid}{english}
-      \field{month}{2}
-      \field{title}{On the {{Theory}} of {{Power Reactor Noise-II}}}
-      \field{urlday}{14}
-      \field{urlmonth}{1}
-      \field{urlyear}{2023}
-      \field{volume}{1}
-      \field{year}{1974}
-      \field{urldateera}{ce}
-      \field{pages}{107\bibrangedash 128}
-      \range{pages}{22}
-      \verb{doi}
-      \verb 10.1016/0302-2927(74)90056-7
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/RE69TCDD/Saito - 1974 - On the theory of power reactor noise—II.pdf
-      \endverb
-    \endentry
-    \entry{saitoTheoryPowerReactor1974a}{article}{}
-      \name{author}{1}{}{%
-        {{hash=5560d76b05cefb1824e2655155b0acb1}{%
-           family={Saito},
-           familyi={S\bibinitperiod},
-           given={Keiichi},
-           giveni={K\bibinitperiod}}}%
-      }
-      \strng{namehash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{fullhash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{bibnamehash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{authorbibnamehash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{authornamehash}{5560d76b05cefb1824e2655155b0acb1}
-      \strng{authorfullhash}{5560d76b05cefb1824e2655155b0acb1}
-      \field{extraname}{3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Annals of Nuclear Science and Engineering}
-      \field{langid}{english}
-      \field{title}{On the {{Theory}} of {{Power Reactor Noise-III}}}
-      \field{volume}{1}
-      \field{year}{1974}
-      \field{pages}{209\bibrangedash 221}
-      \range{pages}{13}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/ABEGJVYA/Saito - ON THE THEORY OF POWER REACTOR NOISE--Ill.pdf
-      \endverb
-    \endentry
-    \entry{ottIntroductoryNuclearReactor1985}{book}{}
-      \name{author}{2}{}{%
-        {{hash=4f62dacee4c2ae0cfbbfc8d0a7c3b696}{%
-           family={Ott},
-           familyi={O\bibinitperiod},
-           given={Karl\bibnamedelima O.},
-           giveni={K\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
-        {{hash=e1ff3eaa9e95f112952618a410b36c85}{%
-           family={Neuhold},
-           familyi={N\bibinitperiod},
-           given={Robert\bibnamedelima J.},
-           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {La Grange Park, Ill. USA}%
-      }
-      \list{publisher}{1}{%
-        {American Nuclear Society}%
-      }
-      \strng{namehash}{8758f65ff19ebfd8da1589c787122c27}
-      \strng{fullhash}{8758f65ff19ebfd8da1589c787122c27}
-      \strng{bibnamehash}{8758f65ff19ebfd8da1589c787122c27}
-      \strng{authorbibnamehash}{8758f65ff19ebfd8da1589c787122c27}
-      \strng{authornamehash}{8758f65ff19ebfd8da1589c787122c27}
-      \strng{authorfullhash}{8758f65ff19ebfd8da1589c787122c27}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{978-0-89448-029-4}
-      \field{langid}{english}
-      \field{title}{Introductory {{Nuclear Reactor Dynamics}}}
-      \field{year}{1985}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/PT8L43KI/Ott and Neuhold - 1985 - Introductory nuclear reactor dynamics.pdf
-      \endverb
-      \keyw{Nuclear reactor kinetics,Nuclear reactors}
-    \endentry
-    \entry{ferrierReactorNoise1963}{book}{}
-      \name{author}{2}{}{%
-        {{hash=af13218bf0366fa2eb563995b3f09c46}{%
-           family={Ferrier},
-           familyi={F\bibinitperiod},
-           given={D},
-           giveni={D\bibinitperiod}}}%
-        {{hash=e65de475016cdf9a1acd7b73495766fe}{%
-           family={Thie},
-           familyi={T\bibinitperiod},
-           given={Joseph\bibnamedelima A},
-           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \strng{namehash}{0d85469658e98e3a7a38c5f8d74dcf21}
-      \strng{fullhash}{0d85469658e98e3a7a38c5f8d74dcf21}
-      \strng{bibnamehash}{0d85469658e98e3a7a38c5f8d74dcf21}
-      \strng{authorbibnamehash}{0d85469658e98e3a7a38c5f8d74dcf21}
-      \strng{authornamehash}{0d85469658e98e3a7a38c5f8d74dcf21}
-      \strng{authorfullhash}{0d85469658e98e3a7a38c5f8d74dcf21}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{langid}{english}
-      \field{title}{Reactor {{Noise}}}
-      \field{year}{1963}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/P926MUXJ/Ferrier and Thie - MONOGRAPH SERIES ON NUCLEAR SCIENCE AND TECHNOLOGY.pdf
-      \endverb
-    \endentry
-    \entry{demaziereDevelopmentNonintrusiveMethod2002}{thesis}{}
-      \name{author}{1}{}{%
-        {{hash=2d97eb924852b6ea1f76aad423b874d0}{%
-           family={Demaziere},
+    \entry{mylonakisCORESIMFlexible2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0ca58555649fe9d26a5e4b113173bb0d}{%
+           family={Mylonakis},
+           familyi={M\bibinitperiod},
+           given={Antonios},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fc62baaf98b45dd001922c847f43db1e}{%
+           family={Vinai},
+           familyi={V\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=dece9392251f156f2e026670e9acc498}{%
+           family={Demazière},
            familyi={D\bibinitperiod},
            given={Christophe},
            giveni={C\bibinitperiod}}}%
       }
-      \strng{namehash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{fullhash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{bibnamehash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{authorbibnamehash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{authornamehash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{authorfullhash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{namehash}{9496e3e8c7de2e6f91cee34f564545ac}
+      \strng{fullhash}{9496e3e8c7de2e6f91cee34f564545ac}
+      \strng{bibnamehash}{9496e3e8c7de2e6f91cee34f564545ac}
+      \strng{authorbibnamehash}{9496e3e8c7de2e6f91cee34f564545ac}
+      \strng{authornamehash}{9496e3e8c7de2e6f91cee34f564545ac}
+      \strng{authorfullhash}{9496e3e8c7de2e6f91cee34f564545ac}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{For that purpose, the spatial average temperature noise has to be measured throughout the core. Even if PWRs are poorly instrumented with respect to temperature detectors, it was proven that gamma-thermometers work as thermocouples in the frequency range of interest for the MTC noise analysis and could be used when estimating the MTC by noise analysis.}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The paper presents CORE SIM+, a tool developed for diffusion-based neutron noise simulations. The simulator is based on the 3-dimensional, two-energy group neutron diffusion equation in the frequency domain. The tool includes the necessary solvers to calculate the criticality problems associated with the system and then the response to a variety of perturbations such as absorbers of variable strength, perturbations travelling with the coolant flow and vibrations of core components. Numerical methods suitable for different types of problems have been implemented. A capability that allows to apply nonuniform computational meshes is available so that the discretization of the domain can be optimized with respect to the characteristics of the neutron noise sources. The simulator can generate neutron noise databases for nuclear power reactors via the Green's function method in a fully automated manner. These databases can be useful when studying the neutron noise response in a reactor and when training machine learning algorithms for core monitoring and diagnostics. As part of the verification process, the CORE SIM+ response of a realistic reactor model to a given perturbation at various frequencies is used to estimate the corresponding point-kinetic component, compared to an exact analytical expression. In addition, the Green's function generator is used to calculate the response of a system to a fuel cell vibration. The solution is then compared to the one of the direct solver of CORE SIM+. As part of the validation work, a neutron noise experiment with vibrations of fuel rods is simulated, showing a reasonable agreement with the measurements. A representative neutron noise database generated for a generic pressurized water reactor is described. From the database the simulations of fuel assembly and core barrel vibrations are chosen as illustrative examples for demonstrating the capabilities of the tool.}
+      \field{issn}{03064549}
+      \field{journaltitle}{Annals of Nuclear Energy}
       \field{langid}{english}
-      \field{title}{Development of a Non-Intrusive Method for the Determination of the Moderator Temperature Coefficient of Reactivity ({{MTC}})}
-      \field{type}{phdthesis}
-      \field{year}{2002}
+      \field{month}{6}
+      \field{shorttitle}{{{CORE SIM}}+}
+      \field{title}{{{CORE SIM}}+: {{A}} Flexible Diffusion-Based Solver for Neutron Noise Simulations}
+      \field{urlday}{14}
+      \field{urlmonth}{1}
+      \field{urlyear}{2023}
+      \field{volume}{155}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{108149}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.anucene.2021.108149
+      \endverb
       \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/Z3XP747Z/Demaziere - CHALMERS UNIVERSITY OF TECHNOLOGY DEPARTMENT OF RE.pdf
+      \verb /Volumes/Harun-Files/Zotero/storage/ITNYTE5K/Mylonakis et al. - 2021 - CORE SIM+ A flexible diffusion-based solver for n.pdf
       \endverb
     \endentry
     \entry{mylonakisCORESIMSIMULATIONS2021}{article}{}
@@ -886,8 +482,8 @@
       \strng{editorbibnamehash}{359862c874dd51ead1a60e6be1f27a3c}
       \strng{editornamehash}{359862c874dd51ead1a60e6be1f27a3c}
       \strng{editorfullhash}{359862c874dd51ead1a60e6be1f27a3c}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{At EPFL, the CROCUS reactor has been used to carry out experiments with vibrating fuel rods. The paper presents a first attempt to employ the measured data to validate CORE SIM+, a neutron noise solver developed at Chalmers University of Technology. For this purpose, the original experimental data are processed in order to extract the necessary information. In particular, detector recordings are scrutinized and detrended, and used to estimate CPSDs of detector pairs. These values are then compared with the ones derived from the CORE SIM+ simulations of the experiments. The main trend of the experimental data along with the values for some detectors are successfully reproduced by CORE SIM+. Further work is necessary on both the experimental and computational sides in order to improve the validation process.}
@@ -907,6 +503,599 @@
       \endverb
       \verb{file}
       \verb /Volumes/Harun-Files/Zotero/storage/9XTY268L/Mylonakis et al. - 2021 - CORE SIM+ SIMULATIONS OF COLIBRI FUEL RODS OSCILLA.pdf
+      \endverb
+    \endentry
+    \entry{hursinModelingNoiseExperiments2023}{article}{}
+      \name{author}{21}{}{%
+        {{hash=1f08ff0430c0e6d655292bae864eb4ba}{%
+           family={Hursin},
+           familyi={H\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=bdab21ee6d0616c21b8c07bc84f89a7b}{%
+           family={Zoia},
+           familyi={Z\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=f308c430b8e09eae06280976d9448dfd}{%
+           family={Rouchon},
+           familyi={R\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c2e6d119b9d6a25d0fdbbb28b1f78af3}{%
+           family={Brighenti},
+           familyi={B\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=32afc3aaef476de1547579d11c5b32c6}{%
+           family={Zmijarevic},
+           familyi={Z\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=17ad61ca79c1390f4d5c7d6b7cd5cb67}{%
+           family={Santandrea},
+           familyi={S\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3bce723c653061ba183e7e8e2a441301}{%
+           family={Vinai},
+           familyi={V\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=239e212faf83a7626c8fc8fa5e814886}{%
+           family={Mylonakis},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3692ce1a86a17382102143c6202370ab}{%
+           family={Yi},
+           familyi={Y\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=e782c06792181b27c91271ef05d4ce7a}{%
+           family={Demazière},
+           familyi={D\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=6ff082e26ad8ae742aa41cdf73333bc1}{%
+           family={Lamirand},
+           familyi={L\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=9bd6e39a0602c0dbf9e97ec3d23f0f2e}{%
+           family={Ambrozic},
+           familyi={A\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5467fb216200fc3ea3a9de29808aaec4}{%
+           family={Yamamoto},
+           familyi={Y\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=3bdc407b868b2d4269abaf34564fc173}{%
+           family={Hübner},
+           familyi={H\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7721eba325fde00f6f7020afee1e4760}{%
+           family={Knospe},
+           familyi={K\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=3fd3ac1a8eb9a75f65d64b90dd53eb64}{%
+           family={Lange},
+           familyi={L\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d4a95d584ae7a58d527261525a0f5b29}{%
+           family={Yum},
+           familyi={Y\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9e3e646bab765c8df08af05fc9cd015e}{%
+           family={Macian},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=6a3c5732cb9acdce0e49a484a8ed0825}{%
+           family={Vidal},
+           familyi={V\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a46a4dfb811504fba0083c5128cade59}{%
+           family={Ginestar},
+           familyi={G\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+        {{hash=c1184b3c46148fda58e1a6d6b2a0606f}{%
+           family={Verdú},
+           familyi={V\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{523040a56df732df118038018d4c8dde}
+      \strng{fullhash}{5e769e75a999e915d035985cbdcc91ad}
+      \strng{bibnamehash}{523040a56df732df118038018d4c8dde}
+      \strng{authorbibnamehash}{523040a56df732df118038018d4c8dde}
+      \strng{authornamehash}{523040a56df732df118038018d4c8dde}
+      \strng{authorfullhash}{5e769e75a999e915d035985cbdcc91ad}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{CORTEX is a EU H2020 project (2017-2021) devoted to the analysis of 'reactor neutron noise' in nuclear reactors, i.e. the small fluctuations occurring around the stationary state due to external or internal disturbances in the core. One important aspect of CORTEX is the development of neutron noise simulation codes capable of modeling the spatial variations of the noise distribution in a reactor. In this paper we illustrate the validation activities concerning the comparison of the simulation results obtained by several noise simulation codes with respect to experimental data produced at the zero-power reactors AKR-2 (operated at TUD, Germany) and CROCUS (operated at EPFL, Switzerland). Both research reactors are modeled in the time and frequency domains, using transport or diffusion theory. Overall, the noise simulators managed to capture the main features of the neutron noise behavior observed in the experimental campaigns carried out in CROCUS and AKR-2, even though computational biases exist close to the region where the noise-inducing mechanical vibration was located (the so-called "noise source"). In some of the experiments, it was possible to observe the spatial variation of the relative neutron noise, even relatively far from the noise source. This was achieved through reduced uncertainties using long measurements, the installation of numerous, robust and efficient detectors at a variety of positions in the near vicinity or inside the core, as well as new post-processing methods.}
+      \field{issn}{03064549}
+      \field{journaltitle}{Annals of Nuclear Energy}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{title}{Modeling Noise Experiments Performed at {{AKR-2}} and {{CROCUS}} Zero-Power Reactors}
+      \field{urlday}{9}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{volume}{194}
+      \field{year}{2023}
+      \field{urldateera}{ce}
+      \field{pages}{110066}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.anucene.2023.110066
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/2SSE92M2/Hursin et al. - 2023 - Modeling noise experiments performed at AKR-2 and .pdf
+      \endverb
+    \endentry
+    \entry{ardiansyahEvaluationPBMR400Core2021}{article}{}
+      \name{author}{5}{}{%
+        {{hash=7231f6d078338ee39d2eddb8ae2c057a}{%
+           family={Ardiansyah},
+           familyi={A\bibinitperiod},
+           given={H},
+           giveni={H\bibinitperiod}}}%
+        {{hash=3152a466f21ad506dcf858a819558fe3}{%
+           family={Seker},
+           familyi={S\bibinitperiod},
+           given={V},
+           giveni={V\bibinitperiod}}}%
+        {{hash=9f7acdcc1fe1309d97286fb9b2084264}{%
+           family={Downar},
+           familyi={D\bibinitperiod},
+           given={T},
+           giveni={T\bibinitperiod}}}%
+        {{hash=04cf18acfb6d7248fd2905902ae7f530}{%
+           family={Skutnik},
+           familyi={S\bibinitperiod},
+           given={S},
+           giveni={S\bibinitperiod}}}%
+        {{hash=815122c30c1a41c3baa35ed9852cb66f}{%
+           family={Wieselquist},
+           familyi={W\bibinitperiod},
+           given={W},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{0009fa53d2b85bb3672d86865ab18c93}
+      \strng{fullhash}{33d0a4a4cff5c8f241462dc26245c1f3}
+      \strng{bibnamehash}{33d0a4a4cff5c8f241462dc26245c1f3}
+      \strng{authorbibnamehash}{33d0a4a4cff5c8f241462dc26245c1f3}
+      \strng{authornamehash}{0009fa53d2b85bb3672d86865ab18c93}
+      \strng{authorfullhash}{33d0a4a4cff5c8f241462dc26245c1f3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The significant recent advances in computer speed and memory have made possible an increasing fidelity and accuracy in reactor core simulation with minimal increase in the computational burden. This has been important for modeling some of the smaller advanced reactor designs for which simplified approximations such as few groups homogenized diffusion theory are not as accurate as they were for large light water reactor cores. For narrow cylindrical cores with large surface to volume ratios such the Ped Bed Modular Reactor (PBMR), neutron leakage from the core can be significant, particularly with the harder neutron spectrum and longer mean free path than a light water reactor. In this paper the core from the OECD PBMR-400 benchmark was analyzed using multigroup Monte Carlo cross sections in the HTR reactor core simulation code AGREE. Homogenized cross sections were generated for each of the discrete regions of the AGREE model using a full core SERPENT Monte Carlo model. The cross sections were generated for a variety of group structures in AGREE to assess the importance of finer group discretization on the accuracy of the core eigenvalue and flux predictions compared to the SERPENT full core Monte Carlo solution. A significant increase in the accuracy was observed by increasing the number of energy groups, with as much as a 530 pcm improvement in the eigenvalue calculation when increasing the number of energy groups from 2 to 14. Significant improvements were also observed in the AGREE neutron flux distributions compared to the SERPENT full core calculation.}
+      \field{issn}{1742-6588, 1742-6596}
+      \field{journaltitle}{Journal of Physics: Conference Series}
+      \field{langid}{english}
+      \field{month}{10}
+      \field{number}{1}
+      \field{title}{Evaluation of {{PBMR-400 Core Design Steady State Condition}} with {{Serpent}} and {{AGREE}}}
+      \field{urlday}{31}
+      \field{urlmonth}{10}
+      \field{urlyear}{2023}
+      \field{volume}{2048}
+      \field{year}{2021}
+      \field{urldateera}{ce}
+      \field{pages}{012024}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1742-6596/2048/1/012024
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/QKDBFZWM/Ardiansyah et al. - 2021 - Evaluation of PBMR-400 Core Design Steady State Co.pdf
+      \endverb
+    \endentry
+    \entry{demaziereCORTEXProjectImproving2020}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=2d97eb924852b6ea1f76aad423b874d0}{%
+           family={Demaziere},
+           familyi={D\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{fullhash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{bibnamehash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{authorbibnamehash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{authornamehash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{authorfullhash}{2d97eb924852b6ea1f76aad423b874d0}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{howpublished}{https://www.ans.org/news/article-210/the-cortex-project-improving-nuclear-fleet-operational-availability/}
+      \field{langid}{english}
+      \field{shorttitle}{The {{CORTEX}} Project}
+      \field{title}{The {{CORTEX}} Project: {{Improving}} Nuclear Fleet Operational Availability}
+      \field{urlday}{8}
+      \field{urlmonth}{9}
+      \field{urlyear}{2023}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/X89T94DP/the-cortex-project-improving-nuclear-fleet-operational-availability.html
+      \endverb
+    \endentry
+    \entry{demaziereIdentificationLocalizationAbsorbers2005}{article}{}
+      \name{author}{2}{}{%
+        {{hash=e782c06792181b27c91271ef05d4ce7a}{%
+           family={Demazière},
+           familyi={D\bibinitperiod},
+           given={C.},
+           giveni={C\bibinitperiod}}}%
+        {{hash=f89a551ffa540fca5d53549fd95c1818}{%
+           family={Andhill},
+           familyi={A\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{1fd5728358cda1dc6510037bdb67b027}
+      \strng{fullhash}{1fd5728358cda1dc6510037bdb67b027}
+      \strng{bibnamehash}{1fd5728358cda1dc6510037bdb67b027}
+      \strng{authorbibnamehash}{1fd5728358cda1dc6510037bdb67b027}
+      \strng{authornamehash}{1fd5728358cda1dc6510037bdb67b027}
+      \strng{authorfullhash}{1fd5728358cda1dc6510037bdb67b027}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper investigates the possibility of localising a noise source of the type ``absorber of variable strength'' (or reactor oscillator) from as few as five neutron detectors evenly distributed throughout the core of a commercial nuclear reactor. The novelty of this investigation lies with the fact that the calculations are performed for a realistic 2-D heterogeneous reactor in the 2-group diffusion approximation, via the prior determination of the corresponding reactor transfer function. It is first demonstrated that the response of such a reactor to a localized perturbation deviates significantly from point-kinetics. The space-dependence of the induced neutron noise thus carries enough information about the location of the noise source, which makes it possible to determine its position from a few detector readings. The identification of the type of noise source is easily performed from the in-phase behaviour of the induced neutron noise. Different unfolding techniques are finally tested. All these techniques rely on the use of the reactor transfer function. One of these techniques is based on the comparison between the actual measured neutron noise and the neutron noise calculated for every possible location of the noise source. This technique is very reliable and almost insensitive to the contamination of the detector signals by background noise, but also extremely CPU consuming. Another technique, based on the piece-wise inversion of the reactor transfer function and requiring little CPU effort, was developed. Although this technique is much less reliable when background noise is present, this technique is useful to indicate a region of the reactor where a noise source is likely to be located.}
+      \field{issn}{0306-4549}
+      \field{journaltitle}{Annals of Nuclear Energy}
+      \field{month}{5}
+      \field{number}{8}
+      \field{title}{Identification and Localization of Absorbers of Variable Strength in Nuclear Reactors}
+      \field{urlday}{6}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{32}
+      \field{year}{2005}
+      \field{urldateera}{ce}
+      \field{pages}{812\bibrangedash 842}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1016/j.anucene.2004.12.011
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/XYNL9HCM/Demazière and Andhill - 2005 - Identification and localization of absorbers of va.pdf;/Volumes/Harun-Files/Zotero/storage/LZDC3J3Y/S0306454905000319.html
+      \endverb
+    \endentry
+    \entry{hosseiniNoiseSourceReconstruction2014}{article}{}
+      \name{author}{2}{}{%
+        {{hash=211d6d9385b5b2fe54db7861a4443fd4}{%
+           family={Hosseini},
+           familyi={H\bibinitperiod},
+           given={Seyed\bibnamedelima Abolfazl},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=0d2e78ba7fb4a346e21be8e2e4b120a9}{%
+           family={Vosoughi},
+           familyi={V\bibinitperiod},
+           given={Naser},
+           giveni={N\bibinitperiod}}}%
+      }
+      \strng{namehash}{6465edb04e11efaf379519d09c20b5a2}
+      \strng{fullhash}{6465edb04e11efaf379519d09c20b5a2}
+      \strng{bibnamehash}{6465edb04e11efaf379519d09c20b5a2}
+      \strng{authorbibnamehash}{6465edb04e11efaf379519d09c20b5a2}
+      \strng{authornamehash}{6465edb04e11efaf379519d09c20b5a2}
+      \strng{authorfullhash}{6465edb04e11efaf379519d09c20b5a2}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The present paper consists of two separate sections. In the first section, the neutron noise source is reconstructed using Artificial Neural Network (ANN) in a typical VVER-1000 reactor core. In the first stage of this section, the neutron noise calculations are performed based on Galerkin Finite Element Method (GFEM). To this end, two types of noise sources including absorber of variable strength and vibrating absorber are considered. As the results of noise calculations, the neutron noise is obtained in the location of detectors. In the second stage, the multilayer perception neural network is developed for reconstruction of the noise source. Complex neutron noises (real and imaginary parts) in the location of detectors are considered as the inputs of ANN. The developed artificial neural network consists of two hidden layers of type hyperbolic tangent sigmoid transfer function and a linear transfer function in the output layer. Noise source characteristics including strength, frequency and the location (X and Y coordinates) are identified with high accuracy. The developed hybrid method which comprises scanning method and multilayer perception neural network is employed for reconstruction of two coincidence noise sources. The number, type and location of noise source are exactly reconstructed using the hybrid method. The strength and frequency of noise source(s) are also identified with high accuracy using the developed method. A sensitivity analysis of the reconstructed noise source to some ANN parameters like the number of hidden layers, neurons in each hidden layer and the applied transfer functions is performed. Variation of accuracy of reconstructed noise source versus number of detectors and their arrangement in the reactor core are investigated as well.}
+      \field{issn}{01491970}
+      \field{journaltitle}{Progress in Nuclear Energy}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{title}{Noise Source Reconstruction Using {{ANN}} and Hybrid Methods in {{VVER-1000}} Reactor Core}
+      \field{urlday}{8}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{71}
+      \field{year}{2014}
+      \field{urldateera}{ce}
+      \field{pages}{232\bibrangedash 247}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1016/j.pnucene.2013.12.007
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/XPWFSY88/Hosseini and Vosoughi - 2014 - Noise source reconstruction using ANN and hybrid m.pdf
+      \endverb
+    \endentry
+    \entry{pazsitNeutronFluctuationsTreatise2008}{book}{}
+      \name{author}{2}{}{%
+        {{hash=ad3129c3ab36ff080fc40cb99f31e6da}{%
+           family={Pázsit},
+           familyi={P\bibinitperiod},
+           given={Imre},
+           giveni={I\bibinitperiod}}}%
+        {{hash=8bbaa23a603ede5d5f56038aaa4e20a4}{%
+           family={Pál},
+           familyi={P\bibinitperiod},
+           given={Lénárd},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Amsterdam ; Boston}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{fullhash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{bibnamehash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{authorbibnamehash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{authornamehash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \strng{authorfullhash}{04e10a8eef4e2d283f6e002a6a30f404}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{annotation}{OCLC: ocn166362162}
+      \field{edition}{1st ed}
+      \field{isbn}{978-0-08-045064-3}
+      \field{langid}{english}
+      \field{shorttitle}{Neutron Fluctuations}
+      \field{title}{Neutron Fluctuations: A Treatise on the Physics on Branching Processes}
+      \field{year}{2008}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/8L9VTQAZ/Pázsit and Pál - 2008 - Neutron fluctuations a treatise on the physics on.pdf
+      \endverb
+      \keyw{Branching processes,Neutrons}
+    \endentry
+    \entry{uhrigRandomNoiseTechniques1970}{book}{}
+      \name{author}{1}{}{%
+        {{hash=b1f5eb13419e9e296a208a2750cbba4d}{%
+           family={Uhrig},
+           familyi={U\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{fullhash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{bibnamehash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{authorbibnamehash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{authornamehash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \strng{authorfullhash}{b1f5eb13419e9e296a208a2750cbba4d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Random {{Noise Techniques}} in {{Nuclear Reactor Systems}}}
+      \field{year}{1970}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/PZM6VALS/Random Noise Technique in Nuclear Reactor Systems (No OCR) (Robert E. Uhrig) (z-lib.org).pdf
+      \endverb
+    \endentry
+    \entry{pacilioAnalysisReactorNoise1979}{incollection}{}
+      \name{author}{5}{}{%
+        {{hash=923cb37626f81a6445005d70b0669b47}{%
+           family={Pacilio},
+           familyi={P\bibinitperiod},
+           given={N.},
+           giveni={N\bibinitperiod}}}%
+        {{hash=921f04523d8ddbe9faef81aa79532c10}{%
+           family={Colombino},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a91343335eab18e0de9f8bee10a0c15f}{%
+           family={Mosiello},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=f769c38d8cc98975b5b9bb5775815107}{%
+           family={Norelli},
+           familyi={N\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+        {{hash=cf787d39358651e894cd1ad2d48511ee}{%
+           family={Jorio},
+           familyi={J\bibinitperiod},
+           given={V.\bibnamedelimi M.},
+           giveni={V\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=d4cacce125833f0a78272bf62dba6636}{%
+           family={Henley},
+           familyi={H\bibinitperiod},
+           given={Ernest\bibnamedelima J.},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=4ea5525df8304cc8dc29f2fb02907d2c}{%
+           family={Lewins},
+           familyi={L\bibinitperiod},
+           given={Jeffery},
+           giveni={J\bibinitperiod}}}%
+        {{hash=3ba040afe0807cfeff6870dfd0015c66}{%
+           family={Becker},
+           familyi={B\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston, MA}%
+      }
+      \list{publisher}{1}{%
+        {Springer US}%
+      }
+      \strng{namehash}{f7ceabb9c8fd614a66c4dde95a97af74}
+      \strng{fullhash}{7cf8922e8ba2845ae7831776437f9325}
+      \strng{bibnamehash}{7cf8922e8ba2845ae7831776437f9325}
+      \strng{authorbibnamehash}{7cf8922e8ba2845ae7831776437f9325}
+      \strng{authornamehash}{f7ceabb9c8fd614a66c4dde95a97af74}
+      \strng{authorfullhash}{7cf8922e8ba2845ae7831776437f9325}
+      \strng{editorbibnamehash}{653d8722ede54849910e60f043e56412}
+      \strng{editornamehash}{653d8722ede54849910e60f043e56412}
+      \strng{editorfullhash}{653d8722ede54849910e60f043e56412}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{The first observation of the statistical fluctuations of the number of neutrons in a reactor was the now famous Rossi-alpha experiment, named for Bruno Rossi who suggested and set up the measuring apparatus during the early days of Los Alamos. The original theoretical studies were formulated by Fermi, Feynman and de Hoffmann in 1944 (1) and again by de Hoffman (1946) (2) during the same period and issued in two Los Alamos reports: LADC-269 and LADC-256, respectively. Like most of the scientific and literary production of the time, the above-mentioned reports remained classified for several years.}
+      \field{booktitle}{Advances in {{Nuclear Science}} and {{Technology}}: {{Volume}} 11}
+      \field{isbn}{978-1-4613-2862-9}
+      \field{langid}{english}
+      \field{shorttitle}{The {{Analysis}} of {{Reactor Noise}}}
+      \field{title}{The {{Analysis}} of {{Reactor Noise}}: {{Measuring Statistical Fluctuations}} in {{Nuclear Systems}}}
+      \field{urlday}{13}
+      \field{urlmonth}{3}
+      \field{urlyear}{2023}
+      \field{year}{1979}
+      \field{urldateera}{ce}
+      \field{pages}{67\bibrangedash 134}
+      \range{pages}{68}
+      \verb{doi}
+      \verb 10.1007/978-1-4613-2862-9_2
+      \endverb
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/77E9JTAC/Pacilio et al. - 1979 - The Analysis of Reactor Noise Measuring Statistic.pdf
+      \endverb
+      \keyw{Ergodic Hypothesis,Factorial Moment,Neutron Count,Noise Analysis,Prompt Neutron}
+    \endentry
+    \entry{thiePowerReactorNoise1981}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e65de475016cdf9a1acd7b73495766fe}{%
+           family={Thie},
+           familyi={T\bibinitperiod},
+           given={Joseph\bibnamedelima A.},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ANS}%
+      }
+      \strng{namehash}{e65de475016cdf9a1acd7b73495766fe}
+      \strng{fullhash}{e65de475016cdf9a1acd7b73495766fe}
+      \strng{bibnamehash}{e65de475016cdf9a1acd7b73495766fe}
+      \strng{authorbibnamehash}{e65de475016cdf9a1acd7b73495766fe}
+      \strng{authornamehash}{e65de475016cdf9a1acd7b73495766fe}
+      \strng{authorfullhash}{e65de475016cdf9a1acd7b73495766fe}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The author explains the fundamentals of statistics, correlation, and regression, along with Fourier series and related topics. Experimental and theoretical considerations in performing noise tests are also included.}
+      \field{isbn}{978-0-89448-025-6}
+      \field{langid}{english}
+      \field{title}{Power {{Reactor Noise}}}
+      \field{year}{1981}
+    \endentry
+    \entry{ottIntroductoryNuclearReactor1985}{book}{}
+      \name{author}{2}{}{%
+        {{hash=4f62dacee4c2ae0cfbbfc8d0a7c3b696}{%
+           family={Ott},
+           familyi={O\bibinitperiod},
+           given={Karl\bibnamedelima O.},
+           giveni={K\bibinitperiod\bibinitdelim O\bibinitperiod}}}%
+        {{hash=e1ff3eaa9e95f112952618a410b36c85}{%
+           family={Neuhold},
+           familyi={N\bibinitperiod},
+           given={Robert\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {La Grange Park, Ill. USA}%
+      }
+      \list{publisher}{1}{%
+        {American Nuclear Society}%
+      }
+      \strng{namehash}{8758f65ff19ebfd8da1589c787122c27}
+      \strng{fullhash}{8758f65ff19ebfd8da1589c787122c27}
+      \strng{bibnamehash}{8758f65ff19ebfd8da1589c787122c27}
+      \strng{authorbibnamehash}{8758f65ff19ebfd8da1589c787122c27}
+      \strng{authornamehash}{8758f65ff19ebfd8da1589c787122c27}
+      \strng{authorfullhash}{8758f65ff19ebfd8da1589c787122c27}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{978-0-89448-029-4}
+      \field{langid}{english}
+      \field{title}{Introductory {{Nuclear Reactor Dynamics}}}
+      \field{year}{1985}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/PT8L43KI/Ott and Neuhold - 1985 - Introductory nuclear reactor dynamics.pdf
+      \endverb
+      \keyw{Nuclear reactor kinetics,Nuclear reactors}
+    \endentry
+    \entry{ferrierReactorNoise1963}{book}{}
+      \name{author}{2}{}{%
+        {{hash=af13218bf0366fa2eb563995b3f09c46}{%
+           family={Ferrier},
+           familyi={F\bibinitperiod},
+           given={D},
+           giveni={D\bibinitperiod}}}%
+        {{hash=e65de475016cdf9a1acd7b73495766fe}{%
+           family={Thie},
+           familyi={T\bibinitperiod},
+           given={Joseph\bibnamedelima A},
+           giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{0d85469658e98e3a7a38c5f8d74dcf21}
+      \strng{fullhash}{0d85469658e98e3a7a38c5f8d74dcf21}
+      \strng{bibnamehash}{0d85469658e98e3a7a38c5f8d74dcf21}
+      \strng{authorbibnamehash}{0d85469658e98e3a7a38c5f8d74dcf21}
+      \strng{authornamehash}{0d85469658e98e3a7a38c5f8d74dcf21}
+      \strng{authorfullhash}{0d85469658e98e3a7a38c5f8d74dcf21}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Reactor {{Noise}}}
+      \field{year}{1963}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/P926MUXJ/Ferrier and Thie - MONOGRAPH SERIES ON NUCLEAR SCIENCE AND TECHNOLOGY.pdf
+      \endverb
+    \endentry
+    \entry{demaziereDevelopmentNonintrusiveMethod2002}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=2d97eb924852b6ea1f76aad423b874d0}{%
+           family={Demaziere},
+           familyi={D\bibinitperiod},
+           given={Christophe},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{fullhash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{bibnamehash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{authorbibnamehash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{authornamehash}{2d97eb924852b6ea1f76aad423b874d0}
+      \strng{authorfullhash}{2d97eb924852b6ea1f76aad423b874d0}
+      \field{extraname}{2}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{For that purpose, the spatial average temperature noise has to be measured throughout the core. Even if PWRs are poorly instrumented with respect to temperature detectors, it was proven that gamma-thermometers work as thermocouples in the frequency range of interest for the MTC noise analysis and could be used when estimating the MTC by noise analysis.}
+      \field{langid}{english}
+      \field{title}{Development of a Non-Intrusive Method for the Determination of the Moderator Temperature Coefficient of Reactivity ({{MTC}})}
+      \field{type}{phdthesis}
+      \field{year}{2002}
+      \verb{file}
+      \verb /Volumes/Harun-Files/Zotero/storage/Z3XP747Z/Demaziere - CHALMERS UNIVERSITY OF TECHNOLOGY DEPARTMENT OF RE.pdf
       \endverb
     \endentry
     \entry{ambrozicNoiseAnalysisTechniques2020}{article}{}
@@ -1139,145 +1328,6 @@
       \endverb
       \keyw{Dynamic adjoint,Green's function,Need to Read,Power reactor noise}
     \endentry
-    \entry{hursinModelingNoiseExperiments2023}{article}{}
-      \name{author}{21}{}{%
-        {{hash=1f08ff0430c0e6d655292bae864eb4ba}{%
-           family={Hursin},
-           familyi={H\bibinitperiod},
-           given={M.},
-           giveni={M\bibinitperiod}}}%
-        {{hash=bdab21ee6d0616c21b8c07bc84f89a7b}{%
-           family={Zoia},
-           familyi={Z\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=f308c430b8e09eae06280976d9448dfd}{%
-           family={Rouchon},
-           familyi={R\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=c2e6d119b9d6a25d0fdbbb28b1f78af3}{%
-           family={Brighenti},
-           familyi={B\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=32afc3aaef476de1547579d11c5b32c6}{%
-           family={Zmijarevic},
-           familyi={Z\bibinitperiod},
-           given={I.},
-           giveni={I\bibinitperiod}}}%
-        {{hash=17ad61ca79c1390f4d5c7d6b7cd5cb67}{%
-           family={Santandrea},
-           familyi={S\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=3bce723c653061ba183e7e8e2a441301}{%
-           family={Vinai},
-           familyi={V\bibinitperiod},
-           given={P.},
-           giveni={P\bibinitperiod}}}%
-        {{hash=239e212faf83a7626c8fc8fa5e814886}{%
-           family={Mylonakis},
-           familyi={M\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=3692ce1a86a17382102143c6202370ab}{%
-           family={Yi},
-           familyi={Y\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=e782c06792181b27c91271ef05d4ce7a}{%
-           family={Demazière},
-           familyi={D\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=6ff082e26ad8ae742aa41cdf73333bc1}{%
-           family={Lamirand},
-           familyi={L\bibinitperiod},
-           given={V.},
-           giveni={V\bibinitperiod}}}%
-        {{hash=9bd6e39a0602c0dbf9e97ec3d23f0f2e}{%
-           family={Ambrozic},
-           familyi={A\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=5467fb216200fc3ea3a9de29808aaec4}{%
-           family={Yamamoto},
-           familyi={Y\bibinitperiod},
-           given={T.},
-           giveni={T\bibinitperiod}}}%
-        {{hash=3bdc407b868b2d4269abaf34564fc173}{%
-           family={Hübner},
-           familyi={H\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=7721eba325fde00f6f7020afee1e4760}{%
-           family={Knospe},
-           familyi={K\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=3fd3ac1a8eb9a75f65d64b90dd53eb64}{%
-           family={Lange},
-           familyi={L\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=d4a95d584ae7a58d527261525a0f5b29}{%
-           family={Yum},
-           familyi={Y\bibinitperiod},
-           given={S.},
-           giveni={S\bibinitperiod}}}%
-        {{hash=9e3e646bab765c8df08af05fc9cd015e}{%
-           family={Macian},
-           familyi={M\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=6a3c5732cb9acdce0e49a484a8ed0825}{%
-           family={Vidal},
-           familyi={V\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=a46a4dfb811504fba0083c5128cade59}{%
-           family={Ginestar},
-           familyi={G\bibinitperiod},
-           given={D.},
-           giveni={D\bibinitperiod}}}%
-        {{hash=c1184b3c46148fda58e1a6d6b2a0606f}{%
-           family={Verdú},
-           familyi={V\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-      }
-      \strng{namehash}{523040a56df732df118038018d4c8dde}
-      \strng{fullhash}{5e769e75a999e915d035985cbdcc91ad}
-      \strng{bibnamehash}{523040a56df732df118038018d4c8dde}
-      \strng{authorbibnamehash}{523040a56df732df118038018d4c8dde}
-      \strng{authornamehash}{523040a56df732df118038018d4c8dde}
-      \strng{authorfullhash}{5e769e75a999e915d035985cbdcc91ad}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{CORTEX is a EU H2020 project (2017-2021) devoted to the analysis of 'reactor neutron noise' in nuclear reactors, i.e. the small fluctuations occurring around the stationary state due to external or internal disturbances in the core. One important aspect of CORTEX is the development of neutron noise simulation codes capable of modeling the spatial variations of the noise distribution in a reactor. In this paper we illustrate the validation activities concerning the comparison of the simulation results obtained by several noise simulation codes with respect to experimental data produced at the zero-power reactors AKR-2 (operated at TUD, Germany) and CROCUS (operated at EPFL, Switzerland). Both research reactors are modeled in the time and frequency domains, using transport or diffusion theory. Overall, the noise simulators managed to capture the main features of the neutron noise behavior observed in the experimental campaigns carried out in CROCUS and AKR-2, even though computational biases exist close to the region where the noise-inducing mechanical vibration was located (the so-called "noise source"). In some of the experiments, it was possible to observe the spatial variation of the relative neutron noise, even relatively far from the noise source. This was achieved through reduced uncertainties using long measurements, the installation of numerous, robust and efficient detectors at a variety of positions in the near vicinity or inside the core, as well as new post-processing methods.}
-      \field{issn}{03064549}
-      \field{journaltitle}{Annals of Nuclear Energy}
-      \field{langid}{english}
-      \field{month}{12}
-      \field{title}{Modeling Noise Experiments Performed at {{AKR-2}} and {{CROCUS}} Zero-Power Reactors}
-      \field{urlday}{9}
-      \field{urlmonth}{9}
-      \field{urlyear}{2023}
-      \field{volume}{194}
-      \field{year}{2023}
-      \field{urldateera}{ce}
-      \field{pages}{110066}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.anucene.2023.110066
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/2SSE92M2/Hursin et al. - 2023 - Modeling noise experiments performed at AKR-2 and .pdf
-      \endverb
-    \endentry
     \entry{demaziereDevelopmentPointkineticVerification2017}{article}{}
       \name{author}{3}{}{%
         {{hash=e782c06792181b27c91271ef05d4ce7a}{%
@@ -1448,57 +1498,6 @@
       \verb /Volumes/Harun-Files/Zotero/storage/C262A53J/Pázsit and Glöckler - 1983 - On the Neutron Noise Diagnostics of Pressurized Water Reactor Control Rod Vibrations. I. Periodic Vi.pdf
       \endverb
     \endentry
-    \entry{mylonakisCORESIMFlexible2021}{article}{}
-      \name{author}{3}{}{%
-        {{hash=0ca58555649fe9d26a5e4b113173bb0d}{%
-           family={Mylonakis},
-           familyi={M\bibinitperiod},
-           given={Antonios},
-           giveni={A\bibinitperiod}}}%
-        {{hash=fc62baaf98b45dd001922c847f43db1e}{%
-           family={Vinai},
-           familyi={V\bibinitperiod},
-           given={Paolo},
-           giveni={P\bibinitperiod}}}%
-        {{hash=dece9392251f156f2e026670e9acc498}{%
-           family={Demazière},
-           familyi={D\bibinitperiod},
-           given={Christophe},
-           giveni={C\bibinitperiod}}}%
-      }
-      \strng{namehash}{9496e3e8c7de2e6f91cee34f564545ac}
-      \strng{fullhash}{9496e3e8c7de2e6f91cee34f564545ac}
-      \strng{bibnamehash}{9496e3e8c7de2e6f91cee34f564545ac}
-      \strng{authorbibnamehash}{9496e3e8c7de2e6f91cee34f564545ac}
-      \strng{authornamehash}{9496e3e8c7de2e6f91cee34f564545ac}
-      \strng{authorfullhash}{9496e3e8c7de2e6f91cee34f564545ac}
-      \field{extraname}{1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{The paper presents CORE SIM+, a tool developed for diffusion-based neutron noise simulations. The simulator is based on the 3-dimensional, two-energy group neutron diffusion equation in the frequency domain. The tool includes the necessary solvers to calculate the criticality problems associated with the system and then the response to a variety of perturbations such as absorbers of variable strength, perturbations travelling with the coolant flow and vibrations of core components. Numerical methods suitable for different types of problems have been implemented. A capability that allows to apply nonuniform computational meshes is available so that the discretization of the domain can be optimized with respect to the characteristics of the neutron noise sources. The simulator can generate neutron noise databases for nuclear power reactors via the Green's function method in a fully automated manner. These databases can be useful when studying the neutron noise response in a reactor and when training machine learning algorithms for core monitoring and diagnostics. As part of the verification process, the CORE SIM+ response of a realistic reactor model to a given perturbation at various frequencies is used to estimate the corresponding point-kinetic component, compared to an exact analytical expression. In addition, the Green's function generator is used to calculate the response of a system to a fuel cell vibration. The solution is then compared to the one of the direct solver of CORE SIM+. As part of the validation work, a neutron noise experiment with vibrations of fuel rods is simulated, showing a reasonable agreement with the measurements. A representative neutron noise database generated for a generic pressurized water reactor is described. From the database the simulations of fuel assembly and core barrel vibrations are chosen as illustrative examples for demonstrating the capabilities of the tool.}
-      \field{issn}{03064549}
-      \field{journaltitle}{Annals of Nuclear Energy}
-      \field{langid}{english}
-      \field{month}{6}
-      \field{shorttitle}{{{CORE SIM}}+}
-      \field{title}{{{CORE SIM}}+: {{A}} Flexible Diffusion-Based Solver for Neutron Noise Simulations}
-      \field{urlday}{14}
-      \field{urlmonth}{1}
-      \field{urlyear}{2023}
-      \field{volume}{155}
-      \field{year}{2021}
-      \field{urldateera}{ce}
-      \field{pages}{108149}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.anucene.2021.108149
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/ITNYTE5K/Mylonakis et al. - 2021 - CORE SIM+ A flexible diffusion-based solver for n.pdf
-      \endverb
-    \endentry
     \entry{chionisSIMULATE3KAnalysesNeutron2017}{inproceedings}{}
       \name{author}{7}{}{%
         {{hash=cc70ac49a0a4ec0666d43e79e55e05aa}{%
@@ -1637,8 +1636,8 @@
       \strng{authornamehash}{ad3129c3ab36ff080fc40cb99f31e6da}
       \strng{authorfullhash}{ad3129c3ab36ff080fc40cb99f31e6da}
       \field{extraname}{1}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{1}
@@ -1646,50 +1645,6 @@
       \field{year}{1977}
       \verb{file}
       \verb /Volumes/Harun-Files/Zotero/storage/MBK3YEYJ/Pázsit - 1977 - INVESTIGATION OF THE SPACE-DEPENDENT NOISE INDUCED.pdf
-      \endverb
-    \endentry
-    \entry{demaziereIdentificationLocalizationAbsorbers2005}{article}{}
-      \name{author}{2}{}{%
-        {{hash=e782c06792181b27c91271ef05d4ce7a}{%
-           family={Demazière},
-           familyi={D\bibinitperiod},
-           given={C.},
-           giveni={C\bibinitperiod}}}%
-        {{hash=f89a551ffa540fca5d53549fd95c1818}{%
-           family={Andhill},
-           familyi={A\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-      }
-      \strng{namehash}{1fd5728358cda1dc6510037bdb67b027}
-      \strng{fullhash}{1fd5728358cda1dc6510037bdb67b027}
-      \strng{bibnamehash}{1fd5728358cda1dc6510037bdb67b027}
-      \strng{authorbibnamehash}{1fd5728358cda1dc6510037bdb67b027}
-      \strng{authornamehash}{1fd5728358cda1dc6510037bdb67b027}
-      \strng{authorfullhash}{1fd5728358cda1dc6510037bdb67b027}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This paper investigates the possibility of localising a noise source of the type ``absorber of variable strength'' (or reactor oscillator) from as few as five neutron detectors evenly distributed throughout the core of a commercial nuclear reactor. The novelty of this investigation lies with the fact that the calculations are performed for a realistic 2-D heterogeneous reactor in the 2-group diffusion approximation, via the prior determination of the corresponding reactor transfer function. It is first demonstrated that the response of such a reactor to a localized perturbation deviates significantly from point-kinetics. The space-dependence of the induced neutron noise thus carries enough information about the location of the noise source, which makes it possible to determine its position from a few detector readings. The identification of the type of noise source is easily performed from the in-phase behaviour of the induced neutron noise. Different unfolding techniques are finally tested. All these techniques rely on the use of the reactor transfer function. One of these techniques is based on the comparison between the actual measured neutron noise and the neutron noise calculated for every possible location of the noise source. This technique is very reliable and almost insensitive to the contamination of the detector signals by background noise, but also extremely CPU consuming. Another technique, based on the piece-wise inversion of the reactor transfer function and requiring little CPU effort, was developed. Although this technique is much less reliable when background noise is present, this technique is useful to indicate a region of the reactor where a noise source is likely to be located.}
-      \field{issn}{0306-4549}
-      \field{journaltitle}{Annals of Nuclear Energy}
-      \field{month}{5}
-      \field{number}{8}
-      \field{title}{Identification and Localization of Absorbers of Variable Strength in Nuclear Reactors}
-      \field{urlday}{6}
-      \field{urlmonth}{6}
-      \field{urlyear}{2024}
-      \field{volume}{32}
-      \field{year}{2005}
-      \field{urldateera}{ce}
-      \field{pages}{812\bibrangedash 842}
-      \range{pages}{31}
-      \verb{doi}
-      \verb 10.1016/j.anucene.2004.12.011
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/XYNL9HCM/Demazière and Andhill - 2005 - Identification and localization of absorbers of va.pdf;/Volumes/Harun-Files/Zotero/storage/LZDC3J3Y/S0306454905000319.html
       \endverb
     \endentry
     \entry{karlssonLocalizationChannelInstability1999}{article}{}
@@ -2172,8 +2127,8 @@
       \strng{authorbibnamehash}{33a09a8f6b365a8bbf6181a18c80658d}
       \strng{authornamehash}{33a09a8f6b365a8bbf6181a18c80658d}
       \strng{authorfullhash}{33a09a8f6b365a8bbf6181a18c80658d}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Using reactor noise techniques, a vibrating in-core instrument tube in the Mühleberg Boiling Water Reactor could be detected. The normalized auto power spectral density (NPSD) of the current fluctuations of a mini in-core chamber, fixed within the instrument tube, has been analyzed before and after repair. There was a strong evidence of a peak at the resonance frequency of the vibration at 2.6 Hz in the NPSD. It vanished promptly after the bypass-streaming at the lower core plate, being the physical origin of the vibrating instrument tube, was re-arranged.}
@@ -2227,8 +2182,8 @@
       \strng{authorbibnamehash}{40cd39a5ee1c56d14849076786e9cc99}
       \strng{authornamehash}{d5c3bcfb649d1bf6190ef3f14f879136}
       \strng{authorfullhash}{40cd39a5ee1c56d14849076786e9cc99}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Neutron noise analysis measurements were made in three BWR-4 reactors under full-power conditions to determine the noise characterization spectra of the reactors with two different instrument-tube cooling configurations. Both configurations were designed to prevent flow-induced vibration of the instrument tubes and subsequent damage of fuel channel boxes caused by impacts of the tubes with the boxes. Noise spectra from these three reactors were compared with spectra previously obtained prior to changing the instrument-tube cooling configuration, and no evidence of impacting was found.}
@@ -2365,8 +2320,8 @@
       \strng{authorbibnamehash}{36591570fa246a7cfcefc277ff2d29c6}
       \strng{authornamehash}{36591570fa246a7cfcefc277ff2d29c6}
       \strng{authorfullhash}{36591570fa246a7cfcefc277ff2d29c6}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Surveillance of core barrel vibrations has been performed in the Swedish Ringhals PWRs for several years. This surveillance is focused mainly on the pendular motion of the core barrel, which is known as the beam mode. The monitoring of the beam mode has suggested that its amplitude increases along the cycle and decreases after refuelling. In the last 5 years several measurements have been taken in order to understand this behaviour. Besides, a non-linear fitting procedure has been implemented in order to better distinguish the different components of vibration. By using this fitting procedure, two modes of vibration have been identified in the frequency range of the beam mode. Several results coming from the trend analysis performed during these years indicate that one of the modes is due to the core barrel motion itself and the other is due to the individual flow induced vibrations of the fuel elements. In this work, the latest results of this monitoring are presented.}
@@ -2822,38 +2777,6 @@
       \verb /Volumes/Harun-Files/Zotero/storage/3FXX2PMA/Lamirand et al. - 2020 - The COLIBRI experimental program in the CROCUS rea.pdf
       \endverb
     \endentry
-    \entry{demaziereCORTEXProjectImproving2020}{misc}{}
-      \name{author}{1}{}{%
-        {{hash=2d97eb924852b6ea1f76aad423b874d0}{%
-           family={Demaziere},
-           familyi={D\bibinitperiod},
-           given={Christophe},
-           giveni={C\bibinitperiod}}}%
-      }
-      \strng{namehash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{fullhash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{bibnamehash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{authorbibnamehash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{authornamehash}{2d97eb924852b6ea1f76aad423b874d0}
-      \strng{authorfullhash}{2d97eb924852b6ea1f76aad423b874d0}
-      \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{howpublished}{https://www.ans.org/news/article-210/the-cortex-project-improving-nuclear-fleet-operational-availability/}
-      \field{langid}{english}
-      \field{shorttitle}{The {{CORTEX}} Project}
-      \field{title}{The {{CORTEX}} Project: {{Improving}} Nuclear Fleet Operational Availability}
-      \field{urlday}{8}
-      \field{urlmonth}{9}
-      \field{urlyear}{2023}
-      \field{year}{2020}
-      \field{urldateera}{ce}
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/X89T94DP/the-cortex-project-improving-nuclear-fleet-operational-availability.html
-      \endverb
-    \endentry
     \entry{brighentiDevelopmentValidationTimedependent2022}{article}{}
       \name{author}{4}{}{%
         {{hash=c2e6d119b9d6a25d0fdbbb28b1f78af3}{%
@@ -2938,8 +2861,8 @@
       \strng{authorbibnamehash}{aa377f5142a2480667de7559c40da7ea}
       \strng{authornamehash}{23a01509882588e042a6b2f8ef6d8794}
       \strng{authorfullhash}{aa377f5142a2480667de7559c40da7ea}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The behavior of low frequency neutron noise during the 30 years of operation of German KWU built PWRs is reviewed. The role of various factors influencing neutron noise such as sub-cooled boiling, power and enrichment uprates, fuel type and mechanical fuel assembly design is discussed. Simulation results of temperature driven neutron noise with Studsvik's S3K dynamic core simulator are shown and compared to measurements. Hypotheses for recent increases and decreases of low frequency neutron noise are compared with evidence from operating history.}
@@ -3149,8 +3072,8 @@
       \strng{authorbibnamehash}{60a1ee26109f37e286e4ff779cae3065}
       \strng{authornamehash}{60a1ee26109f37e286e4ff779cae3065}
       \strng{authorfullhash}{60a1ee26109f37e286e4ff779cae3065}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Thesis (Nucl.E.)--Massachusetts Institute of Technology, Dept. of Nuclear Engineering, 1979.}
@@ -4346,66 +4269,6 @@
       \verb /Volumes/Harun-Files/Zotero/storage/NBNP74PV/Viebach et al. - 2022 - Verification of the code DYN3D for calculations of neutron flux fluctuations.pdf;/Volumes/Harun-Files/Zotero/storage/K575PCNP/S0306454921006113.html
       \endverb
       \keyw{CORE SIM,Deterministic reactor modelling,DYN3D,Neutron noise}
-    \endentry
-    \entry{ardiansyahEvaluationPBMR400Core2021}{article}{}
-      \name{author}{5}{}{%
-        {{hash=7231f6d078338ee39d2eddb8ae2c057a}{%
-           family={Ardiansyah},
-           familyi={A\bibinitperiod},
-           given={H},
-           giveni={H\bibinitperiod}}}%
-        {{hash=3152a466f21ad506dcf858a819558fe3}{%
-           family={Seker},
-           familyi={S\bibinitperiod},
-           given={V},
-           giveni={V\bibinitperiod}}}%
-        {{hash=9f7acdcc1fe1309d97286fb9b2084264}{%
-           family={Downar},
-           familyi={D\bibinitperiod},
-           given={T},
-           giveni={T\bibinitperiod}}}%
-        {{hash=04cf18acfb6d7248fd2905902ae7f530}{%
-           family={Skutnik},
-           familyi={S\bibinitperiod},
-           given={S},
-           giveni={S\bibinitperiod}}}%
-        {{hash=815122c30c1a41c3baa35ed9852cb66f}{%
-           family={Wieselquist},
-           familyi={W\bibinitperiod},
-           given={W},
-           giveni={W\bibinitperiod}}}%
-      }
-      \strng{namehash}{0009fa53d2b85bb3672d86865ab18c93}
-      \strng{fullhash}{33d0a4a4cff5c8f241462dc26245c1f3}
-      \strng{bibnamehash}{33d0a4a4cff5c8f241462dc26245c1f3}
-      \strng{authorbibnamehash}{33d0a4a4cff5c8f241462dc26245c1f3}
-      \strng{authornamehash}{0009fa53d2b85bb3672d86865ab18c93}
-      \strng{authorfullhash}{33d0a4a4cff5c8f241462dc26245c1f3}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The significant recent advances in computer speed and memory have made possible an increasing fidelity and accuracy in reactor core simulation with minimal increase in the computational burden. This has been important for modeling some of the smaller advanced reactor designs for which simplified approximations such as few groups homogenized diffusion theory are not as accurate as they were for large light water reactor cores. For narrow cylindrical cores with large surface to volume ratios such the Ped Bed Modular Reactor (PBMR), neutron leakage from the core can be significant, particularly with the harder neutron spectrum and longer mean free path than a light water reactor. In this paper the core from the OECD PBMR-400 benchmark was analyzed using multigroup Monte Carlo cross sections in the HTR reactor core simulation code AGREE. Homogenized cross sections were generated for each of the discrete regions of the AGREE model using a full core SERPENT Monte Carlo model. The cross sections were generated for a variety of group structures in AGREE to assess the importance of finer group discretization on the accuracy of the core eigenvalue and flux predictions compared to the SERPENT full core Monte Carlo solution. A significant increase in the accuracy was observed by increasing the number of energy groups, with as much as a 530 pcm improvement in the eigenvalue calculation when increasing the number of energy groups from 2 to 14. Significant improvements were also observed in the AGREE neutron flux distributions compared to the SERPENT full core calculation.}
-      \field{issn}{1742-6588, 1742-6596}
-      \field{journaltitle}{Journal of Physics: Conference Series}
-      \field{langid}{english}
-      \field{month}{10}
-      \field{number}{1}
-      \field{title}{Evaluation of {{PBMR-400 Core Design Steady State Condition}} with {{Serpent}} and {{AGREE}}}
-      \field{urlday}{31}
-      \field{urlmonth}{10}
-      \field{urlyear}{2023}
-      \field{volume}{2048}
-      \field{year}{2021}
-      \field{urldateera}{ce}
-      \field{pages}{012024}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1088/1742-6596/2048/1/012024
-      \endverb
-      \verb{file}
-      \verb /Volumes/Harun-Files/Zotero/storage/QKDBFZWM/Ardiansyah et al. - 2021 - Evaluation of PBMR-400 Core Design Steady State Co.pdf
-      \endverb
     \endentry
     \entry{lewisComputationalMethodsNeutron1984}{book}{}
       \name{author}{2}{}{%
