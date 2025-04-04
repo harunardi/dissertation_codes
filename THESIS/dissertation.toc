@@ -17,10 +17,11 @@
 \contentsline {section}{\numberline {2.3}Computational Methods and Tools of Neutron Noise Analysis}{16}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Solving Neutron Noise Problems using Deterministic Methods}{16}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Solving Neutron Noise Problems using Monte Carlo Methods}{18}{subsection.2.3.2}%
-\contentsline {chapter}{\numberline {3}Application Neutron Noise Methods in 2D and 3D HTTR}{20}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Simulation of Neutron Noise in 2D and 3D HTTR}{20}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Application of Neutron Noise Unfolding methods for HTTR}{20}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Novel Neutron Noise Unfolding methods and applications}{21}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusions}{22}{chapter.5}%
-\contentsline {chapter}{References}{23}{chapter*.10}%
+\contentsline {section}{\numberline {2.4}Summary}{19}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Application Neutron Noise Methods in 2D and 3D HTTR}{21}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Simulation of Neutron Noise in 2D and 3D HTTR}{21}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Application of Neutron Noise Unfolding methods for HTTR}{21}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Novel Neutron Noise Unfolding methods and applications}{22}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Conclusions}{23}{chapter.5}%
+\contentsline {chapter}{References}{24}{chapter*.10}%
 \contentsfinish 
